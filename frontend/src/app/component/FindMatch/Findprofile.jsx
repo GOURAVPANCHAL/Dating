@@ -111,11 +111,11 @@ const Findprofile = () => {
                                                 event.stopPropagation();
                                                 handleToggle(index);
                                             }}
-                                            className={`btn userRequestbtn ${requestStatus[index] ? 'theme-bg text-light' : 'bg-danger text-light'}`}
+                                            className={`btn userRequestbtn ${requestStatus[index] ? 'bg-danger text-light' : ' theme-bg text-light'}`}
                                         >
                                             {requestStatus[index]
-                                                ? <i className="bi bi-person-fill-add float-end "></i>
-                                                : <i className="bi bi-person-check-fill"></i>}
+                                                ? <i className="bi bi-person-check-fill"></i>  
+                                                : <i className="bi bi-person-fill-add float-end "></i>}
                                         </div>
                                         <h4>{item.name}, <span>{item.age}</span></h4>
                                         <p className="profession"><i className="bi bi-briefcase-fill"></i> {item.profession}</p>
