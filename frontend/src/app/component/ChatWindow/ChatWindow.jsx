@@ -6,31 +6,27 @@ import Image from "next/image";
 const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage, userId }) => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [typingUser, setTypingUser] = useState("");
+  const [messages, setMessages] = useState([]);  // Local messages state to display
   const fileInputRef = useRef(null);
 
+  // Register socket events
   useEffect(() => {
-    // Emit 'register_user' event to associate userId with socket connection
     if (userId) {
       socket.emit('register_user', userId);
     }
 
-    // Listen for 'private_message' events
     socket.on('private_message', (data) => {
-      // Handle incoming private messages
-      console.log('Private message received:', data);
+      setMessages(prev => [...prev, { text: data.message, fromUser: false }]);
     });
 
-    // Listen for 'typing' events
     socket.on('typing', (typingUserId) => {
       setTypingUser(`${typingUserId} is typing...`);
     });
 
-    // Listen for 'stop_typing' events
     socket.on('stop_typing', () => {
       setTypingUser('');
     });
 
-    // Cleanup event listeners on component unmount
     return () => {
       socket.off('private_message');
       socket.off('typing');
@@ -38,8 +34,19 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
     };
   }, [userId]);
 
+  // Load chat messages only once when chat changes
+  useEffect(() => {
+    if (selectedChat && selectedChat.messages && messages.length === 0) {
+      const initialMessages = selectedChat.messages.map(msg => ({
+        text: msg,
+        fromUser: false,
+      }));
+      setMessages(initialMessages);
+    }
+  }, [selectedChat]);
+
   const handleEmojiClick = (emojiData) => {
-    setNewMessage((prev) => prev + emojiData.emoji);
+    setNewMessage(prev => prev + emojiData.emoji);
   };
 
   const handleImageUpload = (event) => {
@@ -50,8 +57,32 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
   };
 
   const onSendMessage = () => {
+    const autoReplies = [
+      "Hi Alisaa!",
+      "I'll get back to you soon.",
+      "Can you please clarify?",
+      "That's interesting!",
+      "Got it, thanks!",
+      "Let me check and reply.",
+      "I appreciate your input.",
+      "Thanks for reaching out!",
+    ];
+
+    if (!newMessage.trim()) return;
+
+    const userMessage = { text: newMessage, fromUser: true };
+    setMessages(prev => [...prev, userMessage]);
+
+    handleSendMessage(); // send via socket
+    setNewMessage("");
     setShowEmojiPicker(false);
-    handleSendMessage();
+
+    const randomReply = autoReplies[Math.floor(Math.random() * autoReplies.length)];
+    const clientMessage = { text: randomReply, fromUser: false };
+
+    setTimeout(() => {
+      setMessages(prev => [...prev, clientMessage]);
+    }, 1000);
   };
 
   const handleTyping = () => {
@@ -64,9 +95,14 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
   };
 
   if (!selectedChat) {
-    return <div className="profile-main-chat" style={{ color: "#888" }}>Select a chat to start messaging</div>;
+    return <div className="profile-main-chat" style={{ color: "#888" }}>
+      <div className="profile-chat-blank">
+      <p>
+        Select a chat to start messaging
+      </p>
+      </div>
+    </div>;
   }
-
   return (
     <div className="profile-main-chat">
       <div className="profile-chat-header-main">
@@ -93,16 +129,30 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
           </div>
         </div>
       </div>
-
       <div className="profile-chat-messages-main">
-        <div className="messages-container">
-          {selectedChat.messages.map((msg, index) => (
-            <div key={index} className="single-message">
-              <p className="m-0">{msg}</p>
+        <div className="messages-container" style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "10px" }}>
+          {messages.map((msg, index) => (
+            <div
+              key={index}
+              style={{
+                alignSelf: msg.fromUser ? "flex-end" : "flex-start",
+                backgroundColor: msg.fromUser ? "#DCF8C6" : "#FFFFFF",
+                color: "#000",
+                padding: "3px 10px",
+                borderRadius: "0px 10px 10px 10px",
+                maxWidth: "70%",
+                boxShadow: "0 1px 1px rgba(0,0,0,0.1)",
+                wordBreak: "break-word"
+              }}
+            >
+              <p style={{ margin: 0 }}>
+                <strong>{msg.fromUser ? "" : ""}</strong> {msg.text}
+              </p>
             </div>
           ))}
         </div>
       </div>
+
 
       <div style={{ position: "relative" }}>
         {showEmojiPicker && (
