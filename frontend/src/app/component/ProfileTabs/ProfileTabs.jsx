@@ -58,7 +58,7 @@ const ProfileTabs = () => {
       <div className="container-fluid mt-4">
         <div className="row">
           {/* Sidebar */}
-          <div className="col-md-3 mb-3">
+          <div className="col-md-3">
             <div className='profile-tabs-bg'>
             <div className="list-group">
               {[

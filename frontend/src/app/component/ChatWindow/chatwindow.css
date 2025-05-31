@@ -1,0 +1,15 @@
+.single-message.user-message {
+  text-align: right;
+  background-color: #dcf8c6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+}
+
+.single-message.other-message {
+  text-align: left;
+  background-color: #f1f0f0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+}
