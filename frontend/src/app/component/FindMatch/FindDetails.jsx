@@ -17,16 +17,35 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+// import './booking.css';      
 
 const FindDetails = () => {
-    const [activeBtn, setActiveBtn] = useState(null); // 'like' or 'dislike'
-    const [friend, setFriend] = useState(false)
+    const [activeBtn, setActiveBtn] = useState(null);
+    const [friend, setFriend] = useState(false);
     const [zoomedImage, setZoomedImage] = useState(null);
+    const [showBooking, setShowBooking] = useState(false);
+    const [date, setDate] = useState('');
+    const [place, setPlace] = useState('');
+    const [thankYou, setThankYou] = useState(false);
+    const price = 1000;
 
-
-    const handleToggle = ()=>{
-        setFriend((prev)=>!prev);
-    }
+    const handleToggle = () => setFriend(prev => !prev);
+    const handleBooking = () => setShowBooking(true);
+    const handleClose = () => {
+        setShowBooking(false);
+        setThankYou(false);
+        setDate('');
+        setPlace('');
+    };
+    const handleSubmit = () => {
+        if (date && place) {
+            setThankYou(true);
+            setTimeout(() => {
+                setShowBooking(false);
+                setThankYou(false);
+            }, 3000);
+        }
+    };
 
     const profileDetail = [{
         name: "Dasha Daria",
@@ -36,13 +55,9 @@ const FindDetails = () => {
         description: "So long as you have food in your mouth, you have solved all questions for the time being.",
         interest: ["Fashion", "Travelling", "Nature", "Art", "UNO", "Anime", "Music"],
     }];
-
     const profileImages = [pic, pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9];
-
     const aboutInfo = [
-        {
-            information: "A user profile is a digital representation of an individual's identity and preferences within a system, platform, or application. It contains information like personal details, account settings, and activity history."
-        },
+        { information: "A user profile is a digital representation of an individual's identity and preferences within a system." },
         { label: "Live in", value: "Tbilisi, Georgia" },
         { label: "Hometown", value: "Saint Petersburg, Russia" },
         { label: "Work as", value: "Businesswoman" },
@@ -54,7 +69,6 @@ const FindDetails = () => {
         { label: "Drink", value: "Sometimes" },
         { label: "Marijuana", value: "Yes" },
     ];
-
     const leftItems = aboutInfo.slice(1, 6);
     const rightItems = aboutInfo.slice(6);
 
@@ -72,113 +86,79 @@ const FindDetails = () => {
                             <div className="col-md-8">
                                 {profileDetail.map((item, index) => (
                                     <div key={index} className="myprofile-content">
-                                        <h4 className="profile-name">
-                                            {item.name}, <span>{item.age}</span>{" "}
-                                            <span><i className="bi bi-patch-check text-success"></i></span>
-                                        </h4>
-
+                                        <h4 className="profile-name">{item.name}, <span>{item.age}</span><span><i className="bi bi-patch-check text-success"></i></span></h4>
                                         <div className="like-dislike-btn">
-                                            <button
-                                                className={activeBtn === 'like' ? 'active like-btn' : 'like-btn'}
-                                                onClick={() => setActiveBtn('like')}
-                                            >
-                                                <i className="bi bi-hand-thumbs-up"></i>
-                                            </button>
-
-                                            <button
-                                                className={activeBtn === 'dislike' ? 'active dislike-btn' : 'dislike-btn'}
-                                                onClick={() => setActiveBtn('dislike')}
-                                            >
-                                                <i className="bi bi-hand-thumbs-down"></i>
-                                            </button>
+                                            <button className={activeBtn === 'like' ? 'active like-btn' : 'like-btn'} onClick={() => setActiveBtn('like')}><i className="bi bi-hand-thumbs-up"></i></button>
+                                            <button className={activeBtn === 'dislike' ? 'active dislike-btn' : 'dislike-btn'} onClick={() => setActiveBtn('dislike')}><i className="bi bi-hand-thumbs-down"></i></button>
                                         </div>
-
-                                        <p className="profile-location">
-                                            <i className="bi bi-geo-alt"></i> {item.country}, {item.state}
-                                        </p>
+                                        <p className="profile-location"><i className="bi bi-geo-alt"></i> {item.country}, {item.state}</p>
                                         <p className="profile-description">{item.description}</p>
                                         <ul className='profile-interest'>
-                                            {item.interest.map((interest, i) => (
-                                                <li key={i}>{interest}</li>
-                                            ))}
+                                            {item.interest.map((interest, i) => (<li key={i}>{interest}</li>))}
                                         </ul>
                                     </div>
                                 ))}
-                                {/* <div className=''>
-                                    <span className=' fs-3 m-3'> 
-                                        <i class="bi bi-chat-left-dots"></i>
-                                    </span>
-
-                                </div> */}
-                               <div className='FindDetailsBtnSec'>
-                               
-                                    <button 
-                                    onClick={handleToggle} 
-                                    className={`MakeFriendbtn    ${friend ?"MakeFriendbtn":"theme-bg"} `} 
-                                    
-                                    >
-                                      {friend ? <>  <i className="bi bi-person-dash me-2 fs-4"></i> Unfriend </>: <> <i className="bi me-2 bi-person-add fs-4"></i>Friend</>}
+                                <div className='FindDetailsBtnSec'>
+                                    <button onClick={handleToggle} className={`MakeFriendbtn ${friend ? "MakeFriendbtn" : "theme-bg"}`}>
+                                        {friend ? <>  <i className="bi bi-person-dash me-2 fs-4"></i> Unfriend </> : <> <i className="bi me-2 bi-person-add fs-4"></i>Friend</>}
                                     </button>
-                            
-
-                               
-                                    <button className=' messagebtn   m-3 '>
-                                  <span className='justify-content-center text-light pb-3' style={{fontSize:"18px"}}>Message </span>    <i className="bi bi-chat-left-dots text-light fs-5  ms-2"></i>
+                                    <button className='messagebtn m-3'>
+                                        <span className='justify-content-center text-light pb-3' style={{ fontSize: "18px" }}>Message </span><i className="bi bi-chat-left-dots text-light fs-5 ms-2"></i>
                                     </button>
-                              
-                               </div>
+                                    <button className='messagebtn m-3' onClick={handleBooking}>
+                                        <span className='justify-content-center text-light pb-3' style={{ fontSize: "18px" }}>Book For Date</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                     <div className='profile-own-images-sec'>
                         <div className="own-profile-images">
                             <h5 className="mb-3 font-semibold">Photos</h5>
-                            <Swiper
-                                modules={[Navigation]}
-                                spaceBetween={10}
-                                slidesPerView={5}
-                                navigation
-                                className="photo-slider"
-                            >
+                            <Swiper modules={[Navigation]} spaceBetween={10} slidesPerView={5} navigation className="photo-slider">
                                 {profileImages.map((img, i) => (
                                     <SwiperSlide key={i}>
-                                        <Image src={img} alt={`Photo ${i + 1}`} className="profile-image-slide" onClick={()=>setZoomedImage(img)}  style={{cursor:'pointer'}}   />
+                                        <Image src={img} alt={`Photo ${i + 1}`} className="profile-image-slide" onClick={() => setZoomedImage(img)} style={{ cursor: 'pointer' }} />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
                         </div>
                     </div>
 
-                  { zoomedImage && (
-                        <div className='zoom-modal' onClick={()=> setZoomedImage(null)}>
-                           
-                           <div className='zoom-content' onClick={(e)=>e.stopPropagation()}>
-                            <button className='close-btn' onClick={() =>setZoomedImage(null)}>
-                                X
-                            </button>
-                            <Image src={zoomedImage} alt='Zoomed' className='zoomed-image'/>
-                           </div>
+                    {zoomedImage && (
+                        <div className='zoom-modal' onClick={() => setZoomedImage(null)}>
+                            <div className='zoom-content' onClick={(e) => e.stopPropagation()}>
+                                <button className='close-btn' onClick={() => setZoomedImage(null)}>X</button>
+                                <Image src={zoomedImage} alt='Zoomed' className='zoomed-image' />
+                            </div>
                         </div>
                     )}
 
+                    {showBooking && (
+                        <div className="booking-popup animate">
+                            <div className="booking-form">
+                                <button className="close-booking" onClick={handleClose}>×</button>
+                                {thankYou ? (
+                                    <div className="thank-you">Thank you! Hope your meeting will be a success ❤️</div>
+                                ) : (
+                                    <>
+                                        <h4 className="text-center mb-4">Book Your Date</h4>
+                                        <input type="date" className="form-control mb-3" value={date} onChange={(e) => setDate(e.target.value)} />
+                                        <input type="text" className="form-control mb-3" placeholder="Enter place" value={place} onChange={(e) => setPlace(e.target.value)} />
+                                        <div className="mb-3 fw-bold">Price: ₹{price}</div>
+                                        <button className="submit-booking" onClick={handleSubmit}>Submit</button>
+                                    </>
+                                )}
+                            </div>
+                        </div>
+                    )}
 
                     <div className="profile-about-section">
                         <h5 className="mb-3 font-semibold">About</h5>
                         <div className="row">
-                            <div className="col-md-12">
-                                <p>{aboutInfo[0].information}</p>
-                            </div>
-                            <div className="col-md-6">
-                                {leftItems.map((item, index) => (
-                                    <p key={index}><strong>{item.label}:</strong> {item.value}</p>
-                                ))}
-                            </div>
-                            <div className="col-md-6">
-                                {rightItems.map((item, index) => (
-                                    <p key={index}><strong>{item.label}:</strong> {item.value}</p>
-                                ))}
-                            </div>
+                            <div className="col-md-12"><p>{aboutInfo[0].information}</p></div>
+                            <div className="col-md-6">{leftItems.map((item, index) => (<p key={index}><strong>{item.label}:</strong> {item.value}</p>))}</div>
+                            <div className="col-md-6">{rightItems.map((item, index) => (<p key={index}><strong>{item.label}:</strong> {item.value}</p>))}</div>
                         </div>
                     </div>
                 </div>
