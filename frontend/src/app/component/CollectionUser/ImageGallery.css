@@ -1,0 +1,150 @@
+.gallery-wrapper {
+    position: relative;
+    height: 800px;
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  /* Common image styles */
+  .gallery-image {
+    position: absolute;
+    width: 120px;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); */
+    transition: transform 0.3s ease;    
+  }
+
+  .gallery-wrapper{
+    background: linear-gradient(to bottom, #A16EFF, white);
+
+    /* position: relative; */
+  }
+  /* .bottombg{
+    position: absolute;
+    width: 110vw;
+    height:100vh;
+  } */
+
+  
+  /* Position each image exactly like your screenshot */
+ 
+/* Individual image positions and rotations */
+/* Exact positioning and rotation matching the screenshot */
+.img-0  { top: 44%; left: 6%; transform: rotate(-15deg); }
+.img-1  { top: 41%;  left: 15%; transform: rotate(-15deg); }
+.img-2  { top: 38%;  left: 24%; transform: rotate(-15deg); }
+
+.img-3  { top: 35%;  left: 33%; transform: rotate(-15deg); }
+.img-4  { top: 32%;  left: 42%; transform: rotate(-15deg); }
+.img-5  { top: 30%;  left: 51%; transform: rotate(-15deg); }
+.img-6  { top: 27%;  left: 60%; transform: rotate(-15deg); }
+
+.img-7   { top: 24%;  left: 69%; transform: rotate(-15deg); }
+.img-8  { top: 21%;  left: 78%; transform: rotate(-15deg); }
+
+
+
+ /* .img-11   { top: 13%;  left: 13%; transform: rotate(-15deg); }  */
+ .img-9   { top: 15%;  left: 22%; transform: rotate(-15deg); }
+.img-10  { top: 18%;  left: 13%; transform: rotate(-15deg); }
+.img-11  { top: 12%;  left: 31%; transform: rotate(-15deg); }
+.img-12  { top: 9%;  left: 40%; transform: rotate(-15deg); }
+
+.img-13  { top: 7%;  left: 49%; transform: rotate(-15deg); }
+.img-14  { top: 4%;  left: 58%; transform: rotate(-15deg); }
+.img-15 { top: 1%;  left: 67%; transform: rotate(-15deg); } 
+ /* .img-16  { top: 12%;  left: 83%; transform: rotate(-15deg); }  */
+
+
+
+ .img-16  { top: 64%;  left: 17%; transform: rotate(-15deg); }
+.img-17 { top: 61%;  left: 26%; transform: rotate(-15deg); }
+.img-18  { top: 58%;  left: 35%; transform: rotate(-15deg); }
+.img-19  { top: 55%;  left: 44%; transform: rotate(-15deg); }
+.img-20  { top: 53%;  left: 53%; transform: rotate(-15deg); }
+.img-21  { top: 50%;  left: 62%; transform: rotate(-15deg); }
+.img-22  { top: 47%;  left: 71%; transform: rotate(-15deg); }
+.img-23 { top: 81%;  left: 30%; transform: rotate(-15deg); }
+
+
+
+/* .img-24 { top: 77%;  left: 28%; transform: rotate(-10deg); }
+.img-25 { top: 77%;  left: 37%; transform: rotate(-10deg); }
+.img-26 { top: 77%;  left: 46%; transform: rotate(-10deg); } */
+/* .img-27 { top: 77%;  left: 55%; transform: rotate(-10deg); }
+.img-29 { top: 77%;  left: 65%; transform: rotate(-10deg); }  */
+
+@media (max-width: 768px){
+  .gallery-image {
+    width: 76px;
+    height: 110px;
+  }
+  .gallery-wrapper {
+  
+    height: 400px;
+  }
+
+  .img-0   { top: 3%;  left: 3%; transform: rotate(-10deg); }
+  .img-1  { top: 2%;  left: 21%; transform: rotate(-10deg); }
+  .img-2  { top: 2%;  left: 40%; transform: rotate(-10deg); }
+  
+  .img-3  { top: 2%;  left: 59%; transform: rotate(-10deg); }
+  .img-4  { top: 2%;  left: 78%; transform: rotate(-10deg); }
+  .img-5  { top: 32%;  left: 3%; transform: rotate(-10deg); }
+  .img-6  { top: 45%;  left: 60%; transform: rotate(-10deg); }
+  
+  .img-7   { top: 45%;  left: 69%; transform: rotate(-10deg); }
+  .img-8  { top: 44%;  left: 78%; transform: rotate(-10deg); }
+  
+  
+  .img-9  { top: 31%;  left: 22%; transform: rotate(-10deg); }
+  .img-10  { top: 31%;  left: 41%; transform: rotate(-10deg); }
+  .img-16 { top: 29%;  left: 67%; transform: rotate(-10deg); }
+  .img-17  { top: 12%;  left: 83%; transform: rotate(-10deg); }
+   
+
+
+
+  /*
+  
+  .img-11   { top: 13%;  left: 13%; transform: rotate(-10deg); }
+  .img-9   { top: 29%;  left: 22%; transform: rotate(-10deg); }
+  .img-10  { top: 3%;  left: 3%; transform: rotate(-10deg); }
+  .img-12  { top: 29%;  left: 31%; transform: rotate(-10deg); }
+  .img-13  { top: 29%;  left: 40%; transform: rotate(-10deg); }
+
+  
+  .img-14  { top: 29%;  left: 49%; transform: rotate(-10deg); }
+  .img-15  { top: 29%;  left: 58%; transform: rotate(-10deg); }
+  .img-16 { top: 29%;  left: 67%; transform: rotate(-10deg); }
+  .img-17  { top: 12%;  left: 83%; transform: rotate(-10deg); }
+  
+  
+  
+  .img-18  { top: 61%;  left: 17%; transform: rotate(-10deg); }
+  .img-19 { top: 61%;  left: 26%; transform: rotate(-10deg); }
+  .img-20  { top: 61%;  left: 35%; transform: rotate(-10deg); }
+  .img-21  { top: 61%;  left: 44%; transform: rotate(-10deg); }
+  .img-22  { top: 61%;  left: 53%; transform: rotate(-10deg); }
+  .img-23  { top: 61%;  left: 62%; transform: rotate(-10deg); }
+  .img-24  { top: 61%;  left: 71%; transform: rotate(-10deg); }
+  .img-25 { top: 81%;  left: 30%; transform: rotate(-10deg); }
+  
+  
+  
+  .img-26 { top: 77%;  left: 28%; transform: rotate(-10deg); }
+  .img-27 { top: 77%;  left: 37%; transform: rotate(-10deg); }
+  .img-28 { top: 77%;  left: 46%; transform: rotate(-10deg); }
+  .img-29 { top: 77%;  left: 55%; transform: rotate(-10deg); }
+  .img-30 { top: 77%;  left: 65%; transform: rotate(-10deg); }
+
+ */
+
+
+
+
+
+
+}

@@ -1,0 +1,72 @@
+.step6-container {
+    max-width: 480px;
+    margin: 10px auto;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+  
+  .step6-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .step6-subtitle {
+    font-size: 15px;
+    color: #444;
+  }
+  
+  .step6-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .step6-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .step6-option:hover {
+    transform: scale(1.02);
+  }
+  
+  .step6-title-text {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  .step6-desc {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 4px;
+    color: inherit;
+  }
+  
+  .step6-check {
+    font-size: 22px;
+  }
+  
+  .step6-continue {
+    padding: 14px 28px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .step6-continue:hover {
+    opacity: 0.9;
+  }
+  

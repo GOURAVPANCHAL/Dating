@@ -1,0 +1,73 @@
+.step3-container {
+    max-width: 480px;
+    margin: 10px auto;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+  
+  .step3-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .step3-subtitle {
+    font-size: 15px;
+    color: #444;
+    
+  }
+  
+  .step3-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .step3-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .step3-option:hover {
+    transform: scale(1.02);
+  }
+  
+  .step3-title-text {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  .step3-desc {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 4px;
+    color: inherit;
+  }
+  
+  .step3-check {
+    font-size: 22px;
+  }
+  
+  .step3-continue {
+    padding: 14px 28px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .step3-continue:hover {
+    opacity: 0.9;
+  }
+  

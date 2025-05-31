@@ -1,0 +1,231 @@
+:root {
+  --radius: 40px;
+}
+
+.myprofile-main {
+  background-color: whitesmoke;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.myprofile-main .row {
+  align-items: center;
+}
+
+.my-main-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.myprofile-content {
+  /* padding: 1rem; */
+  max-width: 90%;
+  position: relative;
+}
+
+.profile-location {
+  color: gray;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.profile-description {
+  margin-top: 1rem;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-interest {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  list-style: none;
+  gap: 10px;
+}
+
+.profile-interest li {
+  background-color: #ece5e6;
+  padding: 5px 15px;
+  color: var(--bg);
+  font-weight: 400;
+  border-radius: 7px;
+}
+
+.profile-image-slide {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.profile-own-images-sec,
+.profile-about-section {
+  background-color: whitesmoke;
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-top: 2rem;
+}
+
+
+.about-section p {
+  margin-bottom: 0.5rem;
+  font-size: 15px;
+}
+
+.about-section strong {
+  font-weight: 600;
+  color: #333;
+}
+
+.profile-about-section p {
+  font-size: 18px;
+}
+
+/* find details component css */
+.profile-match-detail-sec {
+  background-color: var(--bg2);
+  padding: 2rem 0;
+}
+
+
+
+.like-dislike-btn {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  margin-top: 0px;
+  top: 0;
+  right: 0;
+}
+
+.like-dislike-btn button {
+  padding: 0px 10px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.like-dislike-btn button:hover {
+  background-color: #eee;
+}
+
+.like-dislike-btn .active.like-btn {
+  background-color: green;
+  border-color: green;
+  color: white;
+}
+
+.like-dislike-btn .active.like-btn i {
+  color: white;
+}
+
+.like-dislike-btn .active.dislike-btn {
+  background-color: red;
+  border-color: red;
+  color: white;
+}
+
+.like-dislike-btn .active.dislike-btn i {
+  color: white;
+}
+
+
+.MakeFriendbtn{
+  font-size: 18px;
+  width: 25%;
+  border: none;
+  border-radius: 10px;
+  background-color: gray ;
+ color:rgb(255, 255, 255) !important ;
+ padding: 5px;
+ margin: 20px ;
+ color:white;
+}
+ 
+.messagebtn{
+  width: 25%;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--bg) !important ;
+  padding: 5px;
+  color: black !important;;
+  justify-content: center;
+}
+.FindDetailsBtnSec{
+  
+  align-items: center;
+  display: flex;
+
+}
+
+
+
+.zoom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  animation:fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn{
+  to{
+    opacity: 1;
+  }
+}
+
+.zoom-content {
+  position: relative;
+  max-width: 40%;
+  max-height: 90%;
+  transform: scale(0.7);
+  animation:zoomIn 0.3s forwards;
+}
+
+@keyframes zoomIn{
+  to{
+    transform: scale(1);
+  }
+}
+
+.zoomed-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  transition:transform 0.3s ease-in-out ;
+}
+
+.zoom-image:hover{
+  transform: scale(1.05);
+}
+
+.close-btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: white;
+  border: none;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.close-btn:hover{
+  background-color: #eee;
+}

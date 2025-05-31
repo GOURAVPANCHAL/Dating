@@ -1,0 +1,68 @@
+.BenifitSec {
+    text-align: center;
+}
+
+.BenifitLeftSec h3 {
+    text-align: center;
+    font-weight: 800;
+    margin: 25px 0px;
+
+}
+
+.BenifitSec p {
+    text-align: justify;
+    color: gray;
+    font-size: 16px;
+}
+
+.BenifitImageSec img {
+    height: 600px;
+    width: 650px;
+    padding: 40px 0;
+}
+
+.BenifitLeftSec .iconimg {
+    width: 80px;
+    height: 80px;
+}
+
+@media (max-width: 768px) {
+
+    .BenifitImageSec img {
+        display: none;
+    }
+
+    .BenifitLeftSec h3 {
+        background-color: var(--bg);
+        color: white;
+        padding: 7px 20px;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        margin: auto auto 1rem;
+        -webkit-clip-path: polygon(100% 0, 95% 50%, 100% 100%, 0% 100%, 5% 51%, 0% 0%);
+        clip-path: polygon(100% 0, 95% 50%, 100% 100%, 0% 100%, 5% 51%, 0% 0%);
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    .BenifitSec p {
+        margin: 0;
+        text-align: center;
+        font-size: 12px;
+        padding: 0;
+    }
+
+    .BenifitHeading {
+        font-size: 13px;
+    }
+
+    .iconimg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .BenifitSec {
+        margin-bottom: 1rem;
+    }
+
+}

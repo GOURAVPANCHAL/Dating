@@ -1,0 +1,41 @@
+.step8-container {
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: sans-serif;
+  }
+  
+  .step8-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .step8-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .step8-input-wrapper {
+    margin-bottom: 30px;
+  }
+  
+  .step8-input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .step8-input:focus {
+    border-color: #355070;
+  }
+  
+  .step8-continue {
+    font-size: 16px;
+  }
+  

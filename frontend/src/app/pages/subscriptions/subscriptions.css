@@ -1,0 +1,152 @@
+:root {
+  --pink: #f50057;
+  --highlight: #ff4081;
+  --gray: #bdbdbd;
+  --dark: #1b1b1b;
+}
+
+/* Breadcrumb */
+.breadcrumb-section {
+  background: #faf5ff;
+  padding: 40px 0;
+}
+
+.page-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.page-subtitle {
+  font-size: 18px;
+  color: var(--gray);
+}
+
+/* Subscription section */
+.subscription-section {
+  background: #fff;
+  padding: 60px 20px;
+}
+
+.subscription-card {
+  border-radius: 24px;
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscription-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.subscription-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.subscription-card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+/* Unique background images */
+.card-bg-0 {
+  background-image: url('https://images.unsplash.com/photo-1542281286-9e0a16bb7366');
+}
+
+.card-bg-1 {
+  background-image: url('https://images.unsplash.com/photo-1519345182560-3f2917c472ef');
+}
+
+.card-bg-2 {
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+}
+
+.card-bg-3 {
+  background-image: url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d');
+}
+
+/* Premium badge */
+.badge-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--highlight);
+  color: white;
+  font-size: 12px;
+  padding: 5px 15px;
+  font-weight: 600;
+  border-bottom-right-radius: 16px;
+}
+
+/* Card contents */
+.plan-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.price-box {
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 800;
+  color: white;
+}
+
+.duration {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  text-align: left;
+}
+
+.feature {
+  font-size: 16px;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.feature.enabled {
+  color: #fff;
+}
+
+.feature.disabled {
+  color: #ccc;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Subscribe button */
+.btn-subscribe {
+  background: var(--pink);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 0;
+  width: 100%;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-subscribe:hover {
+  background: #c51162;
+}

@@ -1,0 +1,77 @@
+.MeetOnMainSec {
+    width: 100%;
+    height: 400px;
+    background-image: url("../../Images/horizontalbg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.MeetOnTextSec {
+    max-width: 700px;
+    color: white;
+    padding: 40px 20px;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    border-radius: 12px;
+}
+
+.MeetOnTittle h2 {
+    /* font-family:var(--font-family); */
+    color:  #A16EFF;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.MeetOnDescription p {
+    font-size: 18px;
+    color: #f1f1f1;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.meet-btn {
+    background-color: var(--bg);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 12px;
+    
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.meet-btn:hover {
+    background-color:  #6d3fc4;;
+}
+
+@media (max-width: 768px){
+    .MeetOnDescription p {
+        font-size: 13px;
+        color: #f1f1f1;
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+
+    .MeetOnMainSec{
+        height:250px;
+    }
+    .MeetOnTextSec {
+        padding:0px;
+    }
+
+    .MeetOnTittle h2 {
+        /* font-family: var(--font-family); */
+        padding: 0 25px;
+        font-size: 26px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+}
+

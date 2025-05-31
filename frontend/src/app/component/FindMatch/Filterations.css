@@ -1,0 +1,79 @@
+.filter-bar__container {
+    padding: 10px;
+    padding-bottom: 0;
+    border-bottom: 1px solid #eee;
+    justify-content: space-between;
+    display: flex;
+}
+
+.filter-bar__search {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.filter-bar__scroll {
+    display: flex;
+    /* overflow-x: auto; */
+    gap: 10px;
+    justify-content: center;
+    padding: 5px 0;
+    /* white-space: nowrap; */
+}
+
+.filter-bar__item {
+    position: relative;
+    background: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.filter-bar__dropdown {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 150px;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.filter-bar__dropdown input[type="text"],
+.filter-bar__dropdown input[type="number"],
+.filter-bar__dropdown select {
+    width: 100%;
+    margin: 5px 0;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-bar__dropdown label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .filter-bar__scroll {
+        overflow-x: auto;
+    }
+
+    .filter-bar__dropdown {
+        left: 0;
+        right: auto;
+        width: 200px;
+    }
+}

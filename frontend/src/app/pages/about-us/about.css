@@ -1,0 +1,57 @@
+/* .about-us{
+    background-color: var(--bg);
+} */
+.AboutCount-Section{
+    padding-left: 130px;
+}
+.about-content-first p{
+    font-size: 14px;
+    color: gray;
+}
+.about-content-first h4{
+    font-size: 18px;
+    color: #ED147D;
+
+}
+.about-content-first h1{
+    font-size: 30px;
+   
+
+}
+
+.rightSideSec{
+  text-align: center;
+  padding:120px
+}
+
+.About-mainSec{
+    background-color: var(--bg);
+}
+
+.rightSideSec h2{
+    font-family: var(--font-family);
+    color: white;
+}
+.CounterNumber{
+   color: #ED147D;
+}
+
+.leftSideSec{
+    position: relative;
+}
+ .svgImg{
+ position: absolute;
+ top:78px;
+ left:30px;
+ }
+
+ .CloudsvgImg{
+    position: absolute;
+    top:53px;
+    left:5px; 
+ }
+ .MsgsvgImg{
+    position: absolute;
+    top: 188px;
+    right: 53px;
+ }

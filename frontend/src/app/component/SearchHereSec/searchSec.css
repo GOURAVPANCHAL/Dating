@@ -1,0 +1,93 @@
+.UserImgWrapper {
+    position: relative;
+    width: 250px;
+    height: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .searchContainerSec {
+    padding: 20px 0px;
+  }
+  
+  .miniTittle {
+    text-align: center;    
+    font-size: 17px;
+    font-weight: 650;
+    color: #6d3fc4;
+    margin-bottom: 0;
+  }
+  
+  .UserImgWrapper:hover .UserImg {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .UserImgWrapper:hover {
+    background-color: #6d3fc4;
+  }
+  
+  .social-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+  }
+  .searchUserName{
+font-size: 16px;
+  }
+  
+  .UserImgWrapper:hover .social-icons {
+    opacity: 1;
+  }
+  
+  .icon{
+    color:white;
+
+  }
+  .SearchMainSec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+   
+  .user-discription , .designationSec{
+    font-size: 13px;
+    line-height: 20px;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+
+@media (max-width : 768px){
+  .UserImgWrapper img{
+    width:150px;
+    height:150px;
+  }
+  .UserImgWrapper {
+    width: 150px;
+    height: 155px;
+}
+
+.Search-detailSec{
+  width:100%;  
+
+}
+
+.SearchMainSec {
+  padding: 0px;
+}
+}

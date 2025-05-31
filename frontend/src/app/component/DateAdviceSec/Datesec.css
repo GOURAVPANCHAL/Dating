@@ -1,0 +1,132 @@
+.dateAdviceImageSec{
+    position: relative;
+    /* background-image: url("/public/Video-Banner.jpg"); */
+ /* background: #ED147D; */
+ background-image: url("../../Images/Video-Banner.jpg");
+    height:650px;
+    width:100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.PlayiconSvg{
+    position:absolute;
+    top:50%;
+     left:50%;
+     
+}
+.SvgPic:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    
+}
+
+.dateAdviceimg{
+    object-fit:cover;
+}
+
+.AdviceRightSec {
+    height:auto;
+    width: 100%;
+    background: #F5F5F5;
+    padding: 130px 0px 130px 0px;
+}
+
+
+.subtitle-section {
+    font-family: "Archivo Narrow", Sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000;
+    text-align: center;
+}
+.DataTittle{
+    font-weight: 600;
+    font-size: 45px;
+    /* font-family: var(--font-family); */
+    /* color: #A16EFF; */
+}
+.element-container{
+    font-weight: 400;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    color: #676770;
+    display: grid;
+    background-color: #FFFFFF;
+    margin-top:20px;
+    margin-left :140px;
+    margin-right :140px;
+    box-sizing: border-box;
+    padding: 15px 15px 15px 15px;
+    border-radius: 30px 30px 30px 0px;
+}
+
+.boldSec{
+    box-sizing: border-box;
+}
+.DateTextSection .subtitle-section{
+    /* font-family: var(--font-family); */
+    color:#A16EFF
+}
+
+
+.preferenceSec{
+    margin-top:10px;
+}
+.preferenceElementSec{
+    max-width: 500px;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.elements-button-wrapper{
+    width:100%;
+}
+.elementor-button{
+    background-color: var(--bg);
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0px 8px 11px 0px #F8CFE3;
+    border-radius: 30px 30px 30px 30px;
+    padding: 5px 225px 5px 225px;
+    margin:5px;
+    color:#FFFFFF;
+    text-decoration: none;
+    width:100%
+}
+@media (max-width: 768px){
+    .AdviceRightSec {
+       
+        padding: 20px 0px 30px 0px;
+    }
+
+    .element-container{
+        margin: 0;
+    }
+    .elementor-button {
+     padding: 0px;
+     box-shadow: none;
+    }
+    
+.preferenceElementSec {
+    max-width: 300px;
+}
+.DataTittle {
+    font-weight: 700;
+    font-size: 28px;
+}
+.subtitle-section {
+   
+    font-size: 17px;
+}
+.dateAdviceImageSec {
+    display: none;
+}
+
+.PlayiconSvg {
+    top: 31%;
+    left: 36%;
+}
+
+}

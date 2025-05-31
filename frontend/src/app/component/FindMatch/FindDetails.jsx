@@ -1,0 +1,190 @@
+'use client';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import image from '../../Images/people2.png';
+import "../MyProfile/myprofile.css";
+import pic from "../../Images/user/user.jpeg";
+import pic1 from "../../Images/user/user1.jpeg";
+import pic2 from "../../Images/user/user2.jpg";
+import pic3 from "../../Images/user/user3.jpeg";
+import pic4 from "../../Images/user/user4.jpeg";
+import pic5 from "../../Images/user/user5.jpeg";
+import pic6 from "../../Images/user/user6.jpeg";
+import pic7 from "../../Images/user/user2.jpeg";
+import pic8 from "../../Images/user/user8.jpeg";
+import pic9 from "../../Images/user/user9.jpeg";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+const FindDetails = () => {
+    const [activeBtn, setActiveBtn] = useState(null); // 'like' or 'dislike'
+    const [friend, setFriend] = useState(false)
+    const [zoomedImage, setZoomedImage] = useState(null);
+
+
+    const handleToggle = ()=>{
+        setFriend((prev)=>!prev);
+    }
+
+    const profileDetail = [{
+        name: "Dasha Daria",
+        age: 24,
+        country: "Georgia",
+        state: "India",
+        description: "So long as you have food in your mouth, you have solved all questions for the time being.",
+        interest: ["Fashion", "Travelling", "Nature", "Art", "UNO", "Anime", "Music"],
+    }];
+
+    const profileImages = [pic, pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9];
+
+    const aboutInfo = [
+        {
+            information: "A user profile is a digital representation of an individual's identity and preferences within a system, platform, or application. It contains information like personal details, account settings, and activity history."
+        },
+        { label: "Live in", value: "Tbilisi, Georgia" },
+        { label: "Hometown", value: "Saint Petersburg, Russia" },
+        { label: "Work as", value: "Businesswoman" },
+        { label: "Education", value: "Bachelor of Software Engineering" },
+        { label: "Languages", value: "English, Russian" },
+        { label: "Relationship", value: "Single" },
+        { label: "Family plans", value: "No kids" },
+        { label: "Smoke", value: "Sometimes" },
+        { label: "Drink", value: "Sometimes" },
+        { label: "Marijuana", value: "Yes" },
+    ];
+
+    const leftItems = aboutInfo.slice(1, 6);
+    const rightItems = aboutInfo.slice(6);
+
+    return (
+        <section className='profile-match-detail-sec'>
+            <div className="container">
+                <div className='my-profile-section'>
+                    <div className='myprofile-main'>
+                        <div className="row">
+                            <div className="col-md-4">
+                                <div className="my-main-image">
+                                    <Image src={image} className='img-fluid' alt='profile-image' />
+                                </div>
+                            </div>
+                            <div className="col-md-8">
+                                {profileDetail.map((item, index) => (
+                                    <div key={index} className="myprofile-content">
+                                        <h4 className="profile-name">
+                                            {item.name}, <span>{item.age}</span>{" "}
+                                            <span><i className="bi bi-patch-check text-success"></i></span>
+                                        </h4>
+
+                                        <div className="like-dislike-btn">
+                                            <button
+                                                className={activeBtn === 'like' ? 'active like-btn' : 'like-btn'}
+                                                onClick={() => setActiveBtn('like')}
+                                            >
+                                                <i className="bi bi-hand-thumbs-up"></i>
+                                            </button>
+
+                                            <button
+                                                className={activeBtn === 'dislike' ? 'active dislike-btn' : 'dislike-btn'}
+                                                onClick={() => setActiveBtn('dislike')}
+                                            >
+                                                <i className="bi bi-hand-thumbs-down"></i>
+                                            </button>
+                                        </div>
+
+                                        <p className="profile-location">
+                                            <i className="bi bi-geo-alt"></i> {item.country}, {item.state}
+                                        </p>
+                                        <p className="profile-description">{item.description}</p>
+                                        <ul className='profile-interest'>
+                                            {item.interest.map((interest, i) => (
+                                                <li key={i}>{interest}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                                {/* <div className=''>
+                                    <span className=' fs-3 m-3'> 
+                                        <i class="bi bi-chat-left-dots"></i>
+                                    </span>
+
+                                </div> */}
+                               <div className='FindDetailsBtnSec'>
+                               
+                                    <button 
+                                    onClick={handleToggle} 
+                                    className={`MakeFriendbtn    ${friend ?"MakeFriendbtn":"theme-bg"} `} 
+                                    
+                                    >
+                                      {friend ? <>  <i className="bi bi-person-dash me-2 fs-4"></i> Unfriend </>: <> <i className="bi me-2 bi-person-add fs-4"></i>Friend</>}
+                                    </button>
+                            
+
+                               
+                                    <button className=' messagebtn   m-3 '>
+                                  <span className='justify-content-center text-light pb-3' style={{fontSize:"18px"}}>Message </span>    <i className="bi bi-chat-left-dots text-light fs-5  ms-2"></i>
+                                    </button>
+                              
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='profile-own-images-sec'>
+                        <div className="own-profile-images">
+                            <h5 className="mb-3 font-semibold">Photos</h5>
+                            <Swiper
+                                modules={[Navigation]}
+                                spaceBetween={10}
+                                slidesPerView={5}
+                                navigation
+                                className="photo-slider"
+                            >
+                                {profileImages.map((img, i) => (
+                                    <SwiperSlide key={i}>
+                                        <Image src={img} alt={`Photo ${i + 1}`} className="profile-image-slide" onClick={()=>setZoomedImage(img)}  style={{cursor:'pointer'}}   />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
+                    </div>
+
+                  { zoomedImage && (
+                        <div className='zoom-modal' onClick={()=> setZoomedImage(null)}>
+                           
+                           <div className='zoom-content' onClick={(e)=>e.stopPropagation()}>
+                            <button className='close-btn' onClick={() =>setZoomedImage(null)}>
+                                X
+                            </button>
+                            <Image src={zoomedImage} alt='Zoomed' className='zoomed-image'/>
+                           </div>
+                        </div>
+                    )}
+
+
+                    <div className="profile-about-section">
+                        <h5 className="mb-3 font-semibold">About</h5>
+                        <div className="row">
+                            <div className="col-md-12">
+                                <p>{aboutInfo[0].information}</p>
+                            </div>
+                            <div className="col-md-6">
+                                {leftItems.map((item, index) => (
+                                    <p key={index}><strong>{item.label}:</strong> {item.value}</p>
+                                ))}
+                            </div>
+                            <div className="col-md-6">
+                                {rightItems.map((item, index) => (
+                                    <p key={index}><strong>{item.label}:</strong> {item.value}</p>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default FindDetails;

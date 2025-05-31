@@ -1,0 +1,25 @@
+.faqMainSec{
+    margin-top:40px;
+}
+.faq-image{
+    border-radius: 15px 15px 15px 15px;
+
+}
+.Faq-dropdown-sec{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:solid 2px gray;
+    padding:10px 25px;
+    border-radius: 30px;
+}
+
+.transition-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .rotate-icon {
+    transform: rotate(180deg);
+  }
+  

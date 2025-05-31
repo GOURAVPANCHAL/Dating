@@ -1,0 +1,37 @@
+.profile-tabs-section .list-group-item.active {
+    background-color: transparent;
+       border-top: none;
+    /* border-bottom: 1px solid var(--bg); */
+    border-left: none;
+    border-right: none;
+    color: var(--bg);
+    /* font-weight: 600; */
+    
+
+}
+
+.profile-tabs-section .list-group-item {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.801);
+    font-weight: 600;
+    font-size: 18px;
+    border-top: none;
+    border-bottom: 1px solid lightgray;
+    border-left: none;
+    padding: 15px 25px;
+    border-right: none;
+}
+
+.list-group {
+    background: transparent !important;
+}
+
+
+
+
+.profile-tabs-bg{
+    background-color: whitesmoke;
+    border-radius: 20px;
+    /* padding: 20px; */
+    height: 100%;
+}

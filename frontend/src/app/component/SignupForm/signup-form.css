@@ -1,0 +1,61 @@
+.signup-bg {
+  background-color: #f8f9fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0; 
+}
+
+.signup-card {
+  width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.signup-header {
+    padding: 40px 20px;
+  background-color: #ec0d81;
+  color: white;
+}
+
+.signup-btn {
+  background-color: #ec0d81;
+  color: white;
+}
+
+.signup-btn:hover {
+  background-color: #c00b6d;
+}
+
+.login-switch-btn {
+  background-color: #000;
+  color: white;
+}
+
+.login-switch-btn:hover {
+  background-color: #333;
+}
+
+.terms-text {
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.terms-text a {
+  color: #ec0d81;
+  text-decoration: none;
+}
+
+.terms-text a:hover {
+  text-decoration: underline;
+}
+
+.section-label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #6c757d;
+  text-transform: uppercase;
+  margin: 20px 0 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}

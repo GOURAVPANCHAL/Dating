@@ -1,0 +1,40 @@
+.login-body{
+padding: 30px;
+}
+
+.login-bg {
+    background-color: var(--bg2);
+}
+
+.login-card {
+    width: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.login-header {
+    padding: 40px 20px;
+    background-color: #ec0d81;
+    color: white;
+}
+
+
+.create-btn {
+    background-color: #000;
+    color: white;
+    border: none;
+}
+
+.create-btn:hover {
+    background-color: #333;
+}
+
+.lost-password {
+    color: #ec0d81;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.lost-password:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,98 @@
+footer {
+    background-image: url('../../Images/footer-bg.jpg');
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem 0;
+}
+
+.footer-heading {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.newsletter-row {
+    margin-bottom: 2rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 100%;
+}
+
+.email-input {
+    flex: 1;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 1.25rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    transition: color 0.2s;
+}
+
+.social-icons a:hover {
+    color: #dc3545;
+}
+
+.footer-main .member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.member-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links li a:hover {
+    color: #dc3545;
+}
+
+.recent-activity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.activity-img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+}
+@media (max-width:768px){
+    .FormSelectSection{
+        text-align: center;
+    }
+    /* .couple-form-left h1 {
+        font-size: 38px !important;
+        text-align: center !important;
+        line-height: 55px !important;
+        letter-spacing: -1.7px;
+        font-family: var(--font-family);
+        color: var(--bg);
+        text-transform: capitalize;
+        max-width: 100% !important;
+    } */
+}

@@ -1,0 +1,128 @@
+.contact-sec {
+    background-color: white;
+    padding: 40px 0px;
+}
+
+.contact-card-title {
+    font-size: 22px;
+    color: black;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.contact-card-text {
+    font-size: 16px;
+    color: var(--gray-light);
+    font-weight: 600;
+}
+
+.contact-card-text:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.contact-form-div {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-form-div input {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.contact-textarea {
+    width: 100% !important;
+    height: 40vh !important;
+    border: 1px solid black !important;
+    padding: 10px;
+    resize: vertical;
+}
+
+.contact-from-main h1 {
+    position: relative;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.801);
+}
+
+.contact-from-main h1 .curved:after {
+    color: var(--bg);
+}
+
+.mt-underline-text.curved:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    height: 17px;
+    right: 85px;
+    width: 30%;
+    border-top: solid 3px;
+    border-radius: 65%;
+}
+
+.contact-form {
+    padding: 2rem 0rem 2rem;
+}
+
+.contact-from-main p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* ===== Responsive CSS ===== */
+@media (max-width: 992px) {
+    .contact-card-title {
+        font-size: 20px;
+    }
+
+    .contact-card-text {
+        font-size: 14px;
+    }
+
+    .contact-from-main h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form-div {
+        flex-direction: column;
+    }
+
+    .contact-from-main h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .contact-from-main p {
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 1.5rem 0;
+    }
+
+    .contact-sec {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-from-main h1 {
+        font-size: 24px;
+    }
+
+    .contact-card-title {
+        font-size: 18px;
+    }
+
+    .contact-card-text {
+        font-size: 13px;
+    }
+
+    .contact-textarea {
+        height: 30vh !important;
+    }
+}

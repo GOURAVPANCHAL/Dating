@@ -1,0 +1,101 @@
+.profile-setting {
+    border-radius: 40px;
+    background-color: whitesmoke;
+    padding: 2rem;
+}
+
+.setting-image-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.setting-heading-1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.setting-heading-1 img {
+    border: 2px solid var(--bg);
+}
+
+.deletebtn {
+    border: none;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.profile-form-field {
+    position: relative;
+    display: grid;
+    margin-bottom: 1rem;
+}
+
+.profile-form-field input {
+    border: none;
+    border-radius: 10px;
+    padding: 7px 14px;
+    box-shadow: inset 0px 5px 8px -4px lightgray;
+    width: 100%;
+}
+.profile-form-field input:focus {
+    outline: none;
+}
+
+.profile-edit-bio{
+    margin-top: 2rem;
+}
+
+.profile-form-field label{
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+}
+
+.profile-form-field p{
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.profile-form-field span{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profile-edit-bio .row{
+    align-items: flex-end;
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.delete-acc{
+    margin-top: 2rem;
+    max-width:42%;
+}
+
+.delete-acc p{
+    font-weight: 500;
+    margin: 0;
+}
+
+.delete-acc a{
+    color: var(--bg);
+}
