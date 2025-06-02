@@ -1,13 +1,9 @@
 .profile-tabs-section .list-group-item.active {
     background-color: transparent;
-       border-top: none;
-    /* border-bottom: 1px solid var(--bg); */
+    border-top: none;
     border-left: none;
     border-right: none;
     color: var(--bg);
-    /* font-weight: 600; */
-    
-
 }
 
 .profile-tabs-section .list-group-item {
@@ -26,12 +22,16 @@
     background: transparent !important;
 }
 
-
-
-
-.profile-tabs-bg{
+.profile-tabs-bg {
     background-color: whitesmoke;
     border-radius: 20px;
     /* padding: 20px; */
     height: 100%;
+}
+
+
+.table-content-overflow {
+    height: 70vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }

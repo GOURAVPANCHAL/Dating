@@ -1,0 +1,105 @@
+.friendsPage-container {
+  margin: auto;
+  padding: 0px 1rem;
+}
+
+.friendsPage-heading {
+  font-size: 2rem;
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 30px;
+}
+
+.friendsPage-loading {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.friendsPage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.friendsPage-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.friendsPage-card:hover {
+  transform: translateY(-4px);
+}
+
+.friendsPage-card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.friendsPage-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+.friendsPage-user-info {
+  flex: 1;
+}
+
+.friendsPage-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.friendsPage-email {
+  font-size: 0.88rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.friendsPage-card-footer {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.friendsPage-btn {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.friendsPage-btn.message {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.friendsPage-btn.message:hover {
+  background-color: #2563eb;
+}
+
+.friendsPage-btn.view {
+  background-color: #10b981;
+  color: #fff;
+}
+
+.friendsPage-btn.view:hover {
+  background-color: #059669;
+}

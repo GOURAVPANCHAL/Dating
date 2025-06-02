@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './findprofile.css';
 import Filterations from './Filterations';
 import Image from 'next/image';
@@ -48,12 +48,30 @@ const Findprofile = () => {
     const [requestStatus, setRequestStatus] = useState({});
     const [currentPage, setCurrentPage] = useState(0);
 
-    const handleToggle = (index) => {
-        setRequestStatus((prev) => ({
-            ...prev,
-            [index]: !prev[index]
-        }));
+ const handleToggle = (index) => {
+    const selectedProfile = currentProfiles[index];
+    const requestKey = `${selectedProfile.name}_${selectedProfile.age}`; // Unique key
+
+    let requests = JSON.parse(localStorage.getItem("friendRequests")) || {};
+
+    if (requestStatus[index]) {
+        delete requests[requestKey];
+    } else {
+        requests[requestKey] = {
+            ...selectedProfile,
+            status: "pending",
+            timestamp: new Date().toISOString()
+        };
     }
+
+    localStorage.setItem("friendRequests", JSON.stringify(requests));
+
+    setRequestStatus((prev) => ({
+        ...prev,
+        [index]: !prev[index]
+    }));
+};
+
 
     const applyFilters = (filters) => {
         let result = [...originalProfiles];
@@ -91,6 +109,19 @@ const Findprofile = () => {
         setCurrentPage(selected);
     };
 
+    useEffect(() => {
+    const requests = JSON.parse(localStorage.getItem("friendRequests")) || {};
+    const statuses = {};
+
+    currentProfiles.forEach((profile, index) => {
+        const key = `${profile.name}_${profile.age}`;
+        if (requests[key]) statuses[index] = true;
+    });
+
+    setRequestStatus(statuses);
+}, [currentPage]);
+
+
     return (
         <section className='find-profile-section'>
             <div className="container-fluid">
@@ -111,7 +142,7 @@ const Findprofile = () => {
                                                 event.stopPropagation();
                                                 handleToggle(index);
                                             }}
-                                            className={`btn userRequestbtn ${requestStatus[index] ? 'bg-danger text-light' : ' theme-bg text-light'}`}
+                                            className={`userRequestbtn ${requestStatus[index] ? 'bg-danger text-light' : ' theme-bg text-light'}`}
                                         >
                                             {requestStatus[index]
                                                 ? <i className="bi bi-person-check-fill"></i>  
