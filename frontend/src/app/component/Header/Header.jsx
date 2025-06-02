@@ -71,8 +71,8 @@ const navItems = [
   },
 
   {
-    label: "Contact",
-    href: "/pages/contact"
+    label: "Request",
+    href: "/pages/friend-requests"
   }
 ];
 

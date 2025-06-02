@@ -7,6 +7,7 @@ import MyProfile from '../MyProfile/MyProfile';
 import NotificationsPage from '@/app/pages/notifications/page';
 import ProfileSetting from '../ProfileSetting/ProfileSetting';
 import ChatingPage from '../Chating/ChatingPage';
+import Friendlist from '../Friendlist/Friendlist';
 
 const ProfileTabs = () => {
   const searchParams = useSearchParams();
@@ -24,11 +25,10 @@ const ProfileTabs = () => {
     switch (activeTab) {
       case 'my-profile':
         return <MyProfile />;
-      case 'go-live':
+      case 'friend list':
         return (
           <>
-            <h5 className="card-title">Go Live Profile</h5>
-            <p className="card-text">You can go-live your personal details and information here.</p>
+            <Friendlist />
           </>
         );
       case 'message':
@@ -63,7 +63,7 @@ const ProfileTabs = () => {
             <div className="list-group">
               {[
                 { key: 'my-profile', label: 'My Profile', icon: 'bi-person' },
-                { key: 'go-live', label: 'Go Live', icon: 'bi-play' },
+                { key: 'friend list', label: 'Friend List', icon: 'bi-play' },
                 { key: 'message', label: 'Message', icon: 'bi-chat-dots' },
                 { key: 'notification', label: 'Notification', icon: 'bi-chat-dots' },
                 { key: 'users', label: 'Users', icon: 'bi-people' },
@@ -83,7 +83,7 @@ const ProfileTabs = () => {
 
           {/* Content */}
           <div className="col-md-9">
-            <div>{renderContent()}</div>
+            <div className='table-content-overflow'>{renderContent()}</div>
           </div>
         </div>
       </div>

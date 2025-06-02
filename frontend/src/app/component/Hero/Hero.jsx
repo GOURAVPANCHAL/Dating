@@ -47,7 +47,7 @@ const Hero = () => {
             <h6>Qiupid: find love with our dating site!</h6>
           </div>
           <div className='hero-wall-content'>
-            <Link href={"/"} className='register-btn'>Register Now</Link>
+            <Link href={"/pages/login"} className='register-btn'>Register Now</Link>
           </div>
 
         </div>

@@ -69,10 +69,10 @@
   bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
-  background: white;
+  background: #ffe4f0;
   padding: 4px;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   z-index: 5;
   width: 60px;
   height: 60px;
@@ -120,12 +120,13 @@
   background-color: transparent;
 }
 
-.userRequestbtn{
+.userRequestbtn {
   float: right;
   border-radius: 50% !important;
-  
-
+  padding: 3px 8px;
+  font-size: 20px;
 }
+
 .pagination {
   margin-top: 20px;
 }
