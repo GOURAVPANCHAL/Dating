@@ -51,21 +51,21 @@ const Footer = () => {
             <div className="member">
               <img src="/images/user1.jpeg" alt="Samantha" className="member-img" />
               <div>
-                <strong>Gourav</strong><br />
+                <strong>Gourav Panchal</strong><br />
                 <span className="text-success">Active</span>
               </div>
             </div>
             <div className="member">
               <img  src="/images/user2.jpeg" alt="Peter" className="member-img" />
               <div>
-                <strong>Mukesh</strong><br />
+                <strong>Mukesh Rajput</strong><br />
                 <span>2 Hours Ago</span>
               </div>
             </div>
             <div className="member">
               <img  src="/images/user3.jpeg" alt="Tluagtea" className="member-img" />
               <div>
-                <strong>Aman</strong><br />
+                <strong>Aman Tiwari</strong><br />
                 <span className="text-success">Active</span>
               </div>
             </div>
@@ -91,7 +91,7 @@ const Footer = () => {
                 <img src={`/activity${i}.jpg`} className="activity-img" alt="Activity" />
                 <div>
                   <strong>Where To Find A Good...</strong><br />
-                  <small>August 13, 2022</small>
+                  <small>jan 13, 2025</small>
                 </div>
               </div>
             ))}
