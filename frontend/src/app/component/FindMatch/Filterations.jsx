@@ -13,11 +13,9 @@ const Filterations = ({ onFilterChange }) => {
     verifiedOnly: false,
     interests: [],
     sortBy: '',
+    search: '',
   });
 
-  const toggleDropdown = (name) => {
-    setOpenDropdown((prev) => (prev === name ? null : name));
-  };
 
   const updateFilter = (key, value) => {
     const updated = { ...filters, [key]: value };
