@@ -14,19 +14,19 @@ import pic6 from "../../Images/user/user5.jpeg";
 
 const Findprofile = () => {
     const originalProfiles = [
-        {id: 1,  gender: "female", picture: pic1, name: "Juhi Khan",      age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        {id: 2,  gender: "female", picture: pic2, name: "Divya Rathor",   age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false },
-        {id: 3,  gender: "female", picture: pic3, name: "Nirmala Devi",   age: 34, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        {id: 4,  gender: "female", picture: pic4, name: "Kalpana Chawla", age: 40, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        {id: 5,  gender: "female", picture: pic5, name: "Vidya Devi",     age: 50, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false },
-        {id: 6,  gender: "male",   picture: pic6, name: "Santosh Singh",  age: 70, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        {id: 7,  gender: "female", picture: pic1, name: "Anjali yadav",   age: 30, profession: "Designer", city: "Delhi", state: "Delhi", tags: ["🎨 Art", "🎬 Movies"], isOnline: false },
-        {id: 8,  gender: "female", picture: pic2, name: "Kavita Sharma",   age: 28, profession: "Writer", city: "Gurgaon", state: "Haryana", tags: ["📖 Reading", "☕ Coffee"], isOnline: true },
-        {id: 9,  gender: "female", picture: pic3, name: "Priya Sharma",      age: 35, profession: "Doctor", city: "Noida", state: "UP", tags: ["💉 Health", "💪 Fitness"], isOnline: true },
-        {id: 10, gender: "female", picture: pic4, name: "Rita Kapoor",           age: 38, profession: "Teacher", city: "Ghaziabad", state: "UP", tags: ["📚 Teaching", "🎶 Music"], isOnline: false },
-        {id: 11, gender: "female", picture: pic5, name: "Neha Singh",           age: 29, profession: "Engineer", city: "Faridabad", state: "Haryana", tags: ["⚙️ Machines", "📈 Stocks"], isOnline: true },
-        {id: 12, gender: "female", picture: pic6, name: "Sneha Sharma",          age: 31, profession: "Chef", city: "Delhi", state: "Delhi", tags: ["🍜 Cooking", "✈️ Travel"], isOnline: false },
-        {id: 13, gender: "female", picture: pic1, name: "Payal kapoor",          age: 26, profession: "Photographer", city: "Delhi", state: "Delhi", tags: ["📸 Photos", "🌄 Hiking"], isOnline: true },
+        {id: 1,  gender: "female", picture: pic1, name: "Juhi Khan",     age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
+        {id: 2,  gender: "female", picture: pic2, name: "Divya Rathor",  age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false },
+        {id: 3,  gender: "female", picture: pic3, name: "Nirmala Devi",  age: 34, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
+        {id: 4,  gender: "female", picture: pic4, name: "Kalpana Chawla",age: 40, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
+        {id: 5,  gender: "female", picture: pic5, name: "Vidya Devi",    age: 50, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false },
+        {id: 6,  gender: "male",   picture: pic6, name: "Santosh Singh", age: 70, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
+        {id: 7,  gender: "female", picture: pic1, name: "Anjali yadav",  age: 30, profession: "Web Designer",  city: "Delhi", state: "Delhi", tags: ["🎨 Art", "🎬 Movies"], isOnline: false },
+        {id: 8,  gender: "female", picture: pic2, name: "Kavita Sharma", age: 28, profession: "Book Writer",   city: "Gurgaon", state: "Haryana", tags: ["📖 Reading", "☕ Coffee"], isOnline: true },
+        {id: 9,  gender: "female", picture: pic3, name: "Priya Sharma",  age: 35, profession: "Doctor",        city: "Noida", state: "UP", tags: ["💉 Health", "💪 Fitness"], isOnline: true },
+        {id: 10, gender: "female", picture: pic4, name: "Rita Kapoor",   age: 38, profession: "Teacher",       city: "Ghaziabad", state: "UP", tags: ["📚 Teaching", "🎶 Music"], isOnline: false },
+        {id: 11, gender: "female", picture: pic5, name: "Neha Singh",    age: 29, profession: "Engineer",      city: "Faridabad", state: "Haryana", tags: ["⚙️ Machines", "📈 Stocks"], isOnline: true },
+        {id: 12, gender: "female", picture: pic6, name: "Sneha Sharma",  age: 31, profession: "Chef",          city: "Delhi", state: "Delhi", tags: ["🍜 Cooking", "✈️ Travel"], isOnline: false },
+        {id: 13, gender: "female", picture: pic1, name: "Payal kapoor",  age: 26, profession: "Photographer",  city: "Delhi", state: "Delhi", tags: ["📸 Photos", "🌄 Hiking"], isOnline: true },
  
         // repeated for pagination testing
        {id: 1, gender:"female",picture: pic1, name: "Juhi Khan", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
