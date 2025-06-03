@@ -24,18 +24,20 @@ const ProfileHeader = () => {
                         </div>
                         <div className='profile-div-2'>
                             <div className="upgradeSec">
-                                <button className='upgradebtn'>Upgrade Account</button>
+                                <Link href={"/pages/subscriptions"} className='text-decoration-none upgradebtn'>Upgrade Account</Link>
                             </div>
                             <div className='profile-image-nav'>
                                 <div>
+                                    <Link href={"/pages/profile"} className='text-decoration-none'>
                                     <Image src={ProfileImage} alt='profile-image' />
+                                    </Link>
                                 </div>
                                 <div>
                                   <Link href={"/pages/notifications"}>  <i className="bi bi-bell"></i></Link>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <i className="bi bi-heart"></i>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

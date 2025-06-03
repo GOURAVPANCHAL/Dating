@@ -1,0 +1,79 @@
+.download-app {
+    padding: 2rem 0rem 0rem;
+    /* background-color: linear-gradient(200deg, rgba(240, 252, 244, 0.2) 16.65%, rgba(248, 238, 225, 0.2) 66.47%, rgba(255, 92, 131, 0.2) 116.29%); */
+    background-image: url('../../Images/white-bg.png');
+}
+
+.download-image img {
+    height: 400px;
+    color: transparent;
+    width: auto;
+}
+
+.download-image {
+    display: flex;
+    justify-content: end;
+}
+
+.download-content h2 {
+    font-size: 46px;
+    font-weight: 600;
+    color: var(--bg);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.download-content h5 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.download-content h5 span {
+    color: var(--bg);
+}
+
+.download-content p {
+    color: #92949f;
+}
+
+.cus-btn {
+    background-color: var(--bg);
+    color: #fafafa;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.cus-btn:hover {
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.download-app-buttons{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.download-app-buttons .cus-btn2 {
+    padding: 5px 10px;
+    border: 2px solid var(--bg);
+    color: black;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+.download-app-buttons .cus-btn2:hover {
+    background-color: black;
+    transition: all 0.3s ease-in-out;
+    color: white;
+}

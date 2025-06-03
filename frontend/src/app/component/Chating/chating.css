@@ -28,8 +28,9 @@
 .chats-list {
     cursor: pointer;
     border-radius: 5px;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     display: flex;
+    padding: 10px;
     justify-content: space-between;
 }
 
