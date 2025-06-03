@@ -122,9 +122,11 @@
 .btn-plan:hover {
   background: #9345c9;
 }
-.Pland-duration{
+
+.Pland-duration {
   align-items: baseline;
   display: flex;
+  justify-content: center;
 }
 
 
@@ -186,6 +188,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -196,8 +199,64 @@
   0% {
     transform: rotate(0deg) translateX(0) rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg) translateX(0) rotate(-360deg);
   }
 }
 
+@media screen and (max-width: 768px) {
+  .earth-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .earth-spin {
+    width: 300px;
+    height: 300px;
+  }
+
+  .icon-container {
+    font-size: 24px;
+    padding: 8px;
+  }
+
+  .pricing-cards {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .pricing-card {
+    padding: 10px;
+  }
+
+  .plan-desc {
+    font-size: 10px;
+    font-weight: 800;
+  }
+
+  .Pland-duration p {
+    margin: 0;
+  }
+
+  .feature-list li {
+    font-size: 11px;
+  }
+
+  .plan-price {
+    font-size: 16px;
+  }
+
+  .btn-plan {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .feature-list {
+    margin: 0 0 5px 0px;
+  }
+  .pricing-title {
+  margin-bottom: 0px;
+}
+}
