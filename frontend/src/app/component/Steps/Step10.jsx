@@ -8,25 +8,19 @@ const allHobbies = [
 
 export default function Step10({ formData, handleChange, setFormData }) {
   const [aadhaarOtp, setAadhaarOtp] = useState("");
-  const [phoneOtp, setPhoneOtp] = useState("");
   const [aadhaarStatus, setAadhaarStatus] = useState("");
-  const [phoneStatus, setPhoneStatus] = useState("");
 
   const handleAadhaarChange = (e) => {
     const aadhaar = e.target.value.replace(/\D/g, "").slice(0, 12);
     setFormData({ ...formData, aadhaar });
   };
 
-  const handlePhoneChange = (e) => {
-    setFormData({ ...formData, phone: e.target.value });
+  const sendAadhaarOtp = () => {
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    setAadhaarOtp(otp);
+    alert(`Simulated Aadhaar OTP sent: ${otp}`);
+    setAadhaarStatus("");
   };
-
-  // const sendAadhaarOtp = () => {
-  //   const otp = Math.floor(100000 + Math.random() * 900000).toString();
-  //   setAadhaarOtp(otp);
-  //   alert(`Simulated Aadhaar OTP sent: ${otp}`);
-  //   setAadhaarStatus(""); // reset status
-  // };
 
   const verifyAadhaarOtp = () => {
     if (formData.aadhaarOtp === aadhaarOtp) {
@@ -34,28 +28,6 @@ export default function Step10({ formData, handleChange, setFormData }) {
     } else {
       setAadhaarStatus("error");
     }
-  };
-
-  const sendPhoneOtp = () => {
-    const otp = Math.floor(100000 + Math.random() * 900000).toString();
-    setPhoneOtp(otp);
-    alert(`Simulated Phone OTP sent: ${otp}`);
-    setPhoneStatus(""); // reset status
-  };
-
-  const verifyPhoneOtp = () => {
-    if (formData.phoneOtp === phoneOtp) {
-      setPhoneStatus("success");
-    } else {
-      setPhoneStatus("error");
-    }
-  };
-
-  const handleLocation = () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const location = `Lat: ${position.coords.latitude.toFixed(3)}, Lon: ${position.coords.longitude.toFixed(3)}`;
-      setFormData({ ...formData, location });
-    });
   };
 
   const toggleHobby = (hobby) => {
@@ -92,7 +64,7 @@ export default function Step10({ formData, handleChange, setFormData }) {
         />
         <button
           type="button"
-          // onClick={sendAadhaarOtp}
+          onClick={sendAadhaarOtp}
           style={{
             position: "absolute",
             top: "50%",
@@ -112,7 +84,7 @@ export default function Step10({ formData, handleChange, setFormData }) {
         <label htmlFor="aadhaarInput">Aadhaar Number</label>
       </div>
 
-      {/* Aadhaar OTP Section */}
+      {/* Aadhaar OTP Verification */}
       <div className="d-flex align-items-center gap-2 mb-2">
         <div style={{ position: "relative", maxWidth: "150px", flexGrow: 1 }}>
           <input
@@ -148,18 +120,18 @@ export default function Step10({ formData, handleChange, setFormData }) {
         </p>
       )}
 
-    <b> Your City</b>
-<input type="text" name="location" className="form-control" placeholder="Where Are You From " onChange={handleChange} />
-
-      {/* Location Section */}
-      {/* <div className="mb-3 mt-4">
-        <button className="btn btn-info me-2" type="button" onClick={handleLocation}>
-          Get Current Location
-        </button>
-        {formData.location && (
-          <span className="badge bg-secondary">{formData.location}</span>
-        )}
-      </div> */}
+      {/* City Input */}
+      <div className="mb-3 mt-3">
+        <label className="form-label fw-semibold">Your City</label>
+        <input
+          type="text"
+          name="location"
+          className="form-control"
+          placeholder="Where Are You From"
+          value={formData.location || ""}
+          onChange={handleChange}
+        />
+      </div>
 
       {/* Hobbies Section */}
       <div className="mb-3 mt-4">
@@ -184,9 +156,7 @@ export default function Step10({ formData, handleChange, setFormData }) {
         <div className="mt-2">
           {(formData.hobbies || []).length > 0 ? (
             formData.hobbies.map((hobby, i) => (
-              <span key={i} className="badge bg-primary me-2">
-                {hobby}
-              </span>
+              <span key={i} className="badge bg-primary me-2">{hobby}</span>
             ))
           ) : (
             <small className="text-muted">No hobbies selected yet</small>

@@ -173,7 +173,7 @@
     .bottom-bar a {
         color: white;
         text-decoration: none;
-        font-size: 26px;
+        font-size: 22px;
     }
 
     .main-icon {
@@ -308,10 +308,10 @@
         width: 100%;
         height: auto;
         z-index: 999;
-        top: 3px;
-        left: 2px;
+        top: 0px;
+        left: 0px;
         z-index: 9999;
-        border-radius: 40px;
+        border-radius: 0px;
 
     }
 
