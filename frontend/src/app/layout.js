@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body>
-        {loader ? (
+        {/* {loader ? (
           <Loader />
         ) : isVerified === null ? (
           <div className="age-form">
@@ -53,20 +53,20 @@ export default function RootLayout({ children }) {
               </div>
             </div>
           </div>
-        ) : isVerified === true ? (
+        ) : isVerified === true ? ( */}
           <div>
             {renderHeader()}
             {children}
             <Footer />
           </div>
-         ) : (
+         {/* ) : (
           <div className="d-flex justify-content-center align-items-center vh-100 bg-dark text-white">
             <div className="text-center">
               <h2>Access Denied</h2>
               <p>You must be 18 years or older to access this website.</p>
             </div>
           </div>
-        )} 
+        )}  */}
 
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
