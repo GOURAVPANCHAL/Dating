@@ -103,9 +103,9 @@ const SubscriptionPage = () => {
           {plans.map((plan, idx) => (
             <div key={idx} className="pricing-card" style={{ borderTopColor: plan.color }}>
               <h3 className="plan-name">{plan.title}</h3>
-             <div className='Pland-duration'>
-             <p className="plan-price">${plan.price}</p>
-             <p className="plan-subtitle">/month</p>
+              <div className='Pland-duration'>
+                <p className="plan-price">${plan.price}</p>
+                <p className="plan-subtitle">/month</p>
               </div>
               <b className="plan-desc">Full access to select features</b>
               <ul className="feature-list">
@@ -122,29 +122,29 @@ const SubscriptionPage = () => {
         </div>
       </section>
 
-<div>
-<div className="earth-wrapper">
-      <Image
-         src="https://static.tradingview.com/static/bundles/background.bf9345a19dc9dbbc5c37.webp"
-        alt="Earth"
-        width={800}
-        height={800}
-        className="earth-image"
-      />
+      <div>
+        {/* <div className="earth-wrapper">
+          <Image
+            src="https://static.tradingview.com/static/bundles/background.bf9345a19dc9dbbc5c37.webp"
+            alt="Earth"
+            width={800}
+            height={800}
+            className="earth-image"
+          />
 
-      <div className="lights-layer">
-        {lights.map((_, i) => (
-          <div key={i} className={`light light-${i}`} />
-        ))}
+          <div className="lights-layer">
+            {lights.map((_, i) => (
+              <div key={i} className={`light light-${i}`} />
+            ))}
+          </div>
+        </div> */}
+
+
+
+
+
+        <SubscriptionBenifit />
       </div>
-    </div>
-
-
-
-
-
-<SubscriptionBenifit />
-</div>
 
 
     </>
@@ -267,7 +267,7 @@ export default SubscriptionPage;
 // </section>
 
 
-//     
+//
 //     </>
 //   );
 // };

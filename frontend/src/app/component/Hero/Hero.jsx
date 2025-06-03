@@ -33,7 +33,7 @@ const Hero = () => {
             <div className="hero-text">
               <h1>Dating for Grown Ups Make a Real Connection</h1>
               <p>Start meeting singles who are ready to commit today.</p>
-              <Link href="/about" className="login-btn">Get Started</Link>
+              <Link href="/pages/create-account" className="login-btn">Create account</Link>
             </div>
           </div>
         </div>

@@ -74,7 +74,6 @@ const Findprofile = () => {
     }));
 };
 
-
     const applyFilters = (filters) => {
         let result = [...originalProfiles];
 
@@ -158,8 +157,8 @@ const Findprofile = () => {
     };
 
     useEffect(() => {
-    const requests = JSON.parse(localStorage.getItem("friendRequests")) || {};
-    const statuses = {};
+        const requests = JSON.parse(localStorage.getItem("friendRequests")) || {};
+        const statuses = {};
 
     currentProfiles.forEach((profile) => {
         if (requests[profile.id])
@@ -168,8 +167,6 @@ const Findprofile = () => {
 
     setRequestStatus(statuses);
 }, [currentPage, filteredProfiles]);
-
-
     return (
         <section className='find-profile-section'>
             <div className="container-fluid">
@@ -178,7 +175,30 @@ const Findprofile = () => {
                 <div className="row">
                     {currentProfiles.map((item, index) => (
                         <div key={index} className="col-md-3 mb-4">
-                            <div className='profile-match-card'>
+                            <div className='profile-match-card position-relative'>
+                                {/* ⋮ Dropdown menu */}
+                                <div className="dropdown-menu-wrapper">
+                                    <button
+                                        className="dots-button"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            const menu = document.getElementById(`menu-${index}`);
+                                            document.querySelectorAll('.dropdown-menu-content').forEach(m => {
+                                                if (m !== menu) m.classList.remove('show');
+                                            });
+                                            menu?.classList.toggle('show');
+                                        }}
+                                    >
+                                        <i className="bi bi-shield-exclamation action-button"></i>
+                                    </button>
+                                    <div id={`menu-${index}`} className="dropdown-menu-content">
+                                        <button className="dropdown-item text-danger"><i className="bi bi-ban"></i> Block</button>
+                                        <button className="dropdown-item text-warning"><i className="bi bi-flag"></i> Report</button>
+                                    </div>
+                                </div>
+
+                                {/* Profile Link */}
                                 <Link href={'/pages/find-match/id'} className='profile-match-link'>
                                     <div className="profile-image-wrapper">
                                         <Image src={item.picture} alt={item.name} className="profile-img" />
@@ -193,7 +213,7 @@ const Findprofile = () => {
                                             className={`userRequestbtn ${requestStatus[index] ? 'bg-danger text-light' : ' theme-bg text-light'}`}
                                         >
                                             {requestStatus[index]
-                                                ? <i className="bi bi-person-check-fill"></i>  
+                                                ? <i className="bi bi-person-check-fill"></i>
                                                 : <i className="bi bi-person-fill-add float-end "></i>}
                                         </div>
                                         <h4>{item.name}, <span>{item.age}</span></h4>
@@ -205,6 +225,8 @@ const Findprofile = () => {
                                         </div>
                                     </div>
                                 </Link>
+
+                                {/* Avatar and Online Dot */}
                                 <div className="bottom-avatar">
                                     <Image src={item.picture} alt="small" className="avatar-img" />
                                 </div>
@@ -212,6 +234,7 @@ const Findprofile = () => {
                             </div>
                         </div>
                     ))}
+
                 </div>
 
                 <div className="pagination-container text-center mt-4">
