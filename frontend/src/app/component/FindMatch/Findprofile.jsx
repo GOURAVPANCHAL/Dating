@@ -13,34 +13,35 @@ import pic5 from "../../Images/user/user4.jpeg";
 import pic6 from "../../Images/user/user5.jpeg";
 
 const Findprofile = () => {
-    const originalProfiles = [
-        { picture: pic1, name: "Juhi Khan", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        { picture: pic2, name: "Divya Rathor", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false },
-        { picture: pic3, name: "Nirmala Devi", age: 34, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        { picture: pic4, name: "Kalpana Chawla", age: 40, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        { picture: pic5, name: "Vidya Devi", age: 50, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false },
-        { picture: pic6, name: "Santosh Singh", age: 70, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        { picture: pic1, name: "Anjali", age: 30, profession: "Designer", city: "Delhi", state: "Delhi", tags: ["🎨 Art", "🎬 Movies"], isOnline: false },
-        { picture: pic2, name: "Kavita", age: 28, profession: "Writer", city: "Gurgaon", state: "Haryana", tags: ["📖 Reading", "☕ Coffee"], isOnline: true },
-        { picture: pic3, name: "Priya", age: 35, profession: "Doctor", city: "Noida", state: "UP", tags: ["💉 Health", "💪 Fitness"], isOnline: true },
-        { picture: pic4, name: "Rita", age: 38, profession: "Teacher", city: "Ghaziabad", state: "UP", tags: ["📚 Teaching", "🎶 Music"], isOnline: false },
-        { picture: pic5, name: "Neha", age: 29, profession: "Engineer", city: "Faridabad", state: "Haryana", tags: ["⚙️ Machines", "📈 Stocks"], isOnline: true },
-        { picture: pic6, name: "Sneha", age: 31, profession: "Chef", city: "Delhi", state: "Delhi", tags: ["🍜 Cooking", "✈️ Travel"], isOnline: false },
-        { picture: pic1, name: "Payal", age: 26, profession: "Photographer", city: "Delhi", state: "Delhi", tags: ["📸 Photos", "🌄 Hiking"], isOnline: true },
+     const originalProfiles = [
+        {id: 1,  gender: "female", picture: pic1, name: "Juhi Khan",     age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        {id: 2,  gender: "female", picture: pic2, name: "Divya Rathor",  age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
+        {id: 3,  gender: "female", picture: pic3, name: "Nirmala Devi",  age: 34, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        {id: 4,  gender: "female", picture: pic4, name: "Kalpana Chawla",age: 40, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        {id: 5,  gender: "female", picture: pic5, name: "Vidya Devi",    age: 50, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
+        {id: 6,  gender: "male",   picture: pic6, name: "Santosh Singh", age: 70, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        {id: 7,  gender: "female", picture: pic1, name: "Anjali yadav",  age: 30, profession: "Web Designer",  city: "Delhi", state: "Delhi", tags: ["🎨 Art", "🎬 Movies"], isOnline: false, verified: false },
+        {id: 8,  gender: "female", picture: pic2, name: "Kavita Sharma", age: 28, profession: "Book Writer",   city: "Gurgaon", state: "Haryana", tags: ["📖 Reading", "☕ Coffee"], isOnline: true, verified: true },
+        {id: 9,  gender: "female", picture: pic3, name: "Priya Sharma",  age: 35, profession: "Doctor",        city: "Noida", state: "UP", tags: ["💉 Health", "💪 Fitness"], isOnline: true, verified: true },
+        {id: 10, gender: "female", picture: pic4, name: "Rita Kapoor",   age: 38, profession: "Teacher",       city: "Ghaziabad", state: "UP", tags: ["📚 Teaching", "🎶 Music"], isOnline: false, verified: false },
+        {id: 11, gender: "female", picture: pic5, name: "Neha Singh",    age: 29, profession: "Engineer",      city: "Faridabad", state: "Haryana", tags: ["⚙️ Machines", "📈 Stocks"], isOnline: true, verified: true },
+        {id: 12, gender: "female", picture: pic6, name: "Sneha Sharma",  age: 31, profession: "Chef",          city: "Delhi", state: "Delhi", tags: ["🍜 Cooking", "✈️ Travel"], isOnline: false, verified: false },
+        {id: 13, gender: "female", picture: pic1, name: "Payal kapoor",  age: 26, profession: "Photographer",  city: "Delhi", state: "Delhi", tags: ["📸 Photos", "🌄 Hiking"], isOnline: true, verified: true },
+ 
         // repeated for pagination testing
-        { picture: pic1, name: "Juhi Khan", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        { picture: pic2, name: "Divya Rathor", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false },
-        { picture: pic3, name: "Nirmala Devi", age: 34, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        { picture: pic4, name: "Kalpana Chawla", age: 40, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        { picture: pic5, name: "Vidya Devi", age: 50, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false },
-        { picture: pic6, name: "Santosh Singh", age: 70, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true },
-        { picture: pic1, name: "Anjali", age: 30, profession: "Designer", city: "Delhi", state: "Delhi", tags: ["🎨 Art", "🎬 Movies"], isOnline: false },
-        { picture: pic2, name: "Kavita", age: 28, profession: "Writer", city: "Gurgaon", state: "Haryana", tags: ["📖 Reading", "☕ Coffee"], isOnline: true },
-        { picture: pic3, name: "Priya", age: 35, profession: "Doctor", city: "Noida", state: "UP", tags: ["💉 Health", "💪 Fitness"], isOnline: true },
-        { picture: pic4, name: "Rita", age: 38, profession: "Teacher", city: "Ghaziabad", state: "UP", tags: ["📚 Teaching", "🎶 Music"], isOnline: false },
-        { picture: pic5, name: "Neha", age: 29, profession: "Engineer", city: "Faridabad", state: "Haryana", tags: ["⚙️ Machines", "📈 Stocks"], isOnline: true },
-        { picture: pic6, name: "Sneha", age: 31, profession: "Chef", city: "Delhi", state: "Delhi", tags: ["🍜 Cooking", "✈️ Travel"], isOnline: false },
-        { picture: pic1, name: "Payal", age: 26, profession: "Photographer", city: "Delhi", state: "Delhi", tags: ["📸 Photos", "🌄 Hiking"], isOnline: true },
+        {id: 14, gender:"female",picture: pic1, name: "Juhi Khan", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        {id: 15, gender:"female", picture: pic2, name: "Divya Rathor", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
+        { id: 16, gender:"female", picture: pic3, name: "Nirmala Devi", age: 34, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        {id: 17, gender:"female",picture: pic4, name: "Kalpana Chawla", age: 40, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        {id: 18, gender:"female",picture: pic5, name: "Vidya Devi", age: 50, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
+        {id: 19, gender:"male", picture: pic6, name: "Santosh Singh", age: 70, profession: "Web Developer", city: "Rohini", state: "Delhi", tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        {id: 20, gender:"female", picture: pic1, name: "Anjali", age: 30, profession: "Designer", city: "Delhi", state: "Delhi", tags: ["🎨 Art", "🎬 Movies"], isOnline: false, verified: false },
+        {id: 21, gender:"female",picture: pic2, name: "Kavita", age: 28, profession: "Writer", city: "Gurgaon", state: "Haryana", tags: ["📖 Reading", "☕ Coffee"], isOnline: true, verified: true },
+        {id: 22, gender:"female", picture: pic3, name: "Priya", age: 35, profession: "Doctor", city: "Noida", state: "UP", tags: ["💉 Health", "💪 Fitness"], isOnline: true, verified: true },
+        {id: 23, gender:"female", picture: pic4, name: "Rita", age: 38, profession: "Teacher", city: "Ghaziabad", state: "UP", tags: ["📚 Teaching", "🎶 Music"], isOnline: false, verified: false },
+        {id: 24, gender:"female", picture: pic5, name: "Neha", age: 29, profession: "Engineer", city: "Faridabad", state: "Haryana", tags: ["⚙️ Machines", "📈 Stocks"], isOnline: true, verified: true },
+        {id: 25, gender:"female", picture: pic6, name: "Sneha", age: 31, profession: "Chef", city: "Delhi", state: "Delhi", tags: ["🍜 Cooking", "✈️ Travel"], isOnline: false, verified: false },
+        {id: 26, gender:"female", picture: pic1, name: "Payal", age: 26, profession: "Photographer", city: "Delhi", state: "Delhi", tags: ["📸 Photos", "🌄 Hiking"], isOnline: true, verified: true },
     ];
 
     const profilesPerPage = 12;
@@ -48,54 +49,100 @@ const Findprofile = () => {
     const [requestStatus, setRequestStatus] = useState({});
     const [currentPage, setCurrentPage] = useState(0);
 
-    const handleToggle = (index) => {
-        const selectedProfile = currentProfiles[index];
-        const requestKey = `${selectedProfile.name}_${selectedProfile.age}`; // Unique key
+  const handleToggle = (profileId) => {
+  const selectedProfile = originalProfiles.find(p => p.id === profileId);
+  if (!selectedProfile) return;
+//   const requestKey = `${selectedProfile.name}_${selectedProfile.age}`;
 
         let requests = JSON.parse(localStorage.getItem("friendRequests")) || {};
 
-        if (requestStatus[index]) {
-            delete requests[requestKey];
-        } else {
-            requests[requestKey] = {
-                ...selectedProfile,
-                status: "pending",
-                timestamp: new Date().toISOString()
-            };
-        }
+    if (requestStatus[profileId]) {
+        delete requests[profileId];
+    } else {
+        requests[profileId] = {
+            ...selectedProfile,
+            status: "pending",
+            timestamp: new Date().toISOString()
+        };
+    }
 
-        localStorage.setItem("friendRequests", JSON.stringify(requests));
+    localStorage.setItem("friendRequests", JSON.stringify(requests));
 
-        setRequestStatus((prev) => ({
-            ...prev,
-            [index]: !prev[index]
-        }));
-    };
-
+    setRequestStatus((prev) => ({
+        ...prev,
+        [profileId]: !prev[profileId]
+    }));
+};
 
     const applyFilters = (filters) => {
         let result = [...originalProfiles];
 
-        if (filters.gender)
-            result = result.filter((p) => p.gender === filters.gender);
+         if (filters.search) {
+            const searchTerm = filters.search.toLowerCase();
+            result = result.filter(
+                (p) =>
+                    p.name.toLowerCase().includes(searchTerm) ||
+                    p.profession.toLowerCase().includes(searchTerm)
+            );
+        }
 
-        if (filters.minAge)
-            result = result.filter((p) => p.age >= filters.minAge);
+       if (filters.gender && filters.gender.length > 0) {
+            if (filters.gender.length === 1) {
+                 result = result.filter((p) =>
+                    filters.gender.includes(p.gender.charAt(0).toUpperCase() + p.gender.slice(1))
+                );
+            }
+            
+        }
 
-        if (filters.maxAge)
-            result = result.filter((p) => p.age <= filters.maxAge);
 
-        if (filters.location)
-            result = result.filter((p) => p.city.toLowerCase().includes(filters.location.toLowerCase()));
+        if (filters.ageRange.min) {
+            result = result.filter((p) => p.age >= parseInt(filters.ageRange.min));
+        }
+        if (filters.ageRange.max) {
+            result = result.filter((p) => p.age <= parseInt(filters.ageRange.max));
+        }
 
-        if (filters.onlineNow)
+
+         if (filters.onlineNow) {
             result = result.filter((p) => p.isOnline);
+        }
 
-        if (filters.verifiedOnly)
-            result = result.filter((p) => p.verified);
 
-        if (filters.sortBy === "newest")
-            result = result.reverse();
+         if (filters.verifiedOnly) {
+            result = result.filter((p) => p.verified === true);
+        }
+
+
+         if (filters.interests && filters.interests.length > 0) {
+            result = result.filter((p) =>
+                // Check if ALL selected interests are present in any of the profile's tags
+                filters.interests.every((filterInterest) =>
+                    p.tags.some((profileTag) =>
+                        profileTag.toLowerCase().includes(filterInterest.toLowerCase())
+                    )
+                )
+            );
+        }
+
+         if (filters.sortBy) {
+            switch (filters.sortBy) {
+                case 'newest':
+                    result.reverse();
+                    break;
+                case 'nearest':
+                    break;
+                case 'active':
+                    result.sort((a, b) => {
+                        if (a.isOnline && !b.isOnline) return -1;
+                        if (!a.isOnline && b.isOnline) return 1;
+                        return a.age - b.age;
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }
 
         setCurrentPage(0);
         setFilteredProfiles(result);
@@ -113,15 +160,13 @@ const Findprofile = () => {
         const requests = JSON.parse(localStorage.getItem("friendRequests")) || {};
         const statuses = {};
 
-        currentProfiles.forEach((profile, index) => {
-            const key = `${profile.name}_${profile.age}`;
-            if (requests[key]) statuses[index] = true;
-        });
+    currentProfiles.forEach((profile) => {
+        if (requests[profile.id])
+             statuses[profile.id] = true;
+    });
 
-        setRequestStatus(statuses);
-    }, [currentPage]);
-
-
+    setRequestStatus(statuses);
+}, [currentPage, filteredProfiles]);
     return (
         <section className='find-profile-section'>
             <div className="container-fluid">

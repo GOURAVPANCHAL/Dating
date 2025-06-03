@@ -39,10 +39,10 @@ const Footer = () => {
         <div className="row footer-main">
           {/* About */}
           <div className="col-md-3 mb-4">
-            <h6 className="footer-heading">About Ollya</h6>
-            <p>Ollya is a friendly dating theme based on HTML template for the community functionality</p>
-            <p><strong>Address:</strong> Suite-13 Tropical Center New Elephant Road 1205</p>
-            <p><strong>Contact:</strong> +30 226 4881 514<br />www.yoursitename.com</p>
+            <h6 className="footer-heading">Love Dating</h6>
+            <p>Love Dating is a friendly dating theme based on lovers for the community functionality</p>
+            <p><strong>Address:</strong> Pocket 10 Rohini Rithala New Delhi, India</p>
+            <p><strong>Contact:</strong> +91-123-456-7890<br />www.lovedating.com</p>
           </div>
 
           {/* Featured Members */}
@@ -51,21 +51,21 @@ const Footer = () => {
             <div className="member">
               <img src="/images/user1.jpeg" alt="Samantha" className="member-img" />
               <div>
-                <strong>Samantha Lee</strong><br />
+                <strong>Gourav Panchal</strong><br />
                 <span className="text-success">Active</span>
               </div>
             </div>
             <div className="member">
               <img  src="/images/user2.jpeg" alt="Peter" className="member-img" />
               <div>
-                <strong>Peter McMillan</strong><br />
+                <strong>Mukesh Rajput</strong><br />
                 <span>2 Hours Ago</span>
               </div>
             </div>
             <div className="member">
               <img  src="/images/user3.jpeg" alt="Tluagtea" className="member-img" />
               <div>
-                <strong>Tluagtea Tualzik</strong><br />
+                <strong>Aman Tiwari</strong><br />
                 <span className="text-success">Active</span>
               </div>
             </div>
@@ -91,7 +91,7 @@ const Footer = () => {
                 <img src={`/activity${i}.jpg`} className="activity-img" alt="Activity" />
                 <div>
                   <strong>Where To Find A Good...</strong><br />
-                  <small>August 13, 2022</small>
+                  <small>jan 13, 2025</small>
                 </div>
               </div>
             ))}

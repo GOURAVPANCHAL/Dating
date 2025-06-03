@@ -6,9 +6,9 @@ import { useState } from 'react'
 import logo from "../../Images/logo.png"
 import mermberImage from "../../Images/explore-lmage.png"
 import './header.css'
-import home from '../../Images/home.png'
-import findmatch from '../../Images/search.png'
-import user from '../../Images/user.png'
+// import home from '../../Images/home.png'
+// import findmatch from '../../Images/search.png'
+// import user from '../../Images/user.png'
 
 const navItems = [
   {

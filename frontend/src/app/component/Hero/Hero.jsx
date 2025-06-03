@@ -8,7 +8,6 @@ const Hero = () => {
     <>
     <section className='hero-section2-responsive'>
         <div className="container">
-          
         </div>
     </section>
     <section className="all-body">
