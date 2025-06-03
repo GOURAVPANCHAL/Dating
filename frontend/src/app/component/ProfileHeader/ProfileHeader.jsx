@@ -35,9 +35,6 @@ const ProfileHeader = () => {
                                 <div>
                                   <Link href={"/pages/notifications"}>  <i className="bi bi-bell"></i></Link>
                                 </div>
-                                {/* <div>
-                                    <i className="bi bi-heart"></i>
-                                </div> */}
                             </div>
                         </div>
                     </div>

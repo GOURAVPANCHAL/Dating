@@ -22,11 +22,11 @@ body {
 }
 
 .breadcrumb-item{
-  color: white !important;
+  color: black !important;
 }
  
 .breadcrumb-item a{
-color: white !important;
+color: black !important;
 text-decoration: none !important;
 }
 
