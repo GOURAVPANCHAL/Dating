@@ -21,12 +21,12 @@ export default function Step10({ formData, handleChange, setFormData }) {
     setFormData({ ...formData, phone: e.target.value });
   };
 
-  const sendAadhaarOtp = () => {
-    const otp = Math.floor(100000 + Math.random() * 900000).toString();
-    setAadhaarOtp(otp);
-    alert(`Simulated Aadhaar OTP sent: ${otp}`);
-    setAadhaarStatus(""); // reset status
-  };
+  // const sendAadhaarOtp = () => {
+  //   const otp = Math.floor(100000 + Math.random() * 900000).toString();
+  //   setAadhaarOtp(otp);
+  //   alert(`Simulated Aadhaar OTP sent: ${otp}`);
+  //   setAadhaarStatus(""); // reset status
+  // };
 
   const verifyAadhaarOtp = () => {
     if (formData.aadhaarOtp === aadhaarOtp) {
@@ -92,7 +92,7 @@ export default function Step10({ formData, handleChange, setFormData }) {
         />
         <button
           type="button"
-          onClick={sendAadhaarOtp}
+          // onClick={sendAadhaarOtp}
           style={{
             position: "absolute",
             top: "50%",
