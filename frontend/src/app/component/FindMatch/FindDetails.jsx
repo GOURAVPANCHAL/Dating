@@ -330,6 +330,7 @@ const FindDetails = () => {
             </div>
           </div>
         </div>
+        
         {/* suggested profile created and its pages */}
 
         <div className="suggested-profiles" ref={suggestedRef}>
