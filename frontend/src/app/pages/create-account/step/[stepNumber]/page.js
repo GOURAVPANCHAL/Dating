@@ -29,40 +29,26 @@ const steps = {
   10: Step10,
   11: Step11,
   12: Step12,
-  // Add Step13-15 when ready
+  // Add Step12-15 when ready
 };
 
 export default function StepPage() {
   const router = useRouter();
   const [stepNumber, setStepNumber] = useState(1);
-  const [showConsent, setShowConsent] = useState(false); // default false
+  const [showConsent, setShowConsent] = useState(true);
 
-  // Initialize stepNumber from URL on mount
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const path = window.location.pathname;
-      const match = path.match(/step\/(\d+)/);
-      if (match) {
-        setStepNumber(parseInt(match[1], 10));
-      }
+    if(typeof window !== 'undefined') {
+    const path = window.location.pathname;
+    const match = path.match(/step\/(\d+)/);
+    if (match) {
+      setStepNumber(parseInt(match[1], 10));
     }
+}
   }, []);
-
-  // Show consent only on step 1 and if user hasn't agreed before
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const hasConsented = localStorage.getItem('hasConsented');
-      if (stepNumber === 1 && !hasConsented) {
-        setShowConsent(true);
-      } else {
-        setShowConsent(false);
-      }
-    }
-  }, [stepNumber]);
 
   const StepComponent = steps[stepNumber];
 
-  // Form data with localStorage persistence
   const [formData, setFormData] = useState(
     typeof window !== 'undefined'
       ? JSON.parse(localStorage.getItem('formData') || '{}')
@@ -89,83 +75,61 @@ export default function StepPage() {
     }
   };
 
-  // When user agrees, save consent and hide popup
-  const handleConsentAgree = () => {
-    localStorage.setItem('hasConsented', 'true');
-    setShowConsent(false);
-  };
-
   if (!StepComponent) return <p>Invalid step</p>;
 
   return (
     <div className="form-container">
-      {showConsent ? (
+{showConsent ? (
         <div className="consent-popup">
-          <Image
-            src="/logo.png"
-            alt="logo"
-            width={100}
-            height={70}
-            className="consent-logo"
-          />
-          <h2 className="consent-title">Before You Swipe</h2>
+          <Image src="/logo.png" alt="logo" width={100} height={70} className="consent-logo" />
+          <h2 className="consent-title"> Before You Swipe</h2>
           <p className="consent-text">
             Welcome! We are excited to be part of your dating journey.
-            <br />
-            <br />
-            Here we treat everyone with kindness and respect, no matter their
-            race, religion, nationality, ethnicity, skin color, ability, size,
-            sex, gender identity, or sexual orientation.
-            <br />
-            <br />
-            In our mission to actively keep this platform safe and inclusive, we
-            ask you to join us by adhering to our{' '}
-            <a href="#">guidelines</a>.
-            <br />
-            <br />
+            <br /><br />
+            Here we treat everyone with kindness and respect, no matter their race, religion, nationality, ethnicity, skin color, ability, size, sex, gender identity, or sexual orientation.
+            <br /><br />
+            In our mission to actively keep this platform safe and inclusive, we ask you to join us by adhering to our <a href="#">guidelines</a>.
+            <br /><br />
             And remember: We have always got your back!
           </p>
           <p className="consent-footer">With love, The Team</p>
-          <button className="consent-button" onClick={handleConsentAgree}>
-            I agree
-          </button>
+          <button className="consent-button" onClick={() => setShowConsent(false)}>I agree</button>
         </div>
-      ) : (
-        <div className="form-card">
-          <div className="form-header">
-            <h2>Create Your Love Profile</h2>
-            <p>Step {stepNumber} of 15</p>
-          </div>
-          <div className="form-body">
-            <StepComponent
-              formData={formData}
-              handleChange={handleChange}
-              setFormData={setFormData}
-            />
-          </div>
-          <div className="form-footer">
-            {stepNumber > 1 && (
-              <button className="btn secondary" onClick={prevStep}>
-                ← Back
-              </button>
-            )}
-            {stepNumber < 15 ? (
-              <button className="btn primary" onClick={nextStep}>
-                Next →
-              </button>
-            ) : (
-              <button
-                className="btn submit"
-                onClick={() => {
-                  console.log('Final Submit', formData);
-                }}
-              >
-                ❤️ Submit
-              </button>
-            )}
-          </div>
+        
+      ) :( <div className="form-card">
+        <div className="form-header">
+          <h2>Create Your Love Profile</h2>
+          <p>Step {stepNumber} of 15</p>
         </div>
-      )}
+        <div className="form-body">
+          <StepComponent
+            formData={formData}
+            handleChange={handleChange}
+            setFormData={setFormData}
+          />
+        </div>
+        <div className="form-footer">
+          {stepNumber > 1 && (
+            <button className="btn secondary" onClick={prevStep}>
+              ← Back
+            </button>
+          )}
+          {stepNumber < 15 ? (
+            <button className="btn primary" onClick={nextStep}>
+              Next →
+            </button>
+          ) : (
+            <button
+              className="btn submit"
+              onClick={() => {
+                console.log('Final Submit', formData);
+              }}
+            >
+              ❤️ Submit
+            </button>
+          )}
+        </div>
+      </div>) }
     </div>
   );
 }
