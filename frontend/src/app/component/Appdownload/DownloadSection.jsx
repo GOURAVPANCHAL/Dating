@@ -6,9 +6,14 @@ const DownloadSection = () => {
     return (
         <>
             <div className="download-app">
-                <div className="container">
+                <div className="container-fluid">
                 <div className="row align-items-center">
-                    <div className="col-md-6">
+                    <div className="col-md-4 p-0">
+                        <div className="download-image">
+                            <Image src={backgroundImage} alt="Download App Background" />
+                        </div>
+                    </div>
+                    <div className="col-md-8">
                         <div className="download-content">
                             <h2>Download Our App</h2>
                             <h5>
@@ -26,11 +31,6 @@ const DownloadSection = () => {
                                     <i className="bi bi-apple"></i> | Apple Store
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="download-image">
-                            <Image src={backgroundImage} alt="Download App Background" />
                         </div>
                     </div>
                 </div>

@@ -12,6 +12,7 @@
 
 .nav-logo img {
     max-width: 100%;
+    justify-content: center;
     height: auto;
 }
 
@@ -146,8 +147,23 @@
 }
 
 
+.nav-sidebar img {
+    width: 70px;
+    height: auto;
+}
+
+.login-btn-header{
+    background-color: var(--bg);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 /* Hide desktop nav on sma-*ll screens */
 @media (max-width: 768px) {
+
     .navbar {
         padding: 0;
     }
@@ -166,22 +182,22 @@
         z-index: 9999;
         border-radius: 40px;
         align-items: center;
-        width: 80%;
+        width: 90%;
     }
 
 
     .bottom-bar a {
         color: white;
         text-decoration: none;
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .main-icon {
         font-size: 35px;
         display: flex;
         justify-content: center;
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         align-items: center;
         background-color: var(--bg);
         border-radius: 50%;
@@ -195,6 +211,7 @@
 @media (max-width: 991px) {
     .nav-sidebar {
         display: block !important;
+        padding: 1rem;
     }
 
     .responsive-sidebar img {
@@ -221,7 +238,6 @@
     .hamburger {
         display: flex;
         flex-direction: column;
-        gap: 5px;
         background: none;
         border: none;
         cursor: pointer;
@@ -250,10 +266,13 @@
         transform: translateX(0);
     }
 
+    .sidebar-header-logo-close{
+        margin-bottom: 1rem;
+    }
 
     .close-btn {
         background: none;
-        color: white;
+        color: black;
         border: none;
         font-size: 2rem;
         position: absolute;
@@ -272,7 +291,7 @@
     }
 
     .sidebar-menu a {
-        color: white;
+        color: black;
         text-decoration: none;
     }
 
@@ -312,14 +331,11 @@
         left: 0px;
         z-index: 9999;
         border-radius: 0px;
-
     }
 
     .responsive-sidebar img {
-        width: 24%;
+        width: 14%;
         height: auto;
     }
-
-
 
 }
