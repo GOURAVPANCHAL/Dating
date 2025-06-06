@@ -34,7 +34,7 @@ const ProfileTabs = () => {
       case 'message':
         return (
           <>
-           <ChatingPage />
+            <ChatingPage />
           </>
         );
       case 'notification':
@@ -60,24 +60,24 @@ const ProfileTabs = () => {
           {/* Sidebar */}
           <div className="col-md-3">
             <div className='profile-tabs-bg'>
-            <div className="list-group">
-              {[
-                { key: 'my-profile', label: 'My Profile', icon: 'bi-person' },
-                { key: 'friend list', label: 'Friend List', icon: 'bi-play' },
-                { key: 'message', label: 'Message', icon: 'bi-chat-dots' },
-                { key: 'notification', label: 'Notification', icon: 'bi-chat-dots' },
-                { key: 'users', label: 'Users', icon: 'bi-people' },
-                { key: 'setting', label: 'Setting', icon: 'bi-gear-wide-connected' },
-              ].map((tab) => (
-                <button
-                  key={tab.key}
-                  className={`list-group-item list-group-item-action ${activeTab === tab.key ? 'active' : ''}`}
-                  onClick={() => setActiveTab(tab.key)}
-                >
-                  <i className={`bi ${tab.icon}`}></i> {tab.label}
-                </button>
-              ))}
-            </div>
+              <div className="list-group">
+                {[
+                  { key: 'my-profile', label: 'My Profile', icon: 'bi-person-circle' },
+                  { key: 'friend list', label: 'Friend List', icon: 'bi-people-fill' },
+                  { key: 'message', label: 'Message', icon: 'bi-chat-left-text' },
+                  { key: 'notification', label: 'Notification', icon: 'bi-bell-fill' },
+                  { key: 'users', label: 'Users', icon: 'bi-person-lines-fill' },
+                  { key: 'setting', label: 'Setting', icon: 'bi-gear-fill' },
+                ].map((tab) => (
+                  <button
+                    key={tab.key}
+                    className={`list-group-item list-group-item-action ${activeTab === tab.key ? 'active' : ''}`}
+                    onClick={() => setActiveTab(tab.key)}
+                  >
+                    <i className={`bi ${tab.icon}`}></i> <span className='tab-btn-name'>{tab.label}</span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 

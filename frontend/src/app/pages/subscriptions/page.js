@@ -83,7 +83,7 @@ const SubscriptionPage = () => {
   const lights = Array.from({ length: 10 });
   return (
     <>
-      <section className="breadcrumb-section">
+      {/* <section className="breadcrumb-section">
         <div className="container text-center">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb justify-content-center gap-2">
@@ -95,7 +95,7 @@ const SubscriptionPage = () => {
           <h1 className="page-title">Subscriptions</h1>
           <p className="page-subtitle">Choose the plan that suits you best</p>
         </div>
-      </section>
+      </section> */}
 
       <section className="pricing-wrapper">
         <h2 className="pricing-title">Choose Your Plan</h2>

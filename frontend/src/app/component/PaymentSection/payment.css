@@ -1,0 +1,287 @@
+.payment-container {
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .payment-box {
+    background:rgb(227, 232, 236);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+  }
+  
+  .payment-box h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .payment-method,
+  .membership-option {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    background: #f8f8f8;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 0.75rem;
+  }
+  
+  .payment-method:hover,
+  .membership-option:hover {
+    background: #f0e9ff;
+  }
+  
+  .payment-method.selected,
+  .membership-option.selected {
+    background: #ffeef5;
+    border-color: #A16EFF;
+  }
+  
+  .icon {
+    font-size: 1.4rem;
+    color: #A16EFF;
+  }
+  
+  .membership-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .membership-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+  }
+  
+  .membership-info p {
+    font-size: 0.85rem;
+    color: #f59e0b;
+  }
+  
+  .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #10b981;
+  }
+  
+  .bestseller-tag {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    background: gold;
+    color: #222;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+  }
+  
+  .secure-note {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #1d4ed8;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .summary {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .summary span {
+    font-weight: bold;
+    color: #16a34a;
+  }
+  
+  .payment-form input[type="text"] {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.2s;
+  }
+  
+  .payment-form input:focus {
+    outline: none;
+    border-color: #b793fa;
+    box-shadow: 0 0 0 2px rgba(255, 107, 158, 0.2);
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .terms {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .pay-button {
+    width: 100%;
+    background: linear-gradient(to right, #A16EFF,#9156ff);
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .pay-button:hover {
+    opacity: 0.9;
+  }
+
+  .contentSec{
+    display:grid;
+    align-items:baseline;
+    justify-content: center;
+  }
+
+
+  .contentSec p{
+    color: #A16EFF;
+ margin:0px;  
+
+}
+
+.paymentHeaderSec{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.payment-header{
+    background-color: aliceblue;
+}
+
+
+
+.support-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-family: sans-serif;
+}
+
+/* Icon Container */
+.chat-icon {
+  display: flex;
+  align-items: center;
+  background-color: #25d366;
+  border-radius: 50px;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: width 0.4s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Expand on hover */
+.chat-icon:hover {
+  width: 250px;
+}
+
+/* Icon image */
+.chat-icon-image {
+  width: 40px;
+  height: 40px;
+}
+
+/* Hover text */
+.chat-hover-text {
+  margin-left: 10px;
+  color: white;
+  font-weight: 500;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Chat Popup Box */
+.chat-popup {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 280px;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Popup Header */
+.chat-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: green;
+  font-size: 16px;
+}
+
+/* Message Text */
+.chat-message {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Textarea Input */
+.chat-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+/* Send Button */
+.chat-send-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: #25d366;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-send-btn:hover {
+  background-color: #1da851;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
