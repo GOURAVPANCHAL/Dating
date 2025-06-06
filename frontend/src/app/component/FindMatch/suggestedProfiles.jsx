@@ -61,7 +61,7 @@ const SuggestedProfiles = () => {
   }
 
   return (
-    <div className="container-fluid mt-5 mb-5">
+    <div className="container-fluid mb-5">
       <hr className="mb-4" />
       <h2 className="text-center mb-4">You Might Also Like...</h2>
       <div className="row justify-content-center">

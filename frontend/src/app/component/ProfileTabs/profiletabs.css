@@ -3,7 +3,8 @@
     border-top: none;
     border-left: none;
     border-right: none;
-    color: var(--bg);
+    color: white;
+    background-color: var(--bg);
 }
 
 .profile-tabs-section .list-group-item {
@@ -34,4 +35,32 @@
     height: 70vh;
     overflow-x: hidden;
     overflow-y: scroll;
+}
+
+@media screen and (max-width: 768px) {
+    .profile-tabs-bg {
+        position: fixed;
+        z-index: 999;
+        bottom: 0px;
+        height: auto;
+        left: 0px;
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .profile-tabs-section .list-group-item {
+        padding: 10px 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile-tabs-bg .list-group {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    .tab-btn-name {
+        display: none;
+    }
+
 }
