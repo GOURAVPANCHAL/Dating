@@ -28,7 +28,7 @@ const navItems = [
         title: "Community",
         links: [
           { label: "Community Activity", href: "/pages/create-account" },
-          { label: "Recent Groups", href: "/about" },
+          { label: "Recent Groups", href: "/pages/payment-section" },
           { label: "Single Group", href: "/about" },
           { label: "Members", href: "/about" },
           { label: "About Us", href: "/pages/about-us" },

@@ -49,6 +49,7 @@ const MyProfile = () => {
     return (
         <section className='my-profile-section'>
             <div className='myprofile-main'>
+            <div className="ribbon">🔥 Premium</div>
                 <div className="row">
                     <div className="col-md-4">
                         <div className="my-main-image">

@@ -88,10 +88,13 @@
   background-color: var(--bg2);
   padding: 2rem 0;
 }
-
+.bi-patch-check{
+  margin-left: 10px;
+}
 
 
 .like-dislike-btn {
+  padding:10px;
   position: absolute;
   display: flex;
   gap: 10px;
@@ -138,25 +141,36 @@
 
 .MakeFriendbtn{
   font-size: 18px;
-  width: 25%;
+  width: 45px;
+  margin-left:10px;
   border: none;
   border-radius: 10px;
   background-color: gray ;
  color:rgb(255, 255, 255) !important ;
  padding: 5px;
- margin: 20px ;
+ margin: 0px ;
  color:white;
 }
  
 .messagebtn{
-  width: 25%;
+  width: 48px;
   border-radius: 10px;
   border: none;
   background-color: var(--bg) !important ;
-  padding: 5px;
-  color: black !important;;
+  padding: 6px;
+  color: black !important;
   justify-content: center;
 }
+
+.Bookingbtn{
+  width: 12%;
+  border:none;
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding:6px;
+
+}
+
 .FindDetailsBtnSec{
   
   align-items: center;
@@ -164,7 +178,9 @@
 
 }
 
-
+.profile-name{
+  margin-top: 10px;
+}
 
 .zoom-modal {
   position: fixed;
@@ -353,6 +369,30 @@
   color: #28a745;
   text-align: center;
   animation: popIn 0.3s ease;
+}
+
+
+.myprofile-main{
+  position: relative;
+
+}
+
+
+.ribbon {
+  position: absolute;
+  top: 21px;
+  right: -32px;
+  z-index: 1;
+  width: 140px;
+  text-align: center;
+  background: linear-gradient(45deg, #ff4e50, #f9d423);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  padding: 6px 0;
+  font-family: sans-serif;
 }
 
 /* Animations */
