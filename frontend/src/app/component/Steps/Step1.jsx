@@ -46,9 +46,9 @@ export default function Step1({ formData, handleChange, setFormData }) {
 
   return (
     <div>
-      <h4 className="text-center text-xl font-semibold mb-2">Step 1 :</h4>
+      <h4 className="text-center text-xl font-semibold mb-2">Step 1</h4>
       
-       <b className="text-info">Name : </b>
+       <b className="text-info">Name :</b>
       <input
         name="name"
         placeholder="Enter Your Name"
@@ -76,7 +76,7 @@ export default function Step1({ formData, handleChange, setFormData }) {
       </div>
 
       {/* Preview Grid */}
-      <div className="mt-1 d-flex ">
+      <div className="mt-1 d-flex">
         {previews.map((src, index) => (
           <div key={index} className="relative ">
             <img
