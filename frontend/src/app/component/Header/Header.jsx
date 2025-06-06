@@ -27,7 +27,7 @@ const navItems = [
       {
         title: "Community",
         links: [
-          { label: "Community Activity", href: "/pages/create-account" },
+          { label: "Community Activity", href: "/pages/create-account/step/1" },
           { label: "Recent Groups", href: "/pages/payment-section" },
           { label: "Single Group", href: "/about" },
           { label: "Members", href: "/about" },
@@ -93,7 +93,7 @@ const Header = () => {
                   </Link>
                 </div>
                 <div>
-                  <h3 className='logotext'>Trustme</h3>
+                  <h3 className='logotext'>LoveNestor</h3>
                 </div>
               </div>
               <div className="col-md-8">

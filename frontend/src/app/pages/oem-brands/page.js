@@ -39,7 +39,7 @@ const page = () => {
                 <span className="d-block" style={{color:"gray"}}>{category.name}</span>
               </div>
             </Link>
-          </div>
+          </div>       
         ))}
       </div>
     </div>

@@ -71,7 +71,7 @@ input[type="range"].form-range::-webkit-slider-thumb {
 input[type="range"].form-range::-moz-range-thumb {
   width: 18px;
   height: 18px;
-  background: #A16EFF;
+  background: var(--bg);
   border-radius: 50%;
   cursor: pointer;
   border: none;
@@ -80,7 +80,7 @@ input[type="range"].form-range::-moz-range-thumb {
 input[type="range"].form-range::-ms-thumb {
   width: 18px;
   height: 18px;
-  background: #A16EFF;
+  background: var(--bg);
   border-radius: 50%;
   cursor: pointer;
   border: none;

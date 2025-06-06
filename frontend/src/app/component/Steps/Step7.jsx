@@ -43,7 +43,7 @@ export default function Step7({ formData, setFormData }) {
 
   return (
     <div className="step7-container">
-      <h2 className="step7-title">Do You Merital Alcohol</h2>
+      <h2 className="step7-title">Whats Your Merital Status</h2>
       <p className="step7-subtitle">for making strong Relationship </p>
 
       <div className="step7-list">
