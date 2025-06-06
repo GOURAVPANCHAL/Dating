@@ -27,7 +27,7 @@ const FindDetails = () => {
     const [date, setDate] = useState("");
     const [place, setPlace] = useState("");
     const [thankYou, setThankYou] = useState(false);
- 
+
 
     const [showSuggested, setShowSuggested] = useState(false);
     const suggestedRef = useRef(null);
@@ -98,18 +98,7 @@ const FindDetails = () => {
             </section>
         );
     }
-    const profileImages = [
-        pic,
-        pic1,
-        pic2,
-        pic3,
-        pic4,
-        pic5,
-        pic6,
-        pic7,
-        pic8,
-        pic9,
-    ];
+    const profileImages = [pic,pic1,pic2,pic3,pic4,pic5,pic6,pic7,pic8,pic9,];
     const aboutInfo = [
         {
             information:
@@ -134,7 +123,7 @@ const FindDetails = () => {
             <div className="container">
                 <div className="my-profile-section">
                     <div className="myprofile-main">
-                    <div className="ribbon"> ₹ 6000</div>
+                        <div className="ribbon"> ₹ 6000</div>
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="my-main-image">
@@ -187,7 +176,7 @@ const FindDetails = () => {
                                     </div>
                                 ))}
 
-                                <hr/>
+                                <hr />
                                 <div className="FindDetailsBtnSec">
                                     <button
                                         onClick={handleToggle}
@@ -206,7 +195,7 @@ const FindDetails = () => {
                                             </>
                                         )}
                                     </button>
-                                    <button className="messagebtn m-3">
+                                    <button className="messagebtn">
                                         <span
                                             className="justify-content-center text-light pb-3"
                                             style={{ fontSize: "18px" }}
@@ -299,7 +288,7 @@ const FindDetails = () => {
                                             value={place}
                                             onChange={(e) => setPlace(e.target.value)}
                                         />
-                                       
+
                                         <button className="submit-booking" onClick={handleSubmit}>
                                             Submit
                                         </button>
@@ -340,17 +329,6 @@ const FindDetails = () => {
             </div>
         </section>
     );
-          </div>
-        </div>
-        
-        {/* suggested profile created and its pages */}
-
-        <div className="suggested-profiles" ref={suggestedRef}>
-          <SuggestedProfiles />
-        </div>
-      </div>
-    </section>
-  );
 };
 
 export default FindDetails;

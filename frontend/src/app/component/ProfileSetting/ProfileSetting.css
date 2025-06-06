@@ -99,3 +99,11 @@
 .delete-acc a{
     color: var(--bg);
 }
+
+@media screen and (max-width: 768px) {
+    .delete-acc{
+    margin-top: 1rem;
+    max-width:100%;
+}
+    
+}

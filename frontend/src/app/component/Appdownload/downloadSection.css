@@ -12,7 +12,7 @@
 
 .download-image {
     display: flex;
-    justify-content: end;
+    justify-content: start;
 }
 
 .download-content h2 {
@@ -76,4 +76,16 @@
     background-color: black;
     transition: all 0.3s ease-in-out;
     color: white;
+}
+
+@media only screen and (max-width: 768px) {
+   .download-image{
+    display: none;
+   }
+   .download-content h2{
+    font-size: 30px;
+   }
+    .download-content h5{
+        font-size: 16px;
+    }
 }
