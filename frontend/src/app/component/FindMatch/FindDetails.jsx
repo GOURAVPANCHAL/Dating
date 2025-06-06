@@ -340,6 +340,17 @@ const FindDetails = () => {
             </div>
         </section>
     );
+          </div>
+        </div>
+        
+        {/* suggested profile created and its pages */}
+
+        <div className="suggested-profiles" ref={suggestedRef}>
+          <SuggestedProfiles />
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default FindDetails;

@@ -2,6 +2,9 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import './createAccount.css';
+import Image from 'next/image';
+
+// Import steps
 import Step1 from '@/app/component/Steps/Step1';
 import Step2 from '@/app/component/Steps/Step2';
 import Step3 from '@/app/component/Steps/Step3';
@@ -14,7 +17,6 @@ import Step9 from '@/app/component/Steps/Step9';
 import Step10 from '@/app/component/Steps/Step10';
 import Step11 from '@/app/component/Steps/Step11';
 import Step12 from '@/app/component/Steps/Step12';
-import Image from 'next/image';
 
 const steps = {
   1: Step1,
@@ -29,7 +31,6 @@ const steps = {
   10: Step10,
   11: Step11,
   12: Step12,
-  // Add Step12-15 when ready
 };
 
 export default function StepPage() {
@@ -37,31 +38,39 @@ export default function StepPage() {
   const [stepNumber, setStepNumber] = useState(1);
   const [showConsent, setShowConsent] = useState(true);
 
+  // Step detection + consent check
   useEffect(() => {
-    if(typeof window !== 'undefined') {
-    const path = window.location.pathname;
-    const match = path.match(/step\/(\d+)/);
-    if (match) {
-      setStepNumber(parseInt(match[1], 10));
+    const match = window?.location?.pathname.match(/step\/(\d+)/);
+    const currentStep = match ? parseInt(match[1], 10) : 1;
+    setStepNumber(currentStep);
+
+    const hasConsented = localStorage.getItem('hasConsented');
+    if (currentStep === 1 && !hasConsented) {
+      setShowConsent(true);
     }
-}
   }, []);
 
-  const StepComponent = steps[stepNumber];
+  const handleConsentAgree = () => {
+    localStorage.setItem('hasConsented', 'true');
+    setShowConsent(false);
+  };
 
-  const [formData, setFormData] = useState(
-    typeof window !== 'undefined'
-      ? JSON.parse(localStorage.getItem('formData') || '{}')
-      : {}
-  );
+  const [formData, setFormData] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('formData');
+      return stored ? JSON.parse(stored) : {};
+    }
+    return {};
+  });
 
   const handleChange = (e) => {
-    setFormData((prev) => {
-      const updated = { ...prev, [e.target.name]: e.target.value };
-      localStorage.setItem('formData', JSON.stringify(updated));
-      return updated;
-    });
+    const updated = { ...formData, [e.target.name]: e.target.value };
+    setFormData(updated);
+    localStorage.setItem('formData', JSON.stringify(updated));
   };
+
+  const StepComponent = steps[stepNumber];
+  if (!StepComponent) return <p>Invalid step</p>;
 
   const nextStep = () => {
     if (stepNumber < 15) {
@@ -75,14 +84,12 @@ export default function StepPage() {
     }
   };
 
-  if (!StepComponent) return <p>Invalid step</p>;
-
   return (
     <div className="form-container">
-{showConsent ? (
+      {showConsent ? (
         <div className="consent-popup">
-          <Image src="/logo.png" alt="logo" width={100} height={70} className="consent-logo" />
-          <h2 className="consent-title"> Before You Swipe</h2>
+          <Image src="/logo.png" alt="logo" width={100} height={70} />
+          <h2 className="consent-title">Before You Swipe</h2>
           <p className="consent-text">
             Welcome! We are excited to be part of your dating journey.
             <br /><br />
@@ -93,43 +100,48 @@ export default function StepPage() {
             And remember: We have always got your back!
           </p>
           <p className="consent-footer">With love, The Team</p>
-          <button className="consent-button" onClick={() => setShowConsent(false)}>I agree</button>
+          <button className="consent-button" onClick={handleConsentAgree}>
+            I agree
+          </button>
         </div>
-        
-      ) :( <div className="form-card">
-        <div className="form-header">
-          <h2>Create Your Love Profile</h2>
-          <p>Step {stepNumber} of 15</p>
+      ) : (
+        <div className="form-card">
+          <div className="form-header">
+            <h2>Create Your Love Profile</h2>
+            <p>Step {stepNumber} of 15</p>
+          </div>
+
+          <div className="form-body">
+            <StepComponent
+              formData={formData}
+              handleChange={handleChange}
+              setFormData={setFormData}
+            />
+          </div>
+
+          <div className="form-footer">
+            {stepNumber > 1 && (
+              <button className="btn secondary" onClick={prevStep}>
+                ← Back
+              </button>
+            )}
+            {stepNumber < 15 ? (
+              <button className="btn primary" onClick={nextStep}>
+                Next →
+              </button>
+            ) : (
+              <button
+                className="btn submit"
+                onClick={() => {
+                  console.log('Final Submit', formData);
+                }}
+              >
+                ❤️ Submit
+              </button>
+            )}
+          </div>
         </div>
-        <div className="form-body">
-          <StepComponent
-            formData={formData}
-            handleChange={handleChange}
-            setFormData={setFormData}
-          />
-        </div>
-        <div className="form-footer">
-          {stepNumber > 1 && (
-            <button className="btn secondary" onClick={prevStep}>
-              ← Back
-            </button>
-          )}
-          {stepNumber < 15 ? (
-            <button className="btn primary" onClick={nextStep}>
-              Next →
-            </button>
-          ) : (
-            <button
-              className="btn submit"
-              onClick={() => {
-                console.log('Final Submit', formData);
-              }}
-            >
-              ❤️ Submit
-            </button>
-          )}
-        </div>
-      </div>) }
+      )}
     </div>
   );
 }
