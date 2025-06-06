@@ -1,96 +1,104 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Step1({ formData, handleChange, setFormData }) {
-  const [previews, setPreviews] = useState([]);
   const MAX_PHOTOS = 6;
+  const [previews, setPreviews] = useState([]);
+  const fileInputs = useRef([]);
 
-  // Load previews if returning to this step
   useEffect(() => {
     if (formData.photos?.length) {
       const urls = formData.photos.map((file) =>
         typeof file === "string" ? file : URL.createObjectURL(file)
-      
-      ); 
+      );
       setPreviews(urls);
     }
-  }, []);
+  }, [formData.photos]);
 
-  const handleImageUpload = (e) => {
-    const files = Array.from(e.target.files);
-    const total = (formData.photos?.length || 0) + files.length;
+  const handleImageSelect = (e, index) => {
+    const file = e.target.files[0];
+    if (!file) return;
 
-    if (total > MAX_PHOTOS) {
-      alert(`You can upload up to ${MAX_PHOTOS} photos.`);
-      return;
-    }
+    const newPhotos = [...(formData.photos || [])];
+    const newPreviews = [...previews];
 
-    const newPreviews = files.map((file) => URL.createObjectURL(file));
-    setPreviews((prev) => [...prev, ...newPreviews]);
-    setFormData((prev) => ({
-      ...prev,
-      photos: [...(prev.photos || []), ...files],
-    }));
+    newPhotos[index] = file;
+    newPreviews[index] = URL.createObjectURL(file);
+
+    setFormData({ ...formData, photos: newPhotos });
+    setPreviews(newPreviews);
   };
 
   const handleRemoveImage = (index) => {
+    const updatedPhotos = [...(formData.photos || [])];
     const updatedPreviews = [...previews];
-    const updatedPhotos = [...formData.photos];
 
-    updatedPreviews.splice(index, 1);
     updatedPhotos.splice(index, 1);
+    updatedPreviews.splice(index, 1);
 
-    setPreviews(updatedPreviews);
     setFormData({ ...formData, photos: updatedPhotos });
+    setPreviews(updatedPreviews);
   };
 
   return (
-    <div>
-      <h4 className="text-center text-xl font-semibold mb-2">Step 1 :</h4>
-      
-       <b className="text-info">Name : </b>
-      <input
-        name="name"
-        placeholder="Enter Your Name"
-        value={formData.name}
-        onChange={handleChange}
-        className="form-input w-full p-2 border rounded mb-1"
-      />
+    <div className="container mt-3">
+      <h4 className="text-center mb-3">Step 1 :</h4>
 
-      <p className="text-sm mb-6">This is how you'll appear on our website.</p>
-
-      {/* Image Upload */}
-      <div className="mb-4">
-        <b className="text-info">User Photos :</b>
+      <div className="mb-3">
+        <label className="form-label fw-bold text-primary">Name:</label>
         <input
-          type="file"
-          accept="image/*"
-          multiple 
-          onChange={handleImageUpload}
-          disabled={formData.photos?.length >= MAX_PHOTOS}
-          className="form-input border-none"
+          type="text"
+          className="form-control"
+          name="name"
+          placeholder="Enter Your Name"
+          value={formData.name}
+          onChange={handleChange}
         />
-        <p className="text-success">
-          Max {MAX_PHOTOS} images. You have uploaded {formData.photos?.length || 0}.
-        </p>
       </div>
 
-      {/* Preview Grid */}
-      <div className="mt-1 d-flex ">
-        {previews.map((src, index) => (
-          <div key={index} className="relative ">
-            <img
-              src={src}
-              alt={`preview-${index}`}
-              style={{height:"100px" , width:"100px"}}
-              className="object-cover rounded shadow"
+      <div className="mb-2 fw-bold text-primary">Upload Your Photos:</div>
+
+      <div className="d-flex flex-wrap gap-2" style={{ maxWidth: "330px" }}>
+        {[...Array(MAX_PHOTOS)].map((_, index) => (
+          <div
+            key={index}
+            className="position-relative border border-secondary rounded d-flex justify-content-center align-items-center bg-light"
+            style={{
+              width: "100px",
+              height: "100px",
+              cursor: "pointer",
+              overflow: "hidden",
+            }}
+            onClick={() => fileInputs.current[index]?.click()}
+          >
+            {previews[index] ? (
+              <>
+                <img
+                  src={previews[index]}
+                  alt={`preview-${index}`}
+                  className="w-100 h-100 object-fit-cover"
+                />
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleRemoveImage(index);
+                  }}
+                  className="btn btn-sm btn-danger position-absolute top-0 end-0 m-1 p-1 rounded-circle"
+                  title="Remove"
+                >
+                  ✕
+                </button>
+              </>
+            ) : (
+              <span className="fs-1 text-muted">+</span>
+            )}
+            <input
+              type="file"
+              accept="image/*"
+              style={{ display: "none" }}
+              ref={(el) => (fileInputs.current[index] = el)}
+              onChange={(e) => handleImageSelect(e, index)}
             />
-            <button
-        onClick={() => handleRemoveImage(index)}
-        className="absolute top-1 right-1   rounded-full px-2 py-0.5"
-      >
-        ✕
-      </button>
           </div>
         ))}
       </div>

@@ -116,7 +116,7 @@ const CoupleForm = () => {
                                     </div>
 
                                     <div className='FindPartnerbtnSec'>
-                                        <button type="submit" className="btn FindPartnerbtn " style={{ backgroundColor: "#A16EFF", color: "white" }}>
+                                        <button type="submit" className="btn FindPartnerbtn " style={{ backgroundColor: "var(--bg)", color: "white" }}>
                                             Find your partner
                                         </button>
                                     </div>
