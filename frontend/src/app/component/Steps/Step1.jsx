@@ -6,6 +6,14 @@ export default function Step1({ formData, handleChange, setFormData }) {
   const [previews, setPreviews] = useState([]);
   const fileInputs = useRef([]);
 
+  const handleAgeChange = (index, value) => {
+    const currentAgeRange = Array.isArray(formData.ageRange) && formData.ageRange.length === 2
+      ? [...formData.ageRange]
+      : [18, 30];
+    currentAgeRange[index] = value;
+    setFormData({ ...formData, ageRange: currentAgeRange });
+  };
+
   useEffect(() => {
     if (formData.photos?.length) {
       const urls = formData.photos.map((file) =>
@@ -54,20 +62,60 @@ export default function Step1({ formData, handleChange, setFormData }) {
           value={formData.name}
           onChange={handleChange}
         />
+
+         {/* adddeed email */}
+        <label className="form-label fw-bold text-primary mt-3 mb-0">Email:</label>
+      <input
+        name="email"
+        type="email"
+        placeholder="Enter your email"
+        value={formData.email}
+        onChange={handleChange}
+        className="form-input mb-6"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+      />
+
+      {/* added genderqwhb */}
+
+      {/* <div className="mb-6">
+        <label className="form-label fw-bold text-primary mt-3 mb-0">Prefered Age Range:</label>
+        <p className="mb-2">
+          Between {(formData.ageRange && formData.ageRange[0] !== undefined ? formData.ageRange[0] : 18)} and {(formData.ageRange && formData.ageRange[1] !== undefined ? formData.ageRange[1] : 30)}
+        </p>
+        <div className="flex items-center gap-9">
+          <input
+            type="range"
+            min="18"
+            max="100"
+            value={(formData.ageRange && formData.ageRange[0] !== undefined) ? formData.ageRange[0] : 18}
+            onChange={(e) => handleAgeChange(0, parseInt(e.target.value))}
+            className="w-full"
+          />
+          <input
+            type="range"
+            min="18"
+            max="100"
+            value={(formData.ageRange && formData.ageRange[1] !== undefined) ? formData.ageRange[1] : 30}
+            onChange={(e) => handleAgeChange(1, parseInt(e.target.value))}
+            className="w-full"
+          />
+        </div>
+      </div> */}
       </div>
 
-      <div className="mb-2 fw-bold text-primary">Upload Your Photos:</div>
+      <div className="mb-2 fw-bold text-primary ">Upload Your Photos:</div>
 
-      <div className="d-flex flex-wrap gap-2" style={{ maxWidth: "330px" }}>
+      <div className="d-flex flex-wrap gap-2 justify-content-center" style={{ maxWidth: "100%" }}>
         {[...Array(MAX_PHOTOS)].map((_, index) => (
           <div
             key={index}
-            className="position-relative border border-secondary rounded d-flex justify-content-center align-items-center bg-light"
+            className="position-relative rounded d-flex justify-content-center align-items-center bg-light border-dotted"
             style={{
               width: "100px",
               height: "100px",
               cursor: "pointer",
               overflow: "hidden",
+              border: "2px dashed #ccc",
             }}
             onClick={() => fileInputs.current[index]?.click()}
           >
