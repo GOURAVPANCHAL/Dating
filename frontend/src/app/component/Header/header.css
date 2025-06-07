@@ -15,7 +15,9 @@
     justify-content: center;
     height: auto;
 }
-
+.logoimg{
+    margin-left: 30px;
+}
 .nav-menu-header .nav-menu-ul {
     display: flex;
     justify-content: center;
