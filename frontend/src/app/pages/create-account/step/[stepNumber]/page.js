@@ -38,35 +38,28 @@ export default function StepPage() {
   const [stepNumber, setStepNumber] = useState(1);
   const [showConsent, setShowConsent] = useState(true);
 
-  // Step detection + consent check
+  // Detect step from URL
   useEffect(() => {
     const match = window?.location?.pathname.match(/step\/(\d+)/);
     const currentStep = match ? parseInt(match[1], 10) : 1;
     setStepNumber(currentStep);
 
-    const hasConsented = localStorage.getItem('hasConsented');
-    if (currentStep === 1 && !hasConsented) {
+    if (currentStep === 1) {
       setShowConsent(true);
+    } else {
+      setShowConsent(false);
     }
   }, []);
 
   const handleConsentAgree = () => {
-    localStorage.setItem('hasConsented', 'true');
     setShowConsent(false);
   };
 
-  const [formData, setFormData] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('formData');
-      return stored ? JSON.parse(stored) : {};
-    }
-    return {};
-  });
+  const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
     const updated = { ...formData, [e.target.name]: e.target.value };
     setFormData(updated);
-    localStorage.setItem('formData', JSON.stringify(updated));
   };
 
   const StepComponent = steps[stepNumber];
@@ -137,7 +130,7 @@ export default function StepPage() {
                 }}
               >
                 ❤️ Submit
-              </button>  
+              </button>
             )}
           </div>
         </div>

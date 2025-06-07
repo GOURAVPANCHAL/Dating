@@ -121,7 +121,8 @@ const FindDetails = () => {
     return (
         <section className="profile-match-detail-sec">
             <div className="container">
-                <div className="my-profile-section">
+             
+               <div className="my-profile-section">
                     <div className="myprofile-main">
                         <div className="ribbon"> ₹ 6000</div>
                         <div className="row">
@@ -326,7 +327,7 @@ const FindDetails = () => {
                 <div className="suggested-profiles" ref={suggestedRef}>
                     <SuggestedProfiles />
                 </div>
-            </div>
+               </div>
         </section>
     );
 };
