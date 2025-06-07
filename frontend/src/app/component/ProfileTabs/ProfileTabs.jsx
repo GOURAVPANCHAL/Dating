@@ -8,6 +8,7 @@ import NotificationsPage from '@/app/pages/notifications/page';
 import ProfileSetting from '../ProfileSetting/ProfileSetting';
 import ChatingPage from '../Chating/ChatingPage';
 import Friendlist from '../Friendlist/Friendlist';
+import ConnectedFriends from '../ConnectedFriends/ConnectedFriends';
 
 const ProfileTabs = () => {
   const searchParams = useSearchParams();
@@ -28,9 +29,16 @@ const ProfileTabs = () => {
       case 'friend list':
         return (
           <>
-            <Friendlist />
+            <Friendlist/>
           </>
         );
+
+      case 'connected-friends':
+        return(
+          <>
+          <ConnectedFriends/>
+          </>
+        );  
       case 'message':
         return (
           <>
@@ -58,12 +66,13 @@ const ProfileTabs = () => {
       <div className="container-fluid mt-4">
         <div className="row">
           {/* Sidebar */}
-          <div className="col-md-3">
+          <div className="col-md-3"> 
             <div className='profile-tabs-bg'>
               <div className="list-group">
                 {[
                   { key: 'my-profile', label: 'My Profile', icon: 'bi-person-circle' },
                   { key: 'friend list', label: 'Friend List', icon: 'bi-people-fill' },
+                  { key: 'connected-friends', label: 'My Booking', icon: 'bi-people-fill' },
                   { key: 'message', label: 'Message', icon: 'bi-chat-left-text' },
                   { key: 'notification', label: 'Notification', icon: 'bi-bell-fill' },
                   { key: 'users', label: 'Users', icon: 'bi-person-lines-fill' },

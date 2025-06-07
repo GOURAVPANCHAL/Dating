@@ -116,7 +116,10 @@ const SubscriptionPage = () => {
                   <li key={`d-${i}`}><span className="cross">✗</span> {feature}</li>
                 ))}
               </ul>
-              <button className="btn-plan">Get this plan</button>
+              <Link href="/pages/payment-section">
+                <button className="btn-plan">Get this plan</button>
+              </Link>
+
             </div>
           ))}
         </div>

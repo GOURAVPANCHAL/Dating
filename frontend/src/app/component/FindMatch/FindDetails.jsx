@@ -118,6 +118,65 @@ const FindDetails = () => {
 
   if (!profileDetail) {
     return (
+
+        <section className="profile-match-detail-sec">
+            <div className="container">
+             
+               <div className="my-profile-section">
+                    <div className="myprofile-main">
+                        <div className="ribbon"> ₹ 6000</div>
+                        <div className="row">
+                            <div className="col-md-4">
+                                <div className="my-main-image">
+                                    <Image
+                                        src={image}
+                                        className="img-fluid"
+                                        alt="profile-image"
+                                    />
+                                </div>
+                            </div>
+                            <div className="col-md-8">
+                                {profileDetail.map((item, index) => (
+                                    <div key={index} className="myprofile-content">
+                                        <h4 className="profile-name">
+                                            {item.name}, <span>{item.age}</span>
+                                            <span>
+                                                <i className="bi bi-patch-check text-success"></i>
+                                            </span>
+                                        </h4>
+                                        <div className="like-dislike-btn">
+                                            <button
+                                                className={
+                                                    activeBtn === "like" ? "active like-btn" : "like-btn"
+                                                }
+                                                onClick={() => setActiveBtn("like")}
+                                            >
+                                                <i className="bi bi-hand-thumbs-up"></i>
+                                            </button>
+                                            <button
+                                                className={
+                                                    activeBtn === "dislike"
+                                                        ? "active dislike-btn"
+                                                        : "dislike-btn"
+                                                }
+                                                onClick={() => setActiveBtn("dislike")}
+                                            >
+                                                <i className="bi bi-hand-thumbs-down"></i>
+                                            </button>
+                                        </div>
+                                        <p className="profile-location">
+                                            <i className="bi bi-geo-alt"></i> {item.country},{" "}
+                                            {item.state}
+                                        </p>
+                                        <p className="profile-description">{item.description}</p>
+                                        <ul className="profile-interest">
+                                            {item.interest.map((interest, i) => (
+                                                <li key={i}>{interest}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+
       <section className="profile-match-detail-sec text-center py-5">
         <div className="container">
           <p>Profile details not available.</p>
@@ -155,6 +214,7 @@ const FindDetails = () => {
   ];
   const leftItems = aboutInfo.slice(1, 6);
   const rightItems = aboutInfo.slice(6);
+
 
   return (
     <section className="profile-match-detail-sec">
@@ -451,6 +511,14 @@ const FindDetails = () => {
             </div>
           )}
 
+
+                <div className="suggested-profiles" ref={suggestedRef}>
+                    <SuggestedProfiles />
+                </div>
+               </div>
+        </section>
+    );
+
           <div className="profile-about-section">
             <h5 className="mb-3 font-semibold">About</h5>
             <div className="row">
@@ -480,6 +548,7 @@ const FindDetails = () => {
       </div>
     </section>
   );
+
 };
 
 export default FindDetails;

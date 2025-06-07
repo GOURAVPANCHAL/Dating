@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import { useState } from "react";
 import './payment.css';
 import { FaCreditCard, FaGooglePay, FaApplePay, FaRupeeSign, FaLock } from "react-icons/fa";
@@ -158,8 +158,6 @@ const Payment = () => {
                     </form>
                 </div>
             </div>
-
-
         </>
     );
 };
