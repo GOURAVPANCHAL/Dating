@@ -1,76 +1,75 @@
 "use client";
 import { useState } from "react";
+import "../Steps/step2.css";
 
-export default function Step2({ formData, handleChange, setFormData }) {
-  const handleInterestChange = (interest) => {
-    setFormData({ ...formData, interestedIn: interest });
-  };
-
-  const handleAgeChange = (index, value) => {
-    const updatedAgeRange = [...formData.ageRange];
-    updatedAgeRange[index] = value;
-    setFormData({ ...formData, ageRange: updatedAgeRange });
+export default function Step2({ formData, setFormData }) {
+  const handleChange = (field, value) => {
+    setFormData({ ...formData, [field]: value });
   };
 
   return (
-    <div>
-      {/* <h5>Email:</h5>
-      <input
-        name="email"
-        type="email"
-        placeholder="Enter your email"
-        value={formData.email}
-        onChange={handleChange}
-        className="form-input mb-6"
-      /> */}
+    <div className="step2-wrapper">
+      <div className="step2-header">
+        <h2 className="step2-title">Let’s Get to Know You</h2>
+        <p className="step2-subtitle">Answer a few fun questions to personalize your profile.</p>
+      </div>
 
-      {/* Interested In */}
-      {/* <div className="mb-6">
-          <b className="">I'm interested in...</b>
-        <div className="flex gap-2">
-          {["Women", "Men", "Everyone"].map((label) => (
-            <button
-              key={label}
-              type="button"
-              onClick={() => handleInterestChange(label)}
-              className={`px-6 m-2 py-2  rounded border ${
-                formData.interestedIn === label
-                  ? "bg-warning text-white"
-                  : "bg-info text-black"
-              }`}
-            style={{width:"120px"}}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-      </div> */}
+      {/* Perfect Weekend */}
+      <div className="step2-field">
+        <label className="step2-label">What’s your idea of a perfect weekend?</label>
+        <textarea
+          value={formData.weekend || ""}
+          onChange={(e) => handleChange("weekend", e.target.value)}
+          placeholder="e.g., Netflix, hiking, beach, gaming..."
+          className="step2-textarea"
+          rows={3}
+        />
+      </div>
 
-      {/* Age Range */}
-      {/* <div className="mb-6">
-        <b>Age</b>
-        <p className="mb-2">
-          Between {formData.ageRange?.[0] || 18} and {formData.ageRange?.[1] || 30}
-        </p>
-        <div className="flex items-center gap-4">
-          <input
-            type="range"
-            min="18"
-            max="100"
-            value={formData.ageRange?.[0] || 18}
-            onChange={(e) => handleAgeChange(0, parseInt(e.target.value))}
-            className="w-full"
-          />
-          <input
-            type="range"
-            min="18"
-            max="100"
-            value={formData.ageRange?.[1] || 30}
-            onChange={(e) => handleAgeChange(1, parseInt(e.target.value))}
-            className="w-full"
-          />
-        </div>
-      </div> */}
+      {/* Communication Style */}
+      <div className="step2-field">
+        <label className="step2-label">How do you usually communicate?</label>
+        <select
+          value={formData.communicationStyle || ""}
+          onChange={(e) => handleChange("communicationStyle", e.target.value)}
+          className="step2-select"
+        >
+          <option value="">Select one</option>
+          <option value="texts">Texts</option>
+          <option value="calls">Phone calls</option>
+          <option value="video">Video chats</option>
+          <option value="inPerson">In-person only</option>
+        </select>
+      </div>
+
+      {/* Love Language */}
+      <div className="step2-field">
+        <label className="step2-label">What’s your love language?</label>
+        <select
+          value={formData.loveLanguage || ""}
+          onChange={(e) => handleChange("loveLanguage", e.target.value)}
+          className="step2-select"
+        >
+          <option value="">Choose one</option>
+          <option value="words">Words of Affirmation</option>
+          <option value="time">Quality Time</option>
+          <option value="gifts">Receiving Gifts</option>
+          <option value="acts">Acts of Service</option>
+          <option value="touch">Physical Touch</option>
+        </select>
+      </div>
+
+      {/* Dealbreaker */}
+      <div className="step2-field">
+        <label className="step2-label">What’s a total dealbreaker for you?</label>
+        <textarea
+          value={formData.dealbreaker || ""}
+          onChange={(e) => handleChange("dealbreaker", e.target.value)}
+          placeholder="e.g., dishonesty, poor hygiene, etc."
+          className="step2-textarea step2-danger"
+          rows={3}
+        />
+      </div>
     </div>
   );
 }
