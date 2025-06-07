@@ -158,7 +158,7 @@
 
 
   .contentSec p{
-    color: #A16EFF;
+    color: var(--bg);
  margin:0px;  
 
 }
