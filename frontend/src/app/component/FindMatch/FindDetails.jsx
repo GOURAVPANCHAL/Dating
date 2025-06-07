@@ -12,7 +12,7 @@ import pic3 from "../../Images/user/user3.jpeg";
 import pic4 from "../../Images/user/user4.jpeg";
 import pic5 from "../../Images/user/user5.jpeg";
 import pic6 from "../../Images/user/user6.jpeg";
-import pic7 from "../../Images/user/user2.jpeg";
+import pic7 from "../../Images/user/user2.jpeg"; // Note: This is a duplicate of pic2
 import pic8 from "../../Images/user/user8.jpeg";
 import pic9 from "../../Images/user/user9.jpeg";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -36,18 +36,18 @@ const FindDetails = () => {
   const [showSuggested, setShowSuggested] = useState(false);
   const suggestedRef = useRef(null);
 
- const handleCancelDate = () => {
-  // Reset everything
-  setDate("");
-  setTime("");
-  setPlace("");
-  setVibe("");
-  setSurprise("");
-  setNote("");
-  setShowBooking(false);
-  setThankYou(false);
-  setCurrentStep(1);
-};
+  const handleCancelDate = () => {
+    // Reset everything
+    setDate("");
+    setTime("");
+    setPlace("");
+    setVibe("");
+    setSurprise("");
+    setNote("");
+    setShowBooking(false);
+    setThankYou(false);
+    setCurrentStep(1);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -71,28 +71,31 @@ const FindDetails = () => {
   const handleToggle = () => setFriend((prev) => !prev);
 
   const handleBooking = () => {
-  setShowBooking(true);
-  setCurrentStep(1);
-};
+    setShowBooking(true);
+    setCurrentStep(1);
+  };
+
   const handleClose = () => {
     setShowBooking(false);
     setThankYou(false);
     setDate("");
     setPlace("");
+    setTime(""); // Reset time as well
+    setVibe("");
+    setSurprise("");
+    setNote("");
+    setCurrentStep(1); // Reset step
   };
-  const handleSubmit = () => {
-    if (!date || !place) {
-      alert("Please fill in both the date and meeting place.");
-      return;
-    }
 
-    if (!surprise || !note) {
-      alert("Please complete the special plans and preferences.");
+  const handleSubmit = () => {
+    if (!date || !place || !time || !vibe || !surprise || !note) {
+      alert("Please fill in all booking details.");
       return;
     }
     setThankYou(true);
     setTimeout(() => {
       setShowBooking(false);
+      handleCancelDate(); // Reset form after showing thank you
     }, 3000);
   };
 
@@ -116,74 +119,6 @@ const FindDetails = () => {
     },
   ];
 
-  if (!profileDetail) {
-    return (
-
-        <section className="profile-match-detail-sec">
-            <div className="container">
-             
-               <div className="my-profile-section">
-                    <div className="myprofile-main">
-                        <div className="ribbon"> ₹ 6000</div>
-                        <div className="row">
-                            <div className="col-md-4">
-                                <div className="my-main-image">
-                                    <Image
-                                        src={image}
-                                        className="img-fluid"
-                                        alt="profile-image"
-                                    />
-                                </div>
-                            </div>
-                            <div className="col-md-8">
-                                {profileDetail.map((item, index) => (
-                                    <div key={index} className="myprofile-content">
-                                        <h4 className="profile-name">
-                                            {item.name}, <span>{item.age}</span>
-                                            <span>
-                                                <i className="bi bi-patch-check text-success"></i>
-                                            </span>
-                                        </h4>
-                                        <div className="like-dislike-btn">
-                                            <button
-                                                className={
-                                                    activeBtn === "like" ? "active like-btn" : "like-btn"
-                                                }
-                                                onClick={() => setActiveBtn("like")}
-                                            >
-                                                <i className="bi bi-hand-thumbs-up"></i>
-                                            </button>
-                                            <button
-                                                className={
-                                                    activeBtn === "dislike"
-                                                        ? "active dislike-btn"
-                                                        : "dislike-btn"
-                                                }
-                                                onClick={() => setActiveBtn("dislike")}
-                                            >
-                                                <i className="bi bi-hand-thumbs-down"></i>
-                                            </button>
-                                        </div>
-                                        <p className="profile-location">
-                                            <i className="bi bi-geo-alt"></i> {item.country},{" "}
-                                            {item.state}
-                                        </p>
-                                        <p className="profile-description">{item.description}</p>
-                                        <ul className="profile-interest">
-                                            {item.interest.map((interest, i) => (
-                                                <li key={i}>{interest}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                ))}
-
-      <section className="profile-match-detail-sec text-center py-5">
-        <div className="container">
-          <p>Profile details not available.</p>
-        </div>
-      </section>
-    );
-  }
   const profileImages = [
     pic,
     pic1,
@@ -196,6 +131,7 @@ const FindDetails = () => {
     pic8,
     pic9,
   ];
+
   const aboutInfo = [
     {
       information:
@@ -215,7 +151,18 @@ const FindDetails = () => {
   const leftItems = aboutInfo.slice(1, 6);
   const rightItems = aboutInfo.slice(6);
 
+  // If profileDetail is empty, show a message
+  if (!profileDetail || profileDetail.length === 0) {
+    return (
+      <section className="profile-match-detail-sec text-center py-5">
+        <div className="container">
+          <p>Profile details not available.</p>
+        </div>
+      </section>
+    );
+  }
 
+  // Main render for the component
   return (
     <section className="profile-match-detail-sec">
       <div className="container">
@@ -290,7 +237,7 @@ const FindDetails = () => {
                     ) : (
                       <>
                         {" "}
-                        <i className="bi  bi-person-add fs-4"></i>
+                        <i className="bi bi-person-add fs-4"></i>
                       </>
                     )}
                   </button>
@@ -298,39 +245,36 @@ const FindDetails = () => {
                     <span
                       className="justify-content-center text-light pb-3"
                       style={{ fontSize: "18px" }}
-                    >
-                      {" "}
-                    </span>
+                    ></span>
                     <i className="bi bi-chat-left-dots text-light fs-5"></i>
                   </button>
 
-
-
                   <div>
-  {!thankYou ? (
-    <button className="Bookingbtn" onClick={handleBooking}>
-      <span
-        className="justify-content-center text-light pb-3"
-        style={{ fontSize: "18px" }}
-      >
-        Let's Date
-      </span>
-    </button>
-  ) : (
-    <button className="Bookingbtn cancel" onClick={handleCancelDate}>
-      <span
-        className="justify-content-center text-light pb-3"
-        style={{ fontSize: "18px", color: "red" }}
-      >
-        Cancel Date
-      </span>
-    </button>
-  )}
-</div>
-</div>
+                    {!thankYou ? (
+                      <button className="Bookingbtn" onClick={handleBooking}>
+                        <span
+                          className="justify-content-center text-light pb-3"
+                          style={{ fontSize: "18px" }}
+                        >
+                          Let's Date
+                        </span>
+                      </button>
+                    ) : (
+                      <button className="Bookingbtn cancel" onClick={handleCancelDate}>
+                        <span
+                          className="justify-content-center text-light pb-3"
+                          style={{ fontSize: "18px", color: "red" }}
+                        >
+                          Cancel Date
+                        </span>
+                      </button>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
           <div className="profile-own-images-sec">
             <div className="own-profile-images">
               <h5 className="mb-3 font-semibold">Photos</h5>
@@ -511,14 +455,6 @@ const FindDetails = () => {
             </div>
           )}
 
-
-                <div className="suggested-profiles" ref={suggestedRef}>
-                    <SuggestedProfiles />
-                </div>
-               </div>
-        </section>
-    );
-
           <div className="profile-about-section">
             <h5 className="mb-3 font-semibold">About</h5>
             <div className="row">
@@ -548,7 +484,6 @@ const FindDetails = () => {
       </div>
     </section>
   );
-
 };
 
 export default FindDetails;
