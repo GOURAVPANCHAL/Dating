@@ -88,16 +88,15 @@ const FindDetails = () => {
   };
 
   const handleSubmit = () => {
-    if (!date || !place || !time || !vibe || !surprise || !note) {
-      alert("Please fill in all booking details.");
-      return;
-    }
-    setThankYou(true);
-    setTimeout(() => {
-      setShowBooking(false);
-      handleCancelDate(); // Reset form after showing thank you
-    }, 3000);
-  };
+  // Validate final step fields if needed
+  if (!surprise || !note) {
+    alert("Please fill all fields before submitting.");
+    return;
+  }
+  setThankYou(true);  // Mark booking as done
+  setShowBooking(false); // Close popup
+};
+
 
   const profileDetail = [
     {
@@ -250,26 +249,32 @@ const FindDetails = () => {
                   </button>
 
                   <div>
-                    {!thankYou ? (
-                      <button className="Bookingbtn" onClick={handleBooking}>
-                        <span
-                          className="justify-content-center text-light pb-3"
-                          style={{ fontSize: "18px" }}
-                        >
-                          Let's Date
-                        </span>
-                      </button>
-                    ) : (
-                      <button className="Bookingbtn cancel" onClick={handleCancelDate}>
-                        <span
-                          className="justify-content-center text-light pb-3"
-                          style={{ fontSize: "18px", color: "red" }}
-                        >
-                          Cancel Date
-                        </span>
-                      </button>
-                    )}
-                  </div>
+  {!thankYou ? (
+    <button className="Bookingbtn" onClick={() => {
+      setShowBooking(true);
+      setCurrentStep(1);
+    }}>
+      <span style={{ fontSize: "18px" }}>Let's Date</span>
+    </button>
+  ) : (
+    <button
+      className="Bookingbtn cancel"
+      onClick={() => {
+        // Your cancel logic here
+        setThankYou(false);
+        setDate("");
+        setTime("");
+        setPlace("");
+        setVibe("");
+        setSurprise("");
+        setNote("");
+      }}
+    >
+      <span style={{ fontSize: "18px", color: "red" }}>Cancel Date</span>
+    </button>
+  )}
+</div>
+
                 </div>
               </div>
             </div>
@@ -422,7 +427,7 @@ const FindDetails = () => {
                         <button
                           className="booking-btn next"
                           onClick={() => {
-                            // Validate current step before moving forward
+                            
                             if (currentStep === 1 && (!date || !time)) {
                               alert(
                                 "Please fill date and time before proceeding."
@@ -454,6 +459,8 @@ const FindDetails = () => {
               </div>
             </div>
           )}
+
+          {/* wqhlduiWIDQWILHWUL */}
 
           <div className="profile-about-section">
             <h5 className="mb-3 font-semibold">About</h5>
