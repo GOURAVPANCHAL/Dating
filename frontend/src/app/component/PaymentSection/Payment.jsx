@@ -138,7 +138,7 @@ const Payment = () => {
                 <div className="payment-box">
                     <h2>3. Finish the Payment</h2>
                     <div className="secure-note">
-                        <FaLock /> <span>Anonymous and Secure Payment</span>
+                        <FaLock /> <span>Anonymous and Secure Payment</span>   
                     </div>
                     <p className="summary">
                         {plans.find(p => p.key === plan).duration} VIP Membership for <span>₹{plans.find(p => p.key === plan).price}</span>
