@@ -114,11 +114,14 @@ const Header = () => {
         {
           title: "Our Services",
           links: [
-            { label: "FAQ", href: "/pages/faq" },
-            { label: "UI/UX Design", href: "/services/ui-ux" },
-            { label: "SEO Optimization", href: "/services/seo" },
-            { label: "E-commerce Solutions", href: "/services/ecommerce" },
-          ]
+        // { label: "Profile Verification", href: "/services/profile-verification" },
+        // { label: "Matchmaking", href: "/services/matchmaking" },
+        // { label: "Relationship Coaching", href: "/services/relationship-coaching" },
+        { label: "Privacy & Safety", href: "/services/privacy-safety" },
+        { label: "VIP Membership", href: "/services/vip-membership" },
+        { label: "Dating Events", href: "/services/events" },
+        { label: "FAQ", href: "/pages/faq" }
+      ]
         }
       ]
     },

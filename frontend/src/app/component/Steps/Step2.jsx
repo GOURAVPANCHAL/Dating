@@ -14,7 +14,7 @@ export default function Step2({ formData, handleChange, setFormData }) {
 
   return (
     <div>
-      <h5>Email:</h5>
+      {/* <h5>Email:</h5>
       <input
         name="email"
         type="email"
@@ -22,10 +22,10 @@ export default function Step2({ formData, handleChange, setFormData }) {
         value={formData.email}
         onChange={handleChange}
         className="form-input mb-6"
-      />
+      /> */}
 
       {/* Interested In */}
-      <div className="mb-6">
+      {/* <div className="mb-6">
           <b className="">I'm interested in...</b>
         <div className="flex gap-2">
           {["Women", "Men", "Everyone"].map((label) => (
@@ -44,10 +44,10 @@ export default function Step2({ formData, handleChange, setFormData }) {
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Age Range */}
-      <div className="mb-6">
+      {/* <div className="mb-6">
         <b>Age</b>
         <p className="mb-2">
           Between {formData.ageRange?.[0] || 18} and {formData.ageRange?.[1] || 30}
@@ -70,7 +70,7 @@ export default function Step2({ formData, handleChange, setFormData }) {
             className="w-full"
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
