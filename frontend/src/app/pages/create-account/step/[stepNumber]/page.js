@@ -17,6 +17,7 @@ import Step9 from '@/app/component/Steps/Step9';
 import Step10 from '@/app/component/Steps/Step10';
 import Step11 from '@/app/component/Steps/Step11';
 import Step12 from '@/app/component/Steps/Step12';
+import Step13 from '@/app/component/Steps/Step13';
 
 const steps = {
   1: Step1,
@@ -31,6 +32,7 @@ const steps = {
   10: Step10,
   11: Step11,
   12: Step12,
+  13: Step13,
 };
 
 export default function StepPage() {
@@ -38,35 +40,28 @@ export default function StepPage() {
   const [stepNumber, setStepNumber] = useState(1);
   const [showConsent, setShowConsent] = useState(true);
 
-  // Step detection + consent check
+  // Detect step from URL
   useEffect(() => {
     const match = window?.location?.pathname.match(/step\/(\d+)/);
     const currentStep = match ? parseInt(match[1], 10) : 1;
     setStepNumber(currentStep);
 
-    const hasConsented = localStorage.getItem('hasConsented');
-    if (currentStep === 1 && !hasConsented) {
+    if (currentStep === 1) {
       setShowConsent(true);
+    } else {
+      setShowConsent(false);
     }
   }, []);
 
   const handleConsentAgree = () => {
-    localStorage.setItem('hasConsented', 'true');
     setShowConsent(false);
   };
 
-  const [formData, setFormData] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('formData');
-      return stored ? JSON.parse(stored) : {};
-    }
-    return {};
-  });
+  const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
     const updated = { ...formData, [e.target.name]: e.target.value };
     setFormData(updated);
-    localStorage.setItem('formData', JSON.stringify(updated));
   };
 
   const StepComponent = steps[stepNumber];
@@ -137,7 +132,7 @@ export default function StepPage() {
                 }}
               >
                 ❤️ Submit
-              </button>  
+              </button>
             )}
           </div>
         </div>
