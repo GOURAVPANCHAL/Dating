@@ -88,7 +88,7 @@ const Header = () => {
             { label: "Community Activity", href: "/pages/create-account/step/page" },
             { label: "Recent Groups", href: "/pages/payment-section" },
             { label: "Single Group", href: "/about" },
-            { label: "Members", href: "/about" },
+            { label: "Members", href: "/pages/purpose" },
             { label: "About Us", href: "/pages/about-us" },
           ]
         },

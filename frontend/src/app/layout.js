@@ -55,7 +55,7 @@
             </div>
           ) : isVerified === true ? ( */}
             <div>
-              {renderHeader()}
+              {renderHeader()}          
               {children}
               <Footer />
             </div>

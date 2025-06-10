@@ -48,12 +48,94 @@ const ConnectedFriends = () => {
   };
 
   return (
-    <section className="meetings-section container">
+
+    <>
+<section>
+    <h3 className='text-center HeadingSec'>Active / Upcoming Booking</h3>
+    <div className='UpcomingBookingSec'>
+      <div className='BookingMainSec'>
+        <div className='container m-1'>
+        
+        <div className="row">
+        {originalProfiles.map((item, index) => (
+          <div key={index} className="col-md-3 col-6">
+            <div className='ConnectedFriends-match-card position-relative'>
+            <div className="premium-ribbon">Premium</div>
+  
+              {/* ConnectedFriends Link */}
+              <Link href={'/pages/find-match/id'} className='ConnectedFriends-match-link'>
+                <div className="ConnectedFriends-image-wrapper">
+                  <Image src={item.picture} alt={item.name} className="ConnectedFriends-img" />
+                </div>
+                <div className="ConnectedFriends-info">
+                  <h4 className="name-price mb-1">
+                    {item.name}, <span className="price-tag">₹{item.Price}</span>
+                  </h4>
+                  <p className="profession mb-2">
+                    <i className="bi bi-briefcase-fill me-1"></i>{item.State}
+                  </p>
+                  <div className="ConnectedFriends-meta text-start">
+                    <div className="mb-1">
+                      <span className="label">📅 Date:</span> {item.Date}
+                      <span className="label ms-2">🕒 Time:</span> {item.Time}
+                    </div>
+                    <div className="mb-1">
+                      <span className="label">🏙️ City:</span> {item.City}
+                    </div>
+                    <div>
+                      <span className="label">📍 Location:</span> {item.Location}
+                    </div>
+                  </div>
+
+                  {/* ⭐ Rating and Rebook */}
+                  <div className="rating-booking-wrapper mt-2 px-2">
+                    <div className="star-rating mb-2">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <i
+                          key={star}
+                          className={`bi ${ratings[item.id] >= star ? 'bi-star-fill' : 'bi-star'} star-icon`}
+                          style={{ cursor: 'pointer', color: ratings[item.id] >= star ? '#f1c40f' : '#ccc' }}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleRating(item.id, star);
+                          }}
+                        ></i>
+                      ))}
+                    </div>
+                    <button className="btn btn-sm btn-primary rebook-btn">Rebook Again</button>
+                  </div>
+
+                </div>
+              </Link>
+
+              {/* Avatar and Online Dot */}
+              <div className="bottom-avatar">
+                <Image src={item.picture} alt="small" className="avatar-img" />
+              </div>
+              <div className={`online-offline-dot ${item.isOnline ? 'green' : 'red'}`}></div>
+            </div>
+          </div>
+        ))}
+      </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+</section>
+
+
+
+    <section className="meetings-sec container">
       <h2 className="meetings-heading mt-3">💖 People I Met</h2>
       <div className="row">
         {originalProfiles.map((item, index) => (
           <div key={index} className="col-md-3 col-6">
-            <div className='profile-match-card position-relative'>
+            <div className='ConnectedFriends-match-card position-relative'>
             <div className="premium-ribbon">Premium</div>
               {/* Dropdown menu */}
               {/* <div className="dropdown-menu-wrapper">
@@ -77,19 +159,19 @@ const ConnectedFriends = () => {
                 </div>
               </div> */}
 
-              {/* Profile Link */}
-              <Link href={'/pages/find-match/id'} className='profile-match-link'>
-                <div className="profile-image-wrapper">
-                  <Image src={item.picture} alt={item.name} className="profile-img" />
+              {/* ConnectedFriends Link */}
+              <Link href={'/pages/find-match/id'} className='ConnectedFriends-match-link'>
+                <div className="ConnectedFriends-image-wrapper">
+                  <Image src={item.picture} alt={item.name} className="ConnectedFriends-img" />
                 </div>
-                <div className="profile-info">
+                <div className="ConnectedFriends-info">
                   <h4 className="name-price mb-1">
                     {item.name}, <span className="price-tag">₹{item.Price}</span>
                   </h4>
                   <p className="profession mb-2">
                     <i className="bi bi-briefcase-fill me-1"></i>{item.State}
                   </p>
-                  <div className="profile-meta text-start">
+                  <div className="ConnectedFriends-meta text-start">
                     <div className="mb-1">
                       <span className="label">📅 Date:</span> {item.Date}
                       <span className="label ms-2">🕒 Time:</span> {item.Time}
@@ -133,6 +215,7 @@ const ConnectedFriends = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 

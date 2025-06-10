@@ -9,6 +9,7 @@ import ProfileSetting from '../ProfileSetting/ProfileSetting';
 import ChatingPage from '../Chating/ChatingPage';
 import Friendlist from '../Friendlist/Friendlist';
 import ConnectedFriends from '../ConnectedFriends/ConnectedFriends';
+import Wishlist from '../Wishlist/Wishlist';
 
 const ProfileTabs = () => {
   const searchParams = useSearchParams();
@@ -45,6 +46,14 @@ const ProfileTabs = () => {
             <ChatingPage />
           </>
         );
+
+        case 'Wishlist':
+          return (
+            <>
+              <Wishlist/>
+            </>
+          );
+
       case 'notification':
         return <NotificationsPage />;
       case 'users':
@@ -74,6 +83,7 @@ const ProfileTabs = () => {
                   { key: 'friend list', label: 'Friend List', icon: 'bi-people-fill' },
                   { key: 'connected-friends', label: 'My Booking', icon: 'bi-people-fill' },
                   { key: 'message', label: 'Message', icon: 'bi-chat-left-text' },
+                  { key: 'Wishlist', label: 'Wishlist', icon: 'bi-chat-left-text' },
                   { key: 'notification', label: 'Notification', icon: 'bi-bell-fill' },
                   { key: 'users', label: 'Users', icon: 'bi-person-lines-fill' },
                   { key: 'setting', label: 'Setting', icon: 'bi-gear-fill' },

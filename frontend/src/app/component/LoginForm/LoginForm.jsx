@@ -59,15 +59,16 @@ export default function LoginForm() {
     };
 
     return (
-        <div className="d-flex justify-content-center align-items-center vh-100 login-bg">
+        <div className="d-flex justify-content-end align-items-center vh-100 login-bg pe-5">
+
             <div className="card login-card">
                 <div className="card-header text-center login-header">
-                    <h5 className="m-0">LOGIN</h5>
+                    <h5 className="m-0 text-dark">LOGIN</h5>
                 </div>
                 <div className="card-body login-body">
                     <form onSubmit={handleSubmit} noValidate>
                         <div className="mb-3">
-                            <label className="form-label">Username or Email</label>
+                            <label className="form-label ">Username or Email</label>
                             <input
                                 type="email"
                                 name="email"
@@ -79,7 +80,7 @@ export default function LoginForm() {
                         </div>
 
                         <div className="mb-3">
-                            <label className="form-label">Password</label>
+                            <label className="form-label ">Password</label>
                             <input
                                 type="password"
                                 name="password"
@@ -98,7 +99,7 @@ export default function LoginForm() {
                                 checked={formData.remember}
                                 onChange={handleChange}
                             />
-                            <label className="form-check-label">Remember Me</label>
+                            <label className="form-check-label ">Remember Me</label>
                         </div>
 
                         <div className="d-flex justify-content-between">
