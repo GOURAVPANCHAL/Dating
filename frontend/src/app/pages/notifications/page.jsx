@@ -375,7 +375,7 @@ export default function NotificationsPage(){
 
           <div className="d-flex justify-content-between align-items-center">
             <h1>
-              <Bell size={24} />
+              <Bell size={24} />        
               Notifications
               {hasUnread && (
                 <span className="notification-count-badge">

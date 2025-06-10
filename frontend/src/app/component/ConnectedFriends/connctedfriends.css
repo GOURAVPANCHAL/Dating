@@ -1,5 +1,5 @@
-/* Profile Card Styles */
-.profile-match-card {
+/* ConnectedFriends Card Styles */
+.ConnectedFriends-match-card {
   position: relative;
   border-radius: 2rem;
   background: white;
@@ -10,7 +10,7 @@
   overflow: visible;
   margin-bottom: 2rem;
 }
-.profile-match-card {
+.ConnectedFriends-match-card {
   position: relative;
   /* This keeps all child elements inside */
 }
@@ -32,35 +32,39 @@
   padding: 4px 0;
   pointer-events: none;
 }
-
-.profile-image-wrapper {
+.BookingMainSec{
+  border:solid 5px var(--bg);
+  border-radius: 40px;
+  padding:20px;
+}
+.ConnectedFriends-image-wrapper {
   width: 100%;
   overflow: hidden;
   border-radius: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.profile-img {
+.ConnectedFriends-img {
   width: 100%;
-  height: 250px;
+  height: 170px;
   object-fit: cover;
-  border-radius: 1.5rem;
+  border-radius: 1.5rem; 
 }
 
-.profile-info h4 {
+.ConnectedFriends-info h4 {
   font-size: 18px;
   font-weight: 600;
   color: var(--bg);
   margin-bottom: 0.3rem;
 }
 
-.profile-info .profession {
+.ConnectedFriends-info .profession {
   font-size: 0.9rem;
   color: #777;
   margin: 0.2rem 0;
 }
 
-.profile-match-link {
+.ConnectedFriends-match-link {
   text-decoration: none;
 }
 
@@ -182,14 +186,17 @@
 }
 
 /* Meetings section specific styles */
-.meetings-section {
+.meetings-sec {
   background-color: rgb(236 229 230);
   padding: 2rem 0;
 }
 .table-content-overflow::-webkit-scrollbar{
  display: none;
 }
-
+.HeadingSec{
+  color: #e91e63;
+  margin:20px;
+}
 .meetings-heading {
   color: var(--bg);
   font-weight: 600;
@@ -197,7 +204,7 @@
   text-align: center;
 }
 
-.profile-info {
+.ConnectedFriends-info {
   padding: 0.5rem 0;
 }
 
@@ -222,13 +229,13 @@
   color: #666;
 }
 
-.profile-meta {
+.ConnectedFriends-meta {
   font-size: 0.8rem;
   color: #444;
   line-height: 1.5;
 }
 
-.profile-meta .label {
+.ConnectedFriends-meta .label {
   color: #888;
   font-weight: 500;
 }
@@ -236,20 +243,20 @@
 
 /* Responsive styles */
 @media only screen and (max-width: 768px) {
-  .profile-img {
+  .ConnectedFriends-img {
     height: 100px;
   }
 
-  .profile-match-card {
+  .ConnectedFriends-match-card {
     padding: 0.5rem;
     padding-bottom: 2.5rem;
   }
 
-  .profile-info h4 {
+  .ConnectedFriends-info h4 {
     font-size: 0.9rem;
   }
   
-  .profile-info .profession {
+  .ConnectedFriends-info .profession {
     font-size: 0.6rem;
   }
   
