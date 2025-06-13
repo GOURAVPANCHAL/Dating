@@ -8,6 +8,8 @@ import NotificationsPage from '@/app/pages/notifications/page';
 import ProfileSetting from '../ProfileSetting/ProfileSetting';
 import ChatingPage from '../Chating/ChatingPage';
 import Friendlist from '../Friendlist/Friendlist';
+import ConnectedFriends from '../ConnectedFriends/ConnectedFriends';
+import Wishlist from '../Wishlist/Wishlist';
 
 const ProfileTabs = () => {
   const searchParams = useSearchParams();
@@ -28,15 +30,30 @@ const ProfileTabs = () => {
       case 'friend list':
         return (
           <>
-            <Friendlist />
+            <Friendlist/>
           </>
         );
+
+      case 'connected-friends':
+        return(
+          <>
+          <ConnectedFriends/>
+          </>
+        );  
       case 'message':
         return (
           <>
             <ChatingPage />
           </>
         );
+
+        case 'Wishlist':
+          return (
+            <>
+              <Wishlist/>
+            </>
+          );
+
       case 'notification':
         return <NotificationsPage />;
       case 'users':
@@ -58,13 +75,15 @@ const ProfileTabs = () => {
       <div className="container-fluid">
         <div className="row">
           {/* Sidebar */}
-          <div className="col-md-3">
+          <div className="col-md-3"> 
             <div className='profile-tabs-bg'>
               <div className="list-group">
                 {[
                   { key: 'my-profile', label: 'My Profile', icon: 'bi-person-circle' },
                   { key: 'friend list', label: 'Friend List', icon: 'bi-people-fill' },
+                  { key: 'connected-friends', label: 'My Booking', icon: 'bi-people-fill' },
                   { key: 'message', label: 'Message', icon: 'bi-chat-left-text' },
+                  { key: 'Wishlist', label: 'Wishlist', icon: 'bi-chat-left-text' },
                   { key: 'notification', label: 'Notification', icon: 'bi-bell-fill' },
                   { key: 'users', label: 'Users', icon: 'bi-person-lines-fill' },
                   { key: 'setting', label: 'Setting', icon: 'bi-gear-fill' },

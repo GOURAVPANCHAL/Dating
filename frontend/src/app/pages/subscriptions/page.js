@@ -116,7 +116,10 @@ const SubscriptionPage = () => {
                   <li key={`d-${i}`}><span className="cross">✗</span> {feature}</li>
                 ))}
               </ul>
-              <button className="btn-plan">Get this plan</button>
+              <Link href="/pages/payment-section">
+                <button className="btn-plan">Get this plan</button>
+              </Link>
+
             </div>
           ))}
         </div>
@@ -152,124 +155,3 @@ const SubscriptionPage = () => {
 };
 
 export default SubscriptionPage;
-
-
-// 'use client';
-// import React from 'react';
-// import SubscriptionBenifit from '@/app/component/SubscriptionBenifits/page';
-// import Link from 'next/link';
-// import './subscriptions.css';
-
-// const plans = [
-//   {
-//     title: "Qiupid Standard",
-//     price: 35,
-//     features: [
-//       "View members directory",
-//       "View members profile",
-//       "Access to groups",
-//       "Add media to your profile",
-//     ],
-//     disabled: [
-//       "View site activity",
-//       "Send private messages",
-//       "Access group directory",
-//       "Create group",
-//       "Forum admin",
-//       "Special title",
-//     ],
-//   },
-//   {
-//     title: "Qiupid Plus",
-//     price: 40,
-//     features: [
-//       "View members directory",
-//       "View members profile",
-//       "Access to groups",
-//       "Add media to your profile",
-//       "View site activity",
-//     ],
-//     disabled: [
-//       "Send private messages",
-//       "Access group directory",
-//       "Create group",
-//       "Forum admin",
-//       "Special title",
-//     ],
-//   },
-//   {
-//     title: "Qiupid Extra",
-//     price: 45,
-//     features: [
-//       "View members directory",
-//       "View members profile",
-//       "Access to groups",
-//       "Add media to your profile",
-//       "View site activity",
-//       "Send private messages",
-//       "Access group directory",
-//     ],
-//     disabled: ["Create group", "Forum admin", "Special title"],
-//   },
-//   {
-//     title: "Qiupid Platinum",
-//     price: 50,
-//     features: [
-//       "View members directory",
-//       "View members profile",
-//       "Access to groups",
-//       "Add media to your profile",
-//       "View site activity",
-//       "Send private messages",
-//       "Access group directory",
-//       "Create group",
-//       "Forum admin",
-//       "Special title",
-//     ],
-//     disabled: [],
-//   },
-// ];
-
-// const SubscriptionPage = () => {
-//   return (
-//     <>
-//     <section className="subscription-section-glass">
-//   <div className="container text-center">
-//     <h2 className="section-title">Pricing table example</h2>
-//     <div className="row justify-content-center g-4">
-//       {plans.slice(0, 3).map((plan, idx) => (
-//         <div key={idx} className="col-md-6 col-lg-4">
-//           <div className={`glass-card plan-${idx}`}>
-//             <h5 className="plan-name">{plan.title}</h5>
-//             <div className="plan-price">{plan.price}$</div>
-//             <div className="price-subtitle">Price Example</div>
-//             <p className="plan-desc">
-//               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-//             </p>
-//             <ul className="plan-features">
-//               {plan.features.map((feature, i) => (
-//                 <li key={i} className="feature success">
-//                   <i className="bi bi-check-circle-fill me-2"></i>{feature}
-//                 </li>
-//               ))}
-//               {plan.disabled.map((feature, i) => (
-//                 <li key={i} className="feature fail">
-//                   <i className="bi bi-x-circle-fill me-2"></i>{feature}
-//                 </li>
-//               ))}
-//             </ul>
-//             <button className="btn-get-plan">Get this plan</button>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-// </section>
-
-
-//
-//     </>
-//   );
-// };
-
-// export default SubscriptionPage;

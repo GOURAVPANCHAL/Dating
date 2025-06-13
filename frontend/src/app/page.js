@@ -15,6 +15,7 @@ import PlatformBenifits from './component/PlatformBenifits/page'
 
 import AnimatedSection from './component/AnimatedSection/page'
 import CubeMainSec from './component/CubeMainSec/page'
+import EarnWithUs from './component/EarnWithUs/page'
 
 
 
@@ -37,20 +38,20 @@ const page = () => {
       {/* <CollectionUser/> */}
 
       <AnimatedSection>
-      <SearchHereSec/>
+        <EarnWithUs/>
+      {/* <SearchHereSec/> */}
       </AnimatedSection>
   
-      <AnimatedSection>
-          <Highlights/>
-        </AnimatedSection>
+    
 
 
       
-
+      <AnimatedSection> 
         
     <PlatformBenifits/>
 
-
+    </AnimatedSection> 
+    
     <AnimatedSection>     
          <TestimonialCarousel/>
        </AnimatedSection>
@@ -62,7 +63,9 @@ const page = () => {
        {/* <CubeSection/> */}
    
        
-
+       <AnimatedSection>
+          <Highlights/>
+        </AnimatedSection>
 
     
        <AnimatedSection>

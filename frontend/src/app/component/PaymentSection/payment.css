@@ -43,12 +43,12 @@
   .payment-method.selected,
   .membership-option.selected {
     background: #ffeef5;
-    border-color: #A16EFF;
+    border-color: var(--bg);
   }
   
   .icon {
     font-size: 1.4rem;
-    color: #A16EFF;
+    color: var(--bg);
   }
   
   .membership-info {
@@ -158,7 +158,7 @@
 
 
   .contentSec p{
-    color: #A16EFF;
+    color: var(--bg);
  margin:0px;  
 
 }

@@ -374,7 +374,7 @@ export default function NotificationsPage(){
         <div className="notifications-header">
           <div className="noti-head-main">
             <h1>
-              <Bell size={24} />
+              <Bell size={24} />        
               Notifications
               {hasUnread && (
                 <p className="notification-count-badge">

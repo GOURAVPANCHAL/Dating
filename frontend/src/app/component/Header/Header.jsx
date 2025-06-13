@@ -30,10 +30,10 @@ const Header = () => {
         {
           title: "Community",
           links: [
-            { label: "Community Activity", href: "/pages/create-account" },
+            { label: "Community Activity", href: "/pages/create-account/step/page" },
             { label: "Recent Groups", href: "/pages/payment-section" },
             { label: "Single Group", href: "/about" },
-            { label: "Members", href: "/about" },
+            { label: "Members", href: "/pages/purpose" },
             { label: "About Us", href: "/pages/about-us" },
           ]
         },
@@ -59,11 +59,14 @@ const Header = () => {
         {
           title: "Our Services",
           links: [
-            { label: "FAQ", href: "/pages/faq" },
-            { label: "UI/UX Design", href: "/services/ui-ux" },
-            { label: "SEO Optimization", href: "/services/seo" },
-            { label: "E-commerce Solutions", href: "/services/ecommerce" },
-          ]
+        // { label: "Profile Verification", href: "/services/profile-verification" },
+        // { label: "Matchmaking", href: "/services/matchmaking" },
+        // { label: "Relationship Coaching", href: "/services/relationship-coaching" },
+        { label: "Privacy & Safety", href: "/services/privacy-safety" },
+        { label: "VIP Membership", href: "/services/vip-membership" },
+        { label: "Dating Events", href: "/services/events" },
+        { label: "FAQ", href: "/pages/faq" }
+      ]
         }
       ]
     },
@@ -89,7 +92,7 @@ const Header = () => {
               <div className="col-md-2 d-flex align-items-center">
                 <div className="nav-logo">
                   <Link href="/">
-                    <Image src={logo} width={50} height={"auto"} alt="Logo" />
+                    <Image src={logo} width={50} className='logoimg' height={"auto"} alt="Logo" />
                   </Link>
                 </div>
               </div>

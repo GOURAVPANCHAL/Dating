@@ -22,7 +22,7 @@
 
 .MeetOnTittle h2 {
     /* font-family:var(--font-family); */
-    color:  #A16EFF;
+    color: var(--bg);
     font-size: 36px;
     margin-bottom: 20px;
     font-weight: bold;

@@ -10,10 +10,17 @@
   },
   "dependencies": {
     "@zegocloud/zego-uikit-prebuilt": "^2.15.0",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.5",
     "animate.css": "^4.1.1",
     "axios": "^1.9.0",
     "bootstrap": "^5.3.6",
     "bootstrap-icons": "^1.13.1",
+    "class-variance-authority": "^0.7.1",
+
+
+    "clsx": "^2.1.1",
+
     "emoji-mart": "^5.6.0",
     "emoji-picker-react": "^4.12.2",
     "framer-motion": "^12.11.3",
@@ -29,6 +36,7 @@
     "react-paginate": "^8.3.0",
     "socket.io-client": "^4.8.1",
     "swiper": "^11.2.7",
+    "tailwind-merge": "^3.3.0",
     "uuid": "^11.1.0"
   },
   "devDependencies": {

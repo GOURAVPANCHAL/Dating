@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
+import './findprofile.css';
 import pic from "../../Images/user/user.jpeg";
 import pic1 from "../../Images/user/user1.jpeg";
 import pic2 from "../../Images/user/user2.jpg";
