@@ -103,3 +103,18 @@
 .friendsPage-btn.view:hover {
   background-color: #059669;
 }
+
+
+@media screen and (max-width: 768px) {
+  .friendsPage-container {
+    padding: 0px;
+  }
+
+  .friendsPage-grid {
+    gap: 5px;
+  }
+
+  .friendsPage-heading {
+    margin-bottom: 10px;
+  }
+}

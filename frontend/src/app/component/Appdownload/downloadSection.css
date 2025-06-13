@@ -88,4 +88,8 @@
     .download-content h5{
         font-size: 16px;
     }
+
+    .download-content{
+        padding-bottom: 2rem;
+    }
 }

@@ -76,4 +76,8 @@
         right: auto;
         width: 200px;
     }
+    
+    .filter-bar__search{
+        display: none;
+    }
 }

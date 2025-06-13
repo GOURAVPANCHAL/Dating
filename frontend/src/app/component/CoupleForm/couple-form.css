@@ -124,6 +124,8 @@ input[type="range"].form-range {
 
   .FindPartnerbtn {
     width: auto !important;
+    padding: 5px 10px;
+    font-size: 12px;
   }
 
   .couple-form-left h1 {
