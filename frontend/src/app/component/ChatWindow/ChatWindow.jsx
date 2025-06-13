@@ -1,42 +1,52 @@
+"use client";
 import { useState, useEffect, useRef } from "react";
 import socket from "../../utils/socket";
 import EmojiPicker from "emoji-picker-react";
 import Image from "next/image";
 
+// Async import
+const getZego = async () => {
+  const { ZegoUIKitPrebuilt } = await import('@zegocloud/zego-uikit-prebuilt');
+  return ZegoUIKitPrebuilt;
+};
+
 const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage, userId }) => {
+  // 🟢 Declare all hooks at the top
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [typingUser, setTypingUser] = useState("");
-  const [messages, setMessages] = useState([]);  // Local messages state to display
+  const [messages, setMessages] = useState([]);
   const fileInputRef = useRef(null);
+  const [startCall, setStartCall] = useState(false);
+  const meetingContainerRef = useRef(null);
 
-  // Register socket events
+  // 🟢 Socket Setup
   useEffect(() => {
     if (userId) {
-      socket.emit('register_user', userId);
+      socket.emit("register_user", userId);
     }
 
-    socket.on('private_message', (data) => {
+    socket.on("private_message", (data) => {
       setMessages(prev => [...prev, { text: data.message, fromUser: false }]);
     });
 
-    socket.on('typing', (typingUserId) => {
+    socket.on("typing", (typingUserId) => {
       setTypingUser(`${typingUserId} is typing...`);
     });
 
-    socket.on('stop_typing', () => {
-      setTypingUser('');
+    socket.on("stop_typing", () => {
+      setTypingUser("");
     });
 
     return () => {
-      socket.off('private_message');
-      socket.off('typing');
-      socket.off('stop_typing');
+      socket.off("private_message");
+      socket.off("typing");
+      socket.off("stop_typing");
     };
   }, [userId]);
 
-  // Load chat messages only once when chat changes
+  // 🟢 Load initial chat messages
   useEffect(() => {
-    if (selectedChat && selectedChat.messages && messages.length === 0) {
+    if (selectedChat?.messages && messages.length === 0) {
       const initialMessages = selectedChat.messages.map(msg => ({
         text: msg,
         fromUser: false,
@@ -45,10 +55,49 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
     }
   }, [selectedChat]);
 
+  // 🟢 Set up the video call when startCall is true
+  useEffect(() => {
+    if (startCall && meetingContainerRef.current) {
+      const myMeeting = async () => {
+        const appID = 1920609631;
+        const serverSecret = "1c0bb695a036aaca3b062f78824cacda";
+        const roomID = new URLSearchParams(window.location.search).get("roomID") || Math.random().toString(36).substring(2, 7);
+
+        const ZegoUIKitPrebuilt = await getZego();
+        const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
+          appID,
+          serverSecret,
+          roomID,
+          Date.now().toString(),
+          "user1"
+        );
+
+        const zp = ZegoUIKitPrebuilt.create(kitToken);
+
+        zp.joinRoom({
+          container: meetingContainerRef.current,
+          sharedLinks: [
+            {
+              name: "Personal link",
+              url: `${window.location.protocol}//${window.location.host}${window.location.pathname}?roomID=${roomID}`,
+            },
+          ],
+          scenario: {
+            mode: ZegoUIKitPrebuilt.OneONoneCall,
+          },
+        });
+      };
+
+      myMeeting();
+    }
+  }, [startCall]);
+
+  // 🟢 Emoji select
   const handleEmojiClick = (emojiData) => {
     setNewMessage(prev => prev + emojiData.emoji);
   };
 
+  // 🟢 Image upload
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -56,16 +105,12 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
     }
   };
 
+  // 🟢 Send message
   const onSendMessage = () => {
     const autoReplies = [
-      "Hi Alisaa!",
-      "I'll get back to you soon.",
-      "Can you please clarify?",
-      "That's interesting!",
-      "Got it, thanks!",
-      "Let me check and reply.",
-      "I appreciate your input.",
-      "Thanks for reaching out!",
+      "Hi Alisaa!", "I'll get back to you soon.", "Can you please clarify?",
+      "That's interesting!", "Got it, thanks!", "Let me check and reply.",
+      "I appreciate your input.", "Thanks for reaching out!",
     ];
 
     if (!newMessage.trim()) return;
@@ -73,7 +118,7 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
     const userMessage = { text: newMessage, fromUser: true };
     setMessages(prev => [...prev, userMessage]);
 
-    handleSendMessage(); // send via socket
+    handleSendMessage();
     setNewMessage("");
     setShowEmojiPicker(false);
 
@@ -86,7 +131,7 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
   };
 
   const handleTyping = () => {
-    if (selectedChat && selectedChat.userId) {
+    if (selectedChat?.userId) {
       socket.emit("typing", selectedChat.userId);
       setTimeout(() => {
         socket.emit("stop_typing", selectedChat.userId);
@@ -95,16 +140,18 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
   };
 
   if (!selectedChat) {
-    return <div className="profile-main-chat" style={{ color: "#888" }}>
-      <div className="profile-chat-blank">
-      <p>
-        Select a chat to start messaging
-      </p>
+    return (
+      <div className="profile-main-chat" style={{ color: "#888" }}>
+        <div className="profile-chat-blank">
+          <p>Select a chat to start messaging</p>
+        </div>
       </div>
-    </div>;
+    );
   }
+
   return (
     <div className="profile-main-chat">
+      {/* Header */}
       <div className="profile-chat-header-main">
         <div className="chats-main-header">
           <div className="profile-chat-image">
@@ -120,15 +167,21 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
             <h3>{selectedChat.name}</h3>
           </div>
         </div>
+
         <div className="call-videocall">
           <div className="call-vc-icon" title="Audio Call">
             <i className="bi bi-telephone" />
           </div>
           <div className="call-vc-icon" title="Video Call">
-            <i className="bi bi-camera-video" />
+            <i onClick={() => setStartCall(true)} className="bi bi-camera-video" />
           </div>
         </div>
       </div>
+
+      {/* Video Call Container */}
+      {startCall && <div ref={meetingContainerRef} />}
+
+      {/* Chat Messages */}
       <div className="profile-chat-messages-main">
         <div className="messages-container" style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "10px" }}>
           {messages.map((msg, index) => (
@@ -145,15 +198,13 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
                 wordBreak: "break-word"
               }}
             >
-              <p style={{ margin: 0 }}>
-                <strong>{msg.fromUser ? "" : ""}</strong> {msg.text}
-              </p>
+              <p style={{ margin: 0 }}>{msg.text}</p>
             </div>
           ))}
         </div>
       </div>
 
-
+      {/* Chat Input */}
       <div style={{ position: "relative" }}>
         {showEmojiPicker && (
           <div style={{ position: "absolute", bottom: "60px", zIndex: 1000 }}>
@@ -192,6 +243,7 @@ const ChatWindow = ({ selectedChat, newMessage, setNewMessage, handleSendMessage
             placeholder="Type a message..."
             className="chat-input"
           />
+
           <button onClick={onSendMessage} className="login-btn">
             <i className="bi bi-send" />
           </button>
