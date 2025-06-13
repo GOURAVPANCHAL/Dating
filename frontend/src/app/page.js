@@ -52,9 +52,9 @@ const page = () => {
 
     </AnimatedSection> 
     
-    <AnimatedSection>     
+    {/* <AnimatedSection>     
          <TestimonialCarousel/>
-       </AnimatedSection>
+       </AnimatedSection> */}
 
       {/* <AnimatedSection>
       <VideoSection/>

@@ -8,61 +8,6 @@ import './header.css'
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-// const navItems = [
-//   {
-//     label: "Home",
-//     href: "/",
-//   },
-//   {
-//     label: "Find Match",
-//     href: "/pages/find-match",
-//   },
-//   {
-//     label: "Community",
-//     href: "/about",
-//     isDropdown: true,
-//     dropdown: [
-//       {
-//         title: "Community",
-//         links: [
-//           { label: "Community Activity", href: "/pages/create-account/step/1" },
-//           { label: "Recent Groups", href: "/pages/payment-section" },
-//           { label: "Single Group", href: "/about" },
-//           { label: "Members", href: "/about" },
-//           { label: "About Us", href: "/pages/about-us" },
-//         ]
-//       },
-//       {
-//         title: "Profile",
-//         links: [
-//           { label: "Profile Main", href: "/pages/profile" },
-//           { label: "Media Profile", href: "/about" },
-//         ]
-//       },
-//       {
-//         title: "Members",
-//         image: mermberImage,
-//         href: "/about"
-//       }
-//     ]
-//   },
-//   {
-//     label: "Services",
-//     href: "/services",
-//     isDropdown: true,
-//     dropdown: [
-//       {
-//         title: "Our Services",
-//         links: [
-//           { label: "FAQ", href: "/pages/faq" },
-//           { label: "UI/UX Design", href: "/services/ui-ux" },
-//           { label: "SEO Optimization", href: "/services/seo" },
-//           { label: "E-commerce Solutions", href: "/services/ecommerce" },
-//         ]
-//       }
-//     ]
-//   },
-// ]
   useEffect(() => {
     const user = localStorage.getItem("user");
     setIsLoggedIn(!!user); // true if user exists
@@ -117,7 +62,7 @@ const Header = () => {
         // { label: "Profile Verification", href: "/services/profile-verification" },
         // { label: "Matchmaking", href: "/services/matchmaking" },
         // { label: "Relationship Coaching", href: "/services/relationship-coaching" },
-        { label: "Privacy & Safety", href: "/services/privacy-safety" },
+        { label: "Privacy & Safety", href: "/pages/policies" },
         { label: "VIP Membership", href: "/services/vip-membership" },
         { label: "Dating Events", href: "/services/events" },
         { label: "FAQ", href: "/pages/faq" }

@@ -67,7 +67,7 @@ const SuggestedProfiles = () => {
       <h2 className="text-center mb-4">You Might Also Like...</h2>
       <div className="row justify-content-center">
         {profiles.map((item) => (
-          <div key={item.id} className="col-md-3 col-sm-6 mb-4">
+          <div key={item.id} className="col-md-3 col-6">
             <div className="profile-match-card">
               <Link href={`/find-match/${item.id}`} className="profile-match-link">
                 <div className="profile-image-wrapper">

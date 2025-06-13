@@ -373,14 +373,14 @@ export default function NotificationsPage(){
       <div className="notifications-card">
         <div className="notifications-header">
 
-          <div className="d-flex justify-content-between align-items-center">
+          <div className="noti-head-main">
             <h1>
               <Bell size={24} />        
               Notifications
               {hasUnread && (
-                <span className="notification-count-badge">
-                  {notifications.filter(n => !n.isRead).length} New
-                </span>
+                <p className="notification-count-badge">
+                 <span className='noti-coun'> {notifications.filter(n => !n.isRead).length} </span> New
+                </p>
               )}
             </h1>
             <div className="notification-tabs">
