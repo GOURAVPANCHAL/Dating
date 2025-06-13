@@ -72,7 +72,7 @@ const ProfileTabs = () => {
 
   return (
     <section className='profile-tabs-section'>
-      <div className="container-fluid mt-4">
+      <div className="container-fluid">
         <div className="row">
           {/* Sidebar */}
           <div className="col-md-3"> 
