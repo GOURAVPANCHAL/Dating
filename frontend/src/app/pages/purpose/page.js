@@ -1,16 +1,18 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import './Purpose.css';
-import pic1 from '@/app/Images/Banner3.jpg'
-import pic2 from '@/app/Images/couplebg.jpg'
+import pic1 from '@/app/Images/Banner7.png'
+import pic2 from '@/app/Images/img.png'
+import pic3 from '@/app/Images/romantic.png'
+import pic4 from '@/app/Images/passion.png'
+import pic5 from '@/app/Images/money.jpg'
+
 
 
 
 export default function PurposePage() {
   return (
     <div className="container">
-     
-
       {/* Hero Section */}
       <header className="hero">
         <div className="heroContent">
@@ -25,9 +27,8 @@ export default function PurposePage() {
         <div className="heroImage">
           <Image 
             src={pic1}
+            className='Purpose-MainSecImg'
             alt="Happy couple talking" 
-            width={600} 
-            height={500}
             priority
           />
         </div>
@@ -38,9 +39,8 @@ export default function PurposePage() {
         <div className="sectionImage">
           <Image 
             src={pic2}
-            alt="Couple having coffee" 
-            width={1000} 
-            height={800}
+            className='purposeSecImg'
+            alt="Couple having coffee"  
           />
         </div>
         <div className="sectionContent">
@@ -74,12 +74,6 @@ export default function PurposePage() {
               <p>Create calm, safe spaces where users can vent, share stress, or find peace with your guidance and presence.</p>
             </div>
 
-            
-            <div className="benefitCard">
-             
-              <h3>🤝 5. Mutual Physical Connection (When Both Agree)</h3>
-              <p>If both parties are comfortable and consensual, offer closeness and companionship — privately, respectfully, and safely.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -92,7 +86,7 @@ export default function PurposePage() {
           <div className="stepCard">
             <div className="stepNumber">1</div>
             <Image 
-               src={pic1}
+               src={pic3}
               alt="Find your match" 
               width={300} 
               height={200}
@@ -105,14 +99,14 @@ export default function PurposePage() {
           <div className="stepCard">
             <div className="stepNumber">2</div>
             <Image 
-           src={pic1}
+           src={pic4}
               alt="Plan your date" 
               width={300} 
-              height={200}
+              height={700}
               className="stepImage"
             />
-            <h3>Plan Your Experience</h3>
-            <p>Choose from various activities or create your own unique date idea</p>
+            <h3> Emotional/Physical Support (Only if Mutually Agreed)</h3>
+            <p>When both parties are ready and respectful, offer physical closeness — like hugs, touch therapy, or consensual intimacy. It’s always optional, always safe.</p>
           </div>
           
           <div className="stepCard">
@@ -133,7 +127,7 @@ export default function PurposePage() {
       {/* Earn Money Section */}
       <section className="section earnSection">
         <div className="sectionContent">
-          <h2 className="sectionTitle">Turn Your <span className="highlightText">Emotional Intelligence</span> Into Income</h2>
+          <h2 className="sectionTitle ">Turn Your <span className="highlightText">Emotional Intelligence</span> Into Income</h2>
           <p className="sectionText">
             Become a <strong>Certified Connection Guide</strong> and earn money by helping others build meaningful relationships.
           </p>
@@ -162,10 +156,10 @@ export default function PurposePage() {
         </div>
         <div className="sectionImage">
           <Image 
-             src={pic1}
+             src={pic5}
             alt="Professional helping couple" 
-            width={500} 
-            height={400}
+            width={700} 
+            height={800}
           />
         </div>
       </section>
@@ -200,7 +194,7 @@ export default function PurposePage() {
             <p className="testimonialText">
               "As a Connection Guide, I've been able to turn my counseling skills into a rewarding side income while helping others."
             </p>
-            <p className="testimonialAuthor">- David, Connection Guide</p>
+            <p className="testimonialAuthor"> David, Connection Guide</p>
           </div>
         </div>
       </section>

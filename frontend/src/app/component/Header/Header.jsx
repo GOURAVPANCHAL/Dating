@@ -62,7 +62,7 @@ const Header = () => {
         // { label: "Profile Verification", href: "/services/profile-verification" },
         // { label: "Matchmaking", href: "/services/matchmaking" },
         // { label: "Relationship Coaching", href: "/services/relationship-coaching" },
-        { label: "Privacy & Safety", href: "/services/privacy-safety" },
+        { label: "Privacy & Safety", href: "/pages/policies" },
         { label: "VIP Membership", href: "/services/vip-membership" },
         { label: "Dating Events", href: "/services/events" },
         { label: "FAQ", href: "/pages/faq" }
