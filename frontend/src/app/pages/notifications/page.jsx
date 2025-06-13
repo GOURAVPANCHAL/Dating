@@ -372,7 +372,6 @@ export default function NotificationsPage(){
     <div className="notifications-container">
       <div className="notifications-card">
         <div className="notifications-header">
-
           <div className="noti-head-main">
             <h1>
               <Bell size={24} />

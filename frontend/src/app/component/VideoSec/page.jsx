@@ -1,7 +1,7 @@
 'use client';
 import 'animate.css';
 import React from 'react';
-import './VideoSection.css'; 
+import './VideoSection.css';
 import { motion } from 'framer-motion';
 
 const VideoSection = () => {
@@ -23,7 +23,6 @@ const VideoSection = () => {
       <div className="content">
         <h1 className=''>
           Find Love That Lasts
-
         </h1>
 
         <motion.p
@@ -31,11 +30,11 @@ const VideoSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5 }}
         >
-      Where genuine connections begin. Real people, real relationships.
+          Where genuine connections begin. Real people, real relationships.
         </motion.p>
       </div>
     </div>
   );
-};  
+};
 
 export default VideoSection;

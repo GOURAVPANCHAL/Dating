@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@zegocloud/zego-uikit-prebuilt": "^2.15.0",
     "animate.css": "^4.1.1",
     "axios": "^1.9.0",
     "bootstrap": "^5.3.6",
