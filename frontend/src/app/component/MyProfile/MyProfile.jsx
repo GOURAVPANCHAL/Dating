@@ -49,7 +49,7 @@ const MyProfile = () => {
     return (
         <section className='my-profile-section'>
             <div className='myprofile-main'>
-            <div className="ribbon">🔥 Premium</div>
+                <div className="ribbon">🔥 Premium</div>
                 <div className="row">
                     <div className="col-md-4">
                         <div className="my-main-image">
@@ -63,7 +63,7 @@ const MyProfile = () => {
                                     {item.name} <span>{item.age}</span>{" "}
                                     <span>
                                         <i className="bi bi-patch-check text-success"></i>
-                                    </span>  
+                                    </span>
                                 </h4>
                                 <p className="profile-location">
                                     <i className="bi bi-geo-alt"></i> {item.country}, {item.state}
@@ -76,6 +76,28 @@ const MyProfile = () => {
                                 </ul>
                             </div>
                         ))}
+                        <div className="profile-likes-section">
+                            <h6>❤️ {profileImages.length} People liked your profile</h6>
+                            <div className="liked-users-avatars">
+                                {profileImages.slice(0, 6).map((img, i) => (
+                                    <Image
+                                        key={i}
+                                        src={img}
+                                        alt={`Liked user ${i + 1}`}
+                                        className="liked-avatar"
+                                        width={40}
+                                        height={40}
+                                    />
+                                ))}
+                                {profileImages.length > 6 && (
+                                    <span className="more-likes">+{profileImages.length - 6}</span>
+                                )}
+                            </div>
+                        </div>
+
+
+
+
                     </div>
                 </div>
             </div>

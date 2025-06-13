@@ -3,13 +3,18 @@ padding: 30px;
 }
 
 .login-bg {
-    background-color: var(--bg2);
+    background-image: url("../../Images/couplebg.jpg");
+    background-size:cover;
+
 }
 
 .login-card {
     width: 400px;
     border-radius: 12px;
     overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1); /* White with 10% opacity */
+    backdrop-filter: blur(10px); /* Optional: adds a glass effect */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Optional: soft shadow */
 }
 
 .login-header {
