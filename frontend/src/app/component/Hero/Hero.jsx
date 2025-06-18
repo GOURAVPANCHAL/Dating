@@ -3,9 +3,13 @@ import React from 'react'
 import './hero.css'
 import heroimage from '../../Images/explore-lmage.png'
 import Image from 'next/image'
+import Whatsapp from '../WhatsApp/whatsapp'
 const Hero = () => {
   return (
     <>
+    <div>
+        <Whatsapp/>
+    </div>
     <section className='hero-section2-responsive'>
         <div className="container">
         </div>

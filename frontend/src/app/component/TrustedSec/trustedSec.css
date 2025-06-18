@@ -18,7 +18,7 @@
 }
 
 .trustedSec {
-  background: #c3a8f3;
+  background:gray;
   /* semi-transparent glass layer */
   backdrop-filter: blur(10px);
   /* background blur */

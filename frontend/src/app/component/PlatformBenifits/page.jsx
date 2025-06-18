@@ -2,7 +2,7 @@ import React from 'react'
 import { GiLovers } from "react-icons/gi";
 import './Benifits.css'
 import Image from 'next/image';
-import pic1 from '@/app/Images/banner6.jpg'
+import pic1 from '@/app/Images/benifits.jpg'
 import icon1 from '@/app/Images/secureicon.png'
 import icon2 from '@/app/Images/Connection.png'
 import icon3 from '../../Images/profile.png'

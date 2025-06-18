@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import './createAccount.css';
 import Image from 'next/image';
+import logo from '@/app/Images/logo.png'
 
 // Import steps
 import Step1 from '@/app/component/Steps/Step1';
@@ -83,7 +84,7 @@ export default function StepPage() {
     <div className="form-container">
       {showConsent ? (
         <div className="consent-popup">
-          <Image src="/logo.png" alt="logo" width={100} height={70} />
+          <Image src={logo} alt="logo" width={70} height={70} />
           <h2 className="consent-title">Before You Swipe</h2>
           <p className="consent-text">
             Welcome! We are excited to be part of your dating journey.
@@ -103,7 +104,7 @@ export default function StepPage() {
         <div className="form-card">
           <div className="form-header">
             <h2>Create Your Love Profile</h2>
-            <p>Step {stepNumber} of 15</p>
+            <p>Step {stepNumber} of 13</p>
           </div>
 
           <div className="form-body">
@@ -120,7 +121,7 @@ export default function StepPage() {
                 ← Back
               </button>
             )}
-            {stepNumber < 15 ? (
+            {stepNumber < 13 ? (
               <button className="btn primary" onClick={nextStep}>
                 Next →
               </button>

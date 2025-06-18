@@ -1,45 +1,222 @@
-.login-body{
-padding: 30px;
-}
-
-.login-bg {
-    background-image: url("../../Images/couplebg.jpg");
-    background-size:cover;
-
-}
-
-.login-card {
-    width: 400px;
-    border-radius: 12px;
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .login-container {
+    background-color:var(--bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-card {
+    display: flex; 
+    width: 850px;
+    background: white;
+    border-radius: 16px;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.1); /* White with 10% opacity */
-    backdrop-filter: blur(10px); /* Optional: adds a glass effect */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Optional: soft shadow */
-}
-
-.login-header {
-    padding: 40px 20px;
-    background-color: #ec0d81;
-    color: white;
-}
-
-
-.create-btn {
-    background-color: #000;
-    color: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-left {
+    flex: 1;
+    position: relative;
+  }
+  
+  .login-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .login-right {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: #3b5866;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: #3b5866;
+  }
+  
+  .tab-switch {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .active-tab {
+    font-weight: bold;
+    border-bottom: 2px solid #3b5866;
+    margin-right: 15px;
+    color: #3b5866;
+    cursor: pointer;
+  }
+  
+  .inactive-tab {
+    color: #aaa;
+    cursor: pointer;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  input {
     border: none;
-}
+    border-bottom: 2px solid #3b5866;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .password-field {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .login-btn {
+    background-color: #3b5866;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: #2e4451;
+  }
+  
+  .or-divider {
+    text-align: center;
+    margin: 20px 0;
+    color: #777;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icons img {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
 
-.create-btn:hover {
-    background-color: #333;
-}
 
-.lost-password {
-    color: #ec0d81;
+  .forgot-password {
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  
+  .forgot-password a {
     font-size: 14px;
+    color: #3b5866;
     text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .forgot-password a:hover {
+    color: #2e4451;
+    text-decoration: underline;
+  }
+  
+  /* === Responsive Design === */
+
+/* Tablet: max-width 992px */
+@media (max-width: 992px) {
+  .login-card {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .login-left {
+    height: 200px;
+  }
+
+  .login-bg {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .login-right {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .login-btn {
+    font-size: 15px;
+  }
 }
 
-.lost-password:hover {
-    text-decoration: underline;
+/* Mobile: max-width 600px */
+@media (max-width: 600px) {
+  .login-right {
+    padding: 20px 15px;
+  }
+
+  h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .tab-switch {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .toggle-password {
+    top: 6px;
+    font-size: 16px;
+  }
+
+  .login-btn {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .or-divider {
+    font-size: 14px;
+  }
+
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
 }
+
+  
