@@ -221,11 +221,15 @@
     padding: 8px;
   }
 
+
+
+
   .pricing-cards {
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     padding: 10px;
-    gap: 10px;
-  }
+    /* gap: 10px; */
+}
+
 
   .pricing-card {
     padding: 10px;

@@ -17,7 +17,7 @@ export default function PurposePage() {
       <header className="hero">
         <div className="heroContent">
           <h1>Welcome to <span>Luvnestor</span></h1>
-          <h2>Where <span className="highlightText">Meaningful Connections</span> Begin</h2>
+          <h2>Where <span className="highlightTextOnly">Meaningful Connections</span> Begin</h2>
           <p className="heroText">💼 Earn Money by Sharing Connection, Support & Companionship</p>
           <div className="heroButtons">
             <a href="/signup" className="button primaryButton">Find Your Match</a>
@@ -150,16 +150,18 @@ export default function PurposePage() {
             </div>
           </div>
           
-          <a href="/become-professional" className="button secondaryButton largeButton">
+        <div className='buttonSec'>
+        <a href="/become-professional" className="button secondaryButton largeButton">
             Become a Connection Guide
           </a>
+        </div>
         </div>
         <div className="sectionImage">
           <Image 
              src={pic5}
             alt="Professional helping couple" 
-            width={700} 
-            height={800}
+            className='PurposeImg'
+           
           />
         </div>
       </section>
@@ -167,7 +169,6 @@ export default function PurposePage() {
       {/* Testimonials Section */}
       <section className="section testimonials">
         <h2 className="sectionTitle centerTitle">Success <span className="highlightText">Stories</span></h2>
-        
         <div className="testimonialGrid">
           <div className="testimonialCard">
             <Image 
@@ -201,7 +202,7 @@ export default function PurposePage() {
 
       {/* Final CTA Section */}
       <section className="section finalCta">
-        <h2 className="ctaTitle">Ready to Start Your <span className="highlightText">Luvnestor Journey</span>?</h2>
+        <h2 className="ctaTitle">Ready to Start Your <span className="highlightText1">Luvnestor Journey</span>?</h2>
         <p className="ctaText">Join thousands of couples building deeper connections today</p>
         <div className="ctaButtons">
           <a href="/signup" className="button primaryButton largeButton">Find Your Match</a>

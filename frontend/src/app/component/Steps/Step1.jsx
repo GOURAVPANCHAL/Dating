@@ -7,20 +7,26 @@ export default function Step1({ formData, handleChange, setFormData }) {
   const fileInputs = useRef([]);
 
   const handleAgeChange = (index, value) => {
-    const currentAgeRange = Array.isArray(formData.ageRange) && formData.ageRange.length === 2
-      ? [...formData.ageRange]
-      : [18, 30];
+    const currentAgeRange =
+      Array.isArray(formData.ageRange) && formData.ageRange.length === 2
+        ? [...formData.ageRange]
+        : [18, 30];
     currentAgeRange[index] = value;
     setFormData({ ...formData, ageRange: currentAgeRange });
   };
 
   useEffect(() => {
-    if (formData.photos?.length) {
-      const urls = formData.photos.map((file) =>
-        typeof file === "string" ? file : URL.createObjectURL(file)
-      );
-      setPreviews(urls);
-    }
+    const urls = (formData.photos || []).map((file) =>
+      typeof file === "string" ? file : URL.createObjectURL(file)
+    );
+    setPreviews(urls);
+
+    // Cleanup memory to prevent leaks
+    return () => {
+      urls.forEach((url) => {
+        if (url.startsWith("blob:")) URL.revokeObjectURL(url);
+      });
+    };
   }, [formData.photos]);
 
   const handleImageSelect = (e, index) => {
@@ -49,8 +55,11 @@ export default function Step1({ formData, handleChange, setFormData }) {
   };
 
   return (
-    <div className="container mt-3">
-      <h4 className="text-center mb-3">Step 1 :</h4>
+    <div className="container mt-4">
+      <div className="mb-4 text-center">
+        <h4 className="fw-bold text-primary">Step 1: Basic Info</h4>
+        <p className="text-muted">Start by sharing your name, email, and photos.</p>
+      </div>
 
       <div className="mb-3">
         <label className="form-label fw-bold text-primary">Name:</label>
@@ -61,51 +70,54 @@ export default function Step1({ formData, handleChange, setFormData }) {
           placeholder="Enter Your Name"
           value={formData.name}
           onChange={handleChange}
+          required
         />
 
-         {/* adddeed email */}
         <label className="form-label fw-bold text-primary mt-3 mb-0">Email:</label>
-      <input
-        name="email"
-        type="email"
-        placeholder="Enter your email"
-        value={formData.email}
-        onChange={handleChange}
-        className="form-input mb-6"
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-      />
-
-      {/* added genderqwhb */}
-
-      {/* <div className="mb-6">
-        <label className="form-label fw-bold text-primary mt-3 mb-0">Prefered Age Range:</label>
-        <p className="mb-2">
-          Between {(formData.ageRange && formData.ageRange[0] !== undefined ? formData.ageRange[0] : 18)} and {(formData.ageRange && formData.ageRange[1] !== undefined ? formData.ageRange[1] : 30)}
-        </p>
-        <div className="flex items-center gap-9">
-          <input
-            type="range"
-            min="18"
-            max="100"
-            value={(formData.ageRange && formData.ageRange[0] !== undefined) ? formData.ageRange[0] : 18}
-            onChange={(e) => handleAgeChange(0, parseInt(e.target.value))}
-            className="w-full"
-          />
-          <input
-            type="range"
-            min="18"
-            max="100"
-            value={(formData.ageRange && formData.ageRange[1] !== undefined) ? formData.ageRange[1] : 30}
-            onChange={(e) => handleAgeChange(1, parseInt(e.target.value))}
-            className="w-full"
-          />
-        </div>
-      </div> */}
+        <input
+          name="email"
+          type="email"
+          placeholder="Enter your email"
+          value={formData.email}
+          onChange={handleChange}
+          className="form-control mb-3"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        />
       </div>
 
-      <div className="mb-2 fw-bold text-primary ">Upload Your Photos:</div>
+      {/* Optional Age Range Slider */}
+      {/* 
+      <div className="mb-4">
+        <label className="form-label fw-bold text-primary">Preferred Age Range:</label>
+        <p className="text-muted">
+          Between {formData.ageRange?.[0] ?? 18} and {formData.ageRange?.[1] ?? 30}
+        </p>
+        <div className="d-flex gap-3">
+          <input
+            type="range"
+            min="18"
+            max="100"
+            value={formData.ageRange?.[0] ?? 18}
+            onChange={(e) => handleAgeChange(0, parseInt(e.target.value))}
+            className="form-range"
+          />
+          <input
+            type="range"
+            min="18"
+            max="100"
+            value={formData.ageRange?.[1] ?? 30}
+            onChange={(e) => handleAgeChange(1, parseInt(e.target.value))}
+            className="form-range"
+          />
+        </div>
+      </div>
+      */}
 
-      <div className="d-flex flex-wrap gap-2 justify-content-center" style={{ maxWidth: "100%" }}>
+      <div className="mb-2 fw-bold text-primary">Upload Your Photos:</div>
+      <p className="text-muted mb-2">You can upload up to {MAX_PHOTOS} photos.</p>
+
+      <div className="d-flex flex-wrap gap-2 justify-content-center">
         {[...Array(MAX_PHOTOS)].map((_, index) => (
           <div
             key={index}
@@ -118,6 +130,7 @@ export default function Step1({ formData, handleChange, setFormData }) {
               border: "2px dashed #ccc",
             }}
             onClick={() => fileInputs.current[index]?.click()}
+            aria-label={`Upload image ${index + 1}`}
           >
             {previews[index] ? (
               <>
@@ -132,6 +145,7 @@ export default function Step1({ formData, handleChange, setFormData }) {
                     handleRemoveImage(index);
                   }}
                   className="btn btn-sm btn-danger position-absolute top-0 end-0 m-1 p-1 rounded-circle"
+                  aria-label={`Remove image ${index + 1}`}
                   title="Remove"
                 >
                   ✕

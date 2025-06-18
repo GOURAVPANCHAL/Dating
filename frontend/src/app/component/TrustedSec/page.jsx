@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import pic1 from '@/app/Images/awesome.png'
 import pic2 from '@/app/Images/icon.png'
-import pic3 from '@/app/Images/millions.webp'
+import pic3 from '@/app/Images/millions1.png'
 import pic4 from '@/app/Images/icon1.png'
 import './trustedSec.css'
 

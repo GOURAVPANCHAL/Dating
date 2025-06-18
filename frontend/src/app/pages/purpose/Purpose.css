@@ -49,7 +49,7 @@ h4 {
   padding: 20px 0;
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 10px;
 }
 
 .earnSection{
@@ -104,7 +104,7 @@ padding-left: 40px;
 .hero {
   display: flex;
   align-items: center;
-  min-height: 80vh;
+  min-height: 70vh;
   padding: 60px 0;
   background: linear-gradient(135deg, #F7FFF7 0%, #E2F3FB 100%);
   position: relative;
@@ -224,10 +224,13 @@ padding-left: 40px;
 .workflowSteps {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;    
   margin-top: 60px;
   flex-wrap: wrap;
 }
+
+
+
 
 .stepCard {
   flex: 1;
@@ -340,9 +343,9 @@ padding-left: 40px;
 }
 
 .testimonialCard {
-  flex: 1;
-  min-width: 300px;
-  max-width: 400px;
+  flex: 2;
+  /* min-width: 300px;
+  max-width: 400px; */
   background: rgba(255, 255, 255, 0.1);
   padding: 40px;
   border-radius: 20px;
@@ -391,7 +394,9 @@ padding-left: 40px;
   width:450px;
   height:500px;
 }
-
+.highlightText1{
+color:darkturquoise;  
+}
 .primaryButton {
   background-color: var(--bg);
   color: white;
@@ -409,7 +414,6 @@ padding-left: 40px;
   color: white;
   box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
 }
-
 .secondaryButton:hover {
   background-color:var(--bg);
   transform: translateY(-3px);
@@ -441,10 +445,28 @@ padding-left: 40px;
   border-radius: 20px;
   margin: 80px 0;
 }
+.PurposeImg{
+  width: 700px;
+  height:800px;
 
+}
+
+.sectionTitle{
+  margin: 0 40px;
+}
+.testimonialGrid {
+  /* display: grid; */
+  gap: 10px;
+  grid-template-columns: 1fr; /* Default: 1 card per row on mobile */
+  padding: 20px;
+}
 .ctaTitle {
   font-size: 3rem;
   margin-bottom: 1.5rem;
+}
+
+.buttonSec{
+  text-align: center;
 }
 
 .ctaText {
@@ -468,6 +490,7 @@ padding-left: 40px;
     text-align: center;
   }
 
+  
   .sectionTitle::after {
     left: 50%;
     transform: translateX(-50%);
@@ -479,7 +502,7 @@ padding-left: 40px;
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 20px 0;
+    padding: 0px 0;
   }
 
   .heroContent {
@@ -490,22 +513,127 @@ padding-left: 40px;
     font-size: 2.8rem;
   }
   .sectionImage {
+    margin:10px;
     width: 100%;
   }
   .hero h2 {
     font-size: 1.8rem;
   }
+  .PurposeImg {
+    width: 100%;
+    height: 300px;
+}
+.ctaTitle {
+  font-size: 1.5rem;
+  padding:10px;
+  margin:0;
+  font-size: x-large;
+}
 
   .heroText {
     margin: 0 auto 2.5rem;
   }
+
+  .benefitCard {
+
+    padding: 0px;
+  
+  }
+}
+@media (max-width: 768px) {
+
+  .testimonialGrid {
+    display: grid;
+    padding:0px;
+
+    grid-template-columns: 1fr;
+    
+}
+.earnGrid { 
+  gap: 10px;
+  
 }
 
-@media (max-width: 768px) {
+.largeButton {
+  padding: 16px 30px;
+  font-size: 1.1rem;
+}
+  .stepCard {
+    padding: 0px;
+  }
+  .workflowSteps{
+    grid-template-columns: repeat(3, 1fr); /* 2 cards per row on tablet and up */
+  }
   .stepImage {
-    width: 80%;
+    width: 50%;
+  }
+  .benefitCard {
+    padding: 0px;
+   
+  }
+  .testimonialCard {
+    flex: 1 1;
+    background: rgba(255, 255, 255, 0.1);
+     padding: 0px; 
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+  .earnCard p {
+    color: #666;
+    font-size: 0.7rem;
+    padding: 10px;
+}
+
+  .testimonialImage{
+    width: 100%;
+    height:300px;
+    margin-top: 10px;
+  
+  }
+  .testimonialAuthor {
+    font-size: 13px;
+  }
+  
+.sectionTitle {
+
+  margin-bottom: 0rem;
+ 
+}
+.earnGrid{
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablet and up */
+  
+
+}
+
+.earnCard {
+ 
+  padding: 10px;
+  
+
+
+  transition: all 0.3s ease;
+}
+
+
+  .benefitsGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablet and up */
+    gap: 20px;
   }
 
+  .benefitCard h3{
+    font-size: 1rem;
+  }
+
+  .benefitCard p {
+    font-size: 12px;
+}
+
+.testimonialGrid {
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets and up */
+}
 
   .stepCard h3 {
     font-size: 14px;
@@ -514,6 +642,12 @@ padding-left: 40px;
   .stepCard p {
     color: #666;
     font-size: 14px;
+    padding: 0px 15px;
+}
+.testimonialText{
+  padding:14px;
+  margin-bottom: 10px;
+  font-size: 12px;
 }
   .section {
     padding: 0px 0;
@@ -525,15 +659,25 @@ padding-left: 40px;
 }
 .heroText {
   margin: 0 auto 1.5rem;
+  padding: 0 30px;
   font-size: 14px;
+}
+.sectionContent{
+ padding:10px;
 }
 
 .sectionImage {
+  margin:10px;
   width: 100%;
 }
 .heroButtons {
   display: contents;
   justify-content: space-around;
+} 
+.testimonialImage {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
 }
 
   .sectionTitle {
@@ -541,6 +685,7 @@ padding-left: 40px;
   }
 
   .hero h1 {
+    padding-left: 0px;
     font-size: 2.2rem;
   }
 
@@ -553,9 +698,18 @@ padding-left: 40px;
   font-size: 1.1rem;
 }
 
-  .ctaTitle {
-    font-size: 2.2rem;
-  }
+.ctaText {
+    font-size: 0.8rem;
+    margin: 5px; 
+}
+
+.ctaButtons {
+  display: flex
+;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
 
   .ctaButtons {
     flex-direction: column;
@@ -564,7 +718,7 @@ padding-left: 40px;
 
   .button {
     width: 100%;
-    max-width: 300px;
+    /* max-width: 300px; */
     margin-bottom: 10px;
   }
 
@@ -575,11 +729,14 @@ padding-left: 40px;
 .sectionText {
   font-size: 14px;
   
+} 
 }
-  .benefitCard {
-    padding: 0px 50px;
-  }
-  .benefitCard p {
-    font-size: 14px;
+
+
+
+
+@media (min-width: 1024px) {
+  .benefitsGrid {
+    grid-template-columns: repeat(2, 1fr); /* optional: 4 cards per row on large screens */
   }
 }

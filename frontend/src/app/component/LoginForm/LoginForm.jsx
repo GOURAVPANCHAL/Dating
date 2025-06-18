@@ -1,122 +1,72 @@
-"use client";
-import { useState, useEffect } from "react";
-import './login-form.css'
-import {useRouter} from "next/navigation";
-import Link from "next/link";
-export default function LoginForm() {
-    const router=useRouter()
-    const Createaccount = () =>{
-        router.push("/pages/register")
-    }
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-        remember: false,
-    });
+'use client';
+import './login-form.css';
+import Image from 'next/image';
+import pic1 from '@/app/Images/img1.jpg';
+import { useState } from 'react';
 
-    const [errors, setErrors] = useState({});
+export default function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
-    useEffect(() => {
-        // Load custom CSS from /public
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "/login.css";
-        document.head.appendChild(link);
-        return () => document.head.removeChild(link);
-    }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({ email, password });
+    // Connect to backend here
+  };
 
-    const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData({
-            ...formData,
-            [name]: type === "checkbox" ? checked : value,
-        });
-    };
-
-    const validate = () => {
-        const newErrors = {};
-        if (!formData.email) {
-            newErrors.email = "Email is required";
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = "Email is invalid";
-        }
-
-        if (!formData.password) {
-            newErrors.password = "Password is required";
-        }
-
-        return newErrors;
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const newErrors = validate();
-        if (Object.keys(newErrors).length === 0) {
-            console.log("Login success", formData);
-        } else {
-            setErrors(newErrors);
-        }
-    };
-
-    return (
-        <div className="d-flex justify-content-end align-items-center vh-100 login-bg pe-5">
-
-            <div className="card login-card">
-                <div className="card-header text-center login-header">
-                    <h5 className="m-0 text-dark">LOGIN</h5>
-                </div>
-                <div className="card-body login-body">
-                    <form onSubmit={handleSubmit} noValidate>
-                        <div className="mb-3">
-                            <label className="form-label ">Username or Email</label>
-                            <input
-                                type="email"
-                                name="email"
-                                className={`form-control ${errors.email ? "is-invalid" : ""}`}
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
-                            {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-                        </div>
-
-                        <div className="mb-3">
-                            <label className="form-label ">Password</label>
-                            <input
-                                type="password"
-                                name="password"
-                                className={`form-control ${errors.password ? "is-invalid" : ""}`}
-                                value={formData.password}
-                                onChange={handleChange}
-                            />
-                            {errors.password && <div className="invalid-feedback">{errors.password}</div>}
-                        </div>
-
-                        <div className="mb-3 form-check">
-                            <input
-                                type="checkbox"
-                                name="remember"
-                                className="form-check-input"
-                                checked={formData.remember}
-                                onChange={handleChange}
-                            />
-                            <label className="form-check-label ">Remember Me</label>
-                        </div>
-
-                        <div className="d-flex justify-content-between">
-                            <button type="submit" className="login-btn">
-                                <i className="bi bi-box-arrow-in-right me-2"></i> LOG IN
-                            </button>
-                            <button type="button" className="register-btn" onClick={Createaccount}>
-                                <i className="bi bi-pencil me-2"></i> CREATE ACCOUNT
-                            </button>
-                        </div>
-
-                        <div className="text-center mt-3">
-                            <Link href="/pages/forgot-password" className="lost-password">Lost password?</Link>
-                        </div>
-                    </form>
-                </div>
-            </div>
+  return (
+    <div className="login-container">
+      <div className="login-card">
+        <div className="login-left">
+          <Image src={pic1} alt="Pattern" className="login-bg" />
         </div>
-    );
+        <div className="login-right">
+          <h2><span className="highlight">Hello,</span> Guyss!</h2>
+          <div className="tab-switch">
+            <span className="active-tab">Login</span>
+          </div>
+
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+
+            <div className="password-field">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <span
+                className="toggle-password"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? '🙈' : '👁️'}
+              </span>
+            </div>
+
+            <div className="forgot-password">
+              <a href="/forgot-password">Forgot Password?</a>
+            </div>
+
+            <button type="submit" className="login-btn">Login</button>
+          </form>
+
+          <p className="or-divider">Or</p>
+
+          <div className="social-icons">
+            <img src="/google-icon.svg" alt="Google" />
+            <img src="/facebook-icon.svg" alt="Facebook" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
