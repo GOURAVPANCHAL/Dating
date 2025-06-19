@@ -485,3 +485,48 @@
 }
 }
 
+.thank-you-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thank-you-popup {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  max-width: 400px;
+  width: 90%;
+}
+
+.thank-you-popup h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.thank-you-popup p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.thank-you-popup button {
+  background: #ff4081;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+

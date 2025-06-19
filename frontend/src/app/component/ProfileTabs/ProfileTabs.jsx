@@ -10,6 +10,7 @@ import ChatingPage from '../Chating/ChatingPage';
 import Friendlist from '../Friendlist/Friendlist';
 import ConnectedFriends from '../ConnectedFriends/ConnectedFriends';
 import Wishlist from '../Wishlist/Wishlist';
+import { FaHeartCirclePlus } from "react-icons/fa6";
 
 const ProfileTabs = () => {
   const searchParams = useSearchParams();
@@ -80,10 +81,10 @@ const ProfileTabs = () => {
               <div className="list-group">
                 {[
                   { key: 'my-profile', label: 'My Profile', icon: 'bi-person-circle' },
-                  { key: 'friend list', label: 'Friend List', icon: 'bi-people-fill' },
+                  { key: 'friend list', label: 'Friend List', icon: 'bi-list' },
                   { key: 'connected-friends', label: 'My Booking', icon: 'bi-people-fill' },
                   { key: 'message', label: 'Message', icon: 'bi-chat-left-text' },
-                  { key: 'Wishlist', label: 'Wishlist', icon: 'bi-chat-left-text' },
+                  { key: 'Wishlist', label: 'Wishlist', icon: 'bi bi-heart-fill' },
                   { key: 'notification', label: 'Notification', icon: 'bi-bell-fill' },
                   { key: 'users', label: 'Users', icon: 'bi-person-lines-fill' },
                   { key: 'setting', label: 'Setting', icon: 'bi-gear-fill' },

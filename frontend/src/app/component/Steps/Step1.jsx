@@ -117,7 +117,7 @@ export default function Step1({ formData, handleChange, setFormData }) {
       <div className="mb-2 fw-bold text-primary">Upload Your Photos:</div>
       <p className="text-muted mb-2">You can upload up to {MAX_PHOTOS} photos.</p>
 
-      <div className="d-flex flex-wrap gap-2 justify-content-center">
+      <div className="d-flex flex-wrap gap-2 justify-content-center" style={{marginBottom:"40px"}}  >
         {[...Array(MAX_PHOTOS)].map((_, index) => (
           <div
             key={index}

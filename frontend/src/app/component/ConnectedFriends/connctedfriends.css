@@ -241,6 +241,127 @@
 }
 
 
+
+/* Active /upcoming date */
+.hotel-card-horizontal {
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(to right, #ffffff, #f8f8fc);
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hotel-card-horizontal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-card-img {
+  width: 160px;
+  height: 230px;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.hotel-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: #28c76f;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.hotel-card-info {
+  flex-grow: 1;
+}
+
+.hotel-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.rating {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.features span {
+  background-color: #f0f0f5;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-right: 6px;
+  color: #555;
+}
+
+.booking-meta p {
+  font-size: 0.8rem;
+  margin: 4px 0;
+  color: #666;
+}
+
+.price-and-book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.book-now-btn {
+  background: #6c5ce7;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background: #4b3bc1;
+}
+
+.star-rating i {
+  font-size: 1rem;
+  color: #f1c40f;
+  margin-right: 2px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star-rating i:hover {
+  color: #f39c12;
+}
+
+
 /* Responsive styles */
 @media only screen and (max-width: 768px) {
   .ConnectedFriends-img {

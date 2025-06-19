@@ -88,14 +88,14 @@ const FindDetails = () => {
   };
 
   const handleSubmit = () => {
-  // Validate final step fields if needed
-  if (!surprise || !note) {
-    alert("Please fill all fields before submitting.");
-    return;
-  }
-  setThankYou(true);  // Mark booking as done
-  setShowBooking(false); // Close popup
-};
+    // Validate final step fields if needed
+    if (!surprise || !note) {
+      alert("Please fill all fields before submitting.");
+      return;
+    }
+    setThankYou(true);  // Mark booking as done
+    setShowBooking(false); // Close popup
+  };
 
 
   const profileDetail = [
@@ -104,6 +104,7 @@ const FindDetails = () => {
       age: 24,
       country: "Georgia",
       state: "India",
+      distance: "5km",
       description:
         "So long as you have food in your mouth, you have solved all questions for the time being.",
       interest: [
@@ -187,6 +188,7 @@ const FindDetails = () => {
                         <i className="bi bi-patch-check text-success"></i>
                       </span>
                     </h4>
+
                     <div className="like-dislike-btn">
                       <button
                         className={
@@ -207,10 +209,13 @@ const FindDetails = () => {
                         <i className="bi bi-hand-thumbs-down"></i>
                       </button>
                     </div>
-                    <p className="profile-location">
-                      <i className="bi bi-geo-alt"></i> {item.country},{" "}
-                      {item.state}
-                    </p>
+                    <div className="d-flex">
+                      <p className="profile-location">
+                        <i className="bi bi-geo-alt"></i> {item.country},{" "}
+                        {item.state}
+
+                      </p>
+                      <p className="ms-3"> <i className="bi bi-geo-alt"></i> {item.distance} </p> </div>
                     <p className="profile-description">{item.description}</p>
                     <ul className="profile-interest">
                       {item.interest.map((interest, i) => (
@@ -224,9 +229,8 @@ const FindDetails = () => {
                 <div className="FindDetailsBtnSec">
                   <button
                     onClick={handleToggle}
-                    className={`MakeFriendbtn ${
-                      friend ? "MakeFriendbtn" : "theme-bg"
-                    }`}
+                    className={`MakeFriendbtn ${friend ? "MakeFriendbtn" : "theme-bg"
+                      }`}
                   >
                     {friend ? (
                       <>
@@ -249,31 +253,31 @@ const FindDetails = () => {
                   </button>
 
                   <div>
-  {!thankYou ? (
-    <button className="Bookingbtn" onClick={() => {
-      setShowBooking(true);
-      setCurrentStep(1);
-    }}>
-      <span style={{ fontSize: "18px" }}>Let's Date</span>
-    </button>
-  ) : (
-    <button
-      className="Bookingbtn cancel"
-      onClick={() => {
-        // Your cancel logic here
-        setThankYou(false);
-        setDate("");
-        setTime("");
-        setPlace("");
-        setVibe("");
-        setSurprise("");
-        setNote("");
-      }}
-    >
-      <span style={{ fontSize: "18px", color: "red" }}>Cancel Date</span>
-    </button>
-  )}
-</div>
+                    {!thankYou ? (
+                      <button className="Bookingbtn" onClick={() => {
+                        setShowBooking(true);
+                        setCurrentStep(1);
+                      }}>
+                        <span style={{ fontSize: "18px" }}>Let's Date</span>
+                      </button>
+                    ) : (
+                      <button
+                        className="Bookingbtn cancel"
+                        onClick={() => {
+                          // Your cancel logic here
+                          setThankYou(false);
+                          setDate("");
+                          setTime("");
+                          setPlace("");
+                          setVibe("");
+                          setSurprise("");
+                          setNote("");
+                        }}
+                      >
+                        <span style={{ fontSize: "18px", color: "white" }}>Cancel Date</span>
+                      </button>
+                    )}
+                  </div>
 
                 </div>
               </div>
@@ -351,13 +355,16 @@ const FindDetails = () => {
                           className="booking-input"
                           value={date}
                           onChange={(e) => setDate(e.target.value)}
+                          min={new Date().toISOString().split("T")[0]} // Set today's date as min
                         />
+
                         <label className="booking-label">Preferred Time</label>
                         <input
                           type="time"
                           className="booking-input"
                           value={time}
                           onChange={(e) => setTime(e.target.value)}
+                          min={date === new Date().toISOString().split("T")[0] ? new Date().toLocaleTimeString('en-GB', { hour12: false }).slice(0, 5) : undefined}
                         />
                       </>
                     )}
@@ -427,7 +434,7 @@ const FindDetails = () => {
                         <button
                           className="booking-btn next"
                           onClick={() => {
-                            
+
                             if (currentStep === 1 && (!date || !time)) {
                               alert(
                                 "Please fill date and time before proceeding."
@@ -485,6 +492,16 @@ const FindDetails = () => {
             </div>
           </div>
         </div>
+        {thankYou && (
+  <div className="thank-you-popup-overlay" onClick={() => setThankYou(false)}>
+    <div className="thank-you-popup" onClick={(e) => e.stopPropagation()}>
+      <h3>🎉 Thank You!</h3>
+      <p>We hope your date will be amazing. All the best! ❤️</p>
+      <button onClick={() => setThankYou(false)}>Close</button>
+    </div>
+  </div>
+)}
+
         <div className="suggested-profiles" ref={suggestedRef}>
           <SuggestedProfiles />
         </div>

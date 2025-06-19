@@ -2,6 +2,7 @@
 import './login-form.css';
 import Image from 'next/image';
 import pic1 from '@/app/Images/img1.jpg';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function LoginPage() {
@@ -16,7 +17,18 @@ export default function LoginPage() {
   };
 
   return (
+    <>
+ 
+
+
     <div className="login-container">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9, y: 50 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.8, y: 50 }}
+      transition={{ duration: 0.5 }}
+      className="login-container"
+    >
       <div className="login-card">
         <div className="login-left">
           <Image src={pic1} alt="Pattern" className="login-bg" />
@@ -53,7 +65,7 @@ export default function LoginPage() {
             </div>
 
             <div className="forgot-password">
-              <a href="/forgot-password">Forgot Password?</a>
+              <a href="/pages/forgot-password">Forgot Password?</a>
             </div>
 
             <button type="submit" className="login-btn">Login</button>
@@ -67,6 +79,9 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
+    </motion.div>
     </div>
+
+    </>
   );
 }
