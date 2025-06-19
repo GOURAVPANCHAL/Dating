@@ -1,99 +1,83 @@
-import Head from 'next/head';
-import './Policy.css';
+"use client";
+import Image from "next/image";
+import "./policy.css";
+import { FaPhoneAlt, FaEnvelope, FaShieldAlt, FaUndoAlt, FaLock, FaHeadset, FaMoneyBillWave } from "react-icons/fa";
+import pic1 from '@/app/Images/privacy-policy.jpg'
 
 const PolicyPage = () => {
   return (
+
+<>
+       <div>
+       <Image src={pic1} alt="policybanner"  className="policy-bannerImg" />
+     </div>
+
     <div className="policy-container">
-      <Head>
-        <title>Intimate Policy & Guidelines | Luvnestor</title>
-        <meta name="description" content="Our commitment to sensual, safe connections with mutual respect" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-      </Head>
+      <h2 className="policy-title">Security & Policies</h2>
 
-      {/* Luxurious Hero Section */}
-      <section className="hero-policy">
-        <h1 className="policy-heading">The Art of Intimate Connection</h1>
-        <p className="policy-intro">
-          Where boundaries become bridges to profound experiences — a sanctuary for sensual connection with uncompromising safety.
-        </p>
-      </section>
+     
 
-      {/* Mission Section */}
-      <section className="policy-section">
-        <h2>Our Philosophy</h2>
-        <p>
-          Luvnestor redefines modern intimacy by blending emotional intelligence with sensual connection. 
-          We empower you to explore desire within a framework of absolute consent and mutual respect, 
-          creating space for both vulnerability and empowerment.
-        </p>
-      </section>
-
-      {/* Features Section */}
-      <section className="policy-section">
-        <h2>Pathways to Pleasure</h2>
-        <div className="features-grid">
-          <div className="feature-card">
-            <h3><span>💋</span> Sensual Dialogues</h3>
-            <p>Monetize your emotional and erotic intelligence through intimate conversations that awaken desire.</p>
-          </div>
-          <div className="feature-card">
-            <h3><span>✨</span> Curated Encounters</h3>
-            <p>Design unforgettable experiences — from wine tastings to private dance sessions — at your premium.</p>
-          </div>
-          <div className="feature-card">
-            <h3><span>🧘</span> Tactile Meditation</h3>
-            <p>Guide partners through sensual mindfulness and breathwork experiences.</p>
-          </div>
-          <div className="feature-card">
-            <h3><span>👐</span> Consensual Touch</h3>
-            <p>Explore therapeutic and erotic touch within pre-negotiated boundaries.</p>
-          </div>
-          <div className="feature-card">
-            <h3><span>🎭</span> Fantasy Fulfillment</h3>
-            <p>Create safe containers for roleplay and kink with clear agreements.</p>
-          </div>
-          <div className="feature-card">
-            <h3><span>🔒</span> Discretion Guaranteed</h3>
-            <p>End-to-end encryption protects your privacy and all communications.</p>
-          </div>
+      <div className="policy-grid">
+        <div className="policy-card">
+          <FaUndoAlt className="policy-icon" />
+          <h3>Reschedule</h3>
+          <ul>
+            <li>Reschedule up to 30 minutes before your booking time.</li>
+            <li>Only one reschedule allowed per booking.</li>
+            <li>To reschedule, go to My Bookings  Reschedule.</li>
+          </ul>
         </div>
-      </section>
 
-      {/* Consent Section */}
-      <section className="policy-section">
-        <h2>The Sacred Yes</h2>
-        <p>
-          Every interaction flows from enthusiastic, informed consent that can be revoked at any moment. 
-          We've built revolutionary consent confirmation tools to ensure every "Yes" is conscious and voluntary.
-        </p>
-        <ul>
-          <li>Multi-step consent verification for physical encounters</li>
-          <li>Real-time boundary adjustment during sessions</li>
-          <li>Anonymous reporting for any discomfort</li>
-        </ul>
-      </section>
+        <div className="policy-card">
+          <FaMoneyBillWave className="policy-icon" />
+          <h3>Cancellation Policy</h3>
+          <ul>
+            <li>Free cancellation up to 1 hour before appointment.</li>
+            <li>Late cancellations may incur a fee.</li>
+            <li>No refund for no-shows or last-minute cancellations.</li>
+          </ul>
+        </div>
 
-      {/* Safety Section */}
-      <section className="policy-section">
-        <h2>Your Safety Ecosystem</h2>
-        <ul>
-         
-          <li>Discreet emergency alert system</li>
-          <li>Mandatory meetup user Adhare verification</li>
-          <li>Website OTP Varification when they Meet </li>
-        
-        </ul>
-      </section>
+        <div className="policy-card">
+          <FaShieldAlt className="policy-icon" />
+          <h3>Safety Instructions</h3>
+          <ul>
+            <li>Never share personal information unnecessarily.</li>
+            <li>Always verify OTP in person.</li>
+            <li>Report any suspicious behavior immediately.</li>
+          </ul>
+        </div>
 
-      {/* Final CTA */}
-      <section className="policy-final">
-        <h2>Ready to Explore Conscious Intimacy?</h2>
-        <p>
-          Join our community of sensual explorers and emotional connoisseurs — where desire meets discernment.
-        </p>
-        <button className="cta-button btn ">Begin Your Journey</button>
-      </section>
+        <div className="policy-card">
+          <FaHeadset className="policy-icon" />
+          <h3>Supervisor Support</h3>
+          <ul>
+            <li>Need help? Our support team is available 24/7.</li>
+            <li><FaPhoneAlt /> +91 90000 00000</li>
+            <li><FaEnvelope /> support@yourapp.com</li>
+          </ul>
+        </div>
+
+        <div className="policy-card">
+          <FaMoneyBillWave className="policy-icon" />
+          <h3>3 Days Money Back Guarantee</h3>
+          <ul>
+            <li>If you're unsatisfied, request a refund within 3 days.</li>
+            <li>No questions asked. Easy & fast refund process.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="final-note">
+        <FaLock className="note-icon" />
+        <div>
+          <p><strong>All meetings are private & secure.</strong></p>
+          <p>No abusive behavior allowed — monitored & reported.</p>
+          <p>Exact location will be shared after confirmation.</p>
+        </div>
+      </div>
     </div>
+    </>
   );
 };
 

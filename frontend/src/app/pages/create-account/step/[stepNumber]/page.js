@@ -18,7 +18,8 @@ import Step9 from '@/app/component/Steps/Step9';
 import Step10 from '@/app/component/Steps/Step10';
 import Step11 from '@/app/component/Steps/Step11';
 import Step12 from '@/app/component/Steps/Step12';
-import Step13 from '@/app/component/Steps/Step13';
+import Step15 from '@/app/component/Steps/Step15';
+import Step14 from '@/app/component/Steps/Step14';
 
 const steps = {
   1: Step1,
@@ -33,7 +34,8 @@ const steps = {
   10: Step10,
   11: Step11,
   12: Step12,
-  13: Step13,
+  14: Step14,
+  15: Step15,
 };
 
 export default function StepPage() {
@@ -104,7 +106,7 @@ export default function StepPage() {
         <div className="form-card">
           <div className="form-header">
             <h2>Create Your Love Profile</h2>
-            <p>Step {stepNumber} of 13</p>
+            <p>Step {stepNumber} of 15</p>
           </div>
 
           <div className="form-body">
@@ -121,7 +123,7 @@ export default function StepPage() {
                 ← Back
               </button>
             )}
-            {stepNumber < 13 ? (
+            {stepNumber < 15 ? (
               <button className="btn primary" onClick={nextStep}>
                 Next →
               </button>

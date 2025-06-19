@@ -65,7 +65,7 @@ const Footer = () => {
             <div className="member">
               <img  src="/images/user3.jpeg" alt="Tluagtea" className="member-img" />
               <div>
-                <strong>Aman Tiwari</strong><br />
+                <strong> Sunil Tiwari</strong><br />
                 <span className="text-success">Active</span>
               </div>
             </div>

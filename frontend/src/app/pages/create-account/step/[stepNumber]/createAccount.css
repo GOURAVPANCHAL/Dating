@@ -3,7 +3,10 @@
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
-    background:whitesmoke;
+    background-image: url("../../../../Images/loginbg.jpg");
+    background-size: cover;         /* Makes sure image covers entire area */
+    background-position: center;    /* Centers the image */
+    background-repeat: no-repeat;   /* Prevents tiling */
   }
   
   .form-card {
@@ -29,7 +32,7 @@
     text-align: center;
     font-size: 14px;
     color: #a20044;
-    margin-bottom: 20px;
+    margin-bottom: -15px;
   }
   
   .form-body {
@@ -54,7 +57,7 @@
   }
   
   .form-footer {
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     gap: 12px;
     justify-content: space-between;
