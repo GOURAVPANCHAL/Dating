@@ -15,34 +15,32 @@ import pic6 from "../../Images/user/user5.jpeg";
 
 const Findprofile = () => {
     const originalProfiles = [
-        { id: 1, gender: "female", picture: pic1, name: "Juhi Khan", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
-        { id: 2, gender: "female", picture: pic2, name: "Divya Rathor", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
-        { id: 3, gender: "female", picture: pic3, name: "Nirmala Devi", age: 34, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
-        { id: 4, gender: "female", picture: pic4, name: "Kalpana Chawla", age: 40, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
-        { id: 5, gender: "female", picture: pic5, name: "Vidya Devi", age: 50, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
-        { id: 6, gender: "male", picture: pic6, name: "Santosh Singh", age: 70, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
-        { id: 7, gender: "female", picture: pic1, name: "Anjali yadav", age: 30, profession: "Web Designer", city: "Delhi", state: "Delhi",    price: 1200,    tags: ["🎨 Art", "🎬 Movies"], isOnline: false, verified: false },
-        { id: 8, gender: "female", picture: pic2, name: "Kavita Sharma", age: 28, profession: "Book Writer", city: "Gurgaon", state: "Haryana",    price: 1200,    tags: ["📖 Reading", "☕ Coffee"], isOnline: true, verified: true },
-        { id: 9, gender: "female", picture: pic3, name: "Priya Sharma", age: 35, profession: "Doctor", city: "Noida", state: "UP",    price: 1200,    tags: ["💉 Health", "💪 Fitness"], isOnline: true, verified: true },
-        { id: 10, gender: "female", picture: pic4, name: "Rita Kapoor", age: 38, profession: "Teacher", city: "Ghaziabad", state: "UP",    price: 1200,    tags: ["📚 Teaching", "🎶 Music"], isOnline: false, verified: false },
-        { id: 11, gender: "female", picture: pic5, name: "Neha Singh", age: 29, profession: "Engineer", city: "Faridabad", state: "Haryana",    price: 1200,    tags: ["⚙️ Machines", "📈 Stocks"], isOnline: true, verified: true },
-        { id: 12, gender: "female", picture: pic6, name: "Sneha Sharma", age: 31, profession: "Chef", city: "Delhi", state: "Delhi",    price: 1200,    tags: ["🍜 Cooking", "✈️ Travel"], isOnline: false, verified: false },
-        { id: 13, gender: "female", picture: pic1, name: "Payal kapoor", age: 26, profession: "Photographer", city: "Delhi", state: "Delhi",    price: 1200,    tags: ["📸 Photos", "🌄 Hiking"], isOnline: true, verified: true },
-
-        // repeated for pagination testing
-        { id: 14, gender: "female", picture: pic1, name: "Juhi Khan", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
-        { id: 15, gender: "female", picture: pic2, name: "Divya Rathor", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
-        { id: 16, gender: "female", picture: pic3, name: "Nirmala Devi", age: 34, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
-        { id: 17, gender: "female", picture: pic4, name: "Kalpana Chawla", age: 40, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
-        { id: 18, gender: "female", picture: pic5, name: "Vidya Devi", age: 50, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
-        { id: 19, gender: "male", picture: pic6, name: "Santosh Singh", age: 70, profession: "Web Developer", city: "Rohini", state: "Delhi",    price: 1200,    tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
-        { id: 20, gender: "female", picture: pic1, name: "Anjali", age: 30, profession: "Designer", city: "Delhi", state: "Delhi",    price: 1200,    tags: ["🎨 Art", "🎬 Movies"], isOnline: false, verified: false },
-        { id: 21, gender: "female", picture: pic2, name: "Kavita", age: 28, profession: "Writer", city: "Gurgaon", state: "Haryana",    price: 1200,    tags: ["📖 Reading", "☕ Coffee"], isOnline: true, verified: true },
-        { id: 22, gender: "female", picture: pic3, name: "Priya", age: 35, profession: "Doctor", city: "Noida", state: "UP",    price: 1200,    tags: ["💉 Health", "💪 Fitness"], isOnline: true, verified: true },
-        { id: 23, gender: "female", picture: pic4, name: "Rita", age: 38, profession: "Teacher", city: "Ghaziabad", state: "UP",    price: 1200,    tags: ["📚 Teaching", "🎶 Music"], isOnline: false, verified: false },
-        { id: 24, gender: "female", picture: pic5, name: "Neha", age: 29, profession: "Engineer", city: "Faridabad", state: "Haryana",    price: 1200,    tags: ["⚙️ Machines", "📈 Stocks"], isOnline: true, verified: true },
-        { id: 25, gender: "female", picture: pic6, name: "Sneha", age: 31, profession: "Chef", city: "Delhi", state: "Delhi",    price: 1200,    tags: ["🍜 Cooking", "✈️ Travel"], isOnline: false, verified: false },
-        { id: 26, gender: "female", picture: pic1, name: "Payal", age: 26, profession: "Photographer", city: "Delhi", state: "Delhi",    price: 1200,    tags: ["📸 Photos", "🌄 Hiking"], isOnline: true, verified: true },
+        { id: 1, gender: "female", picture: pic1, name: "Juhi Khan", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        { id: 2, gender: "female", picture: pic2, name: "Divya Rathor", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
+        { id: 3, gender: "female", picture: pic3, name: "Nirmala Devi", age: 34, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        { id: 4, gender: "female", picture: pic4, name: "Kalpana Chawla", age: 40, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        { id: 5, gender: "female", picture: pic5, name: "Vidya Devi", age: 50, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
+        { id: 6, gender: "male", picture: pic6, name: "Santosh Singh", age: 70, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        { id: 7, gender: "female", picture: pic1, name: "Anjali yadav", age: 30, profession: "Web Designer", city: "Delhi", state: "Delhi", price: 1200, tags: ["🎨 Art", "🎬 Movies"], isOnline: false, verified: false },
+        { id: 8, gender: "female", picture: pic2, name: "Kavita Sharma", age: 28, profession: "Book Writer", city: "Gurgaon", state: "Haryana", price: 1200, tags: ["📖 Reading", "☕ Coffee"], isOnline: true, verified: true },
+        { id: 9, gender: "female", picture: pic3, name: "Priya Sharma", age: 35, profession: "Doctor", city: "Noida", state: "UP", price: 1200, tags: ["💉 Health", "💪 Fitness"], isOnline: true, verified: true },
+        { id: 10, gender: "female", picture: pic4, name: "Rita Kapoor", age: 38, profession: "Teacher", city: "Ghaziabad", state: "UP", price: 1200, tags: ["📚 Teaching", "🎶 Music"], isOnline: false, verified: false },
+        { id: 11, gender: "female", picture: pic5, name: "Neha Singh", age: 29, profession: "Engineer", city: "Faridabad", state: "Haryana", price: 1200, tags: ["⚙️ Machines", "📈 Stocks"], isOnline: true, verified: true },
+        { id: 12, gender: "female", picture: pic6, name: "Sneha Sharma", age: 31, profession: "Chef", city: "Delhi", state: "Delhi", price: 1200, tags: ["🍜 Cooking", "✈️ Travel"], isOnline: false, verified: false },
+        { id: 13, gender: "female", picture: pic1, name: "Payal kapoor", age: 26, profession: "Photographer", city: "Delhi", state: "Delhi", price: 1200, tags: ["📸 Photos", "🌄 Hiking"], isOnline: true, verified: true },
+        { id: 14, gender: "female", picture: pic1, name: "Juhi Khan", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        { id: 15, gender: "female", picture: pic2, name: "Divya Rathor", age: 24, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
+        { id: 16, gender: "female", picture: pic3, name: "Nirmala Devi", age: 34, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        { id: 17, gender: "female", picture: pic4, name: "Kalpana Chawla", age: 40, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        { id: 18, gender: "female", picture: pic5, name: "Vidya Devi", age: 50, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: false, verified: false },
+        { id: 19, gender: "male", picture: pic6, name: "Santosh Singh", age: 70, profession: "Web Developer", city: "Rohini", state: "Delhi", price: 1200, tags: ["🗻 Skiing", "🍕 Foodie", "🎵 Music lover"], isOnline: true, verified: true },
+        { id: 20, gender: "female", picture: pic1, name: "Anjali", age: 30, profession: "Designer", city: "Delhi", state: "Delhi", price: 1200, tags: ["🎨 Art", "🎬 Movies"], isOnline: false, verified: false },
+        { id: 21, gender: "female", picture: pic2, name: "Kavita", age: 28, profession: "Writer", city: "Gurgaon", state: "Haryana", price: 1200, tags: ["📖 Reading", "☕ Coffee"], isOnline: true, verified: true },
+        { id: 22, gender: "female", picture: pic3, name: "Priya", age: 35, profession: "Doctor", city: "Noida", state: "UP", price: 1200, tags: ["💉 Health", "💪 Fitness"], isOnline: true, verified: true },
+        { id: 23, gender: "female", picture: pic4, name: "Rita", age: 38, profession: "Teacher", city: "Ghaziabad", state: "UP", price: 1200, tags: ["📚 Teaching", "🎶 Music"], isOnline: false, verified: false },
+        { id: 24, gender: "female", picture: pic5, name: "Neha", age: 29, profession: "Engineer", city: "Faridabad", state: "Haryana", price: 1200, tags: ["⚙️ Machines", "📈 Stocks"], isOnline: true, verified: true },
+        { id: 25, gender: "female", picture: pic6, name: "Sneha", age: 31, profession: "Chef", city: "Delhi", state: "Delhi", price: 1200, tags: ["🍜 Cooking", "✈️ Travel"], isOnline: false, verified: false },
+        { id: 26, gender: "female", picture: pic1, name: "Payal", age: 26, profession: "Photographer", city: "Delhi", state: "Delhi", price: 1200, tags: ["📸 Photos", "🌄 Hiking"], isOnline: true, verified: true },
     ];
 
     const profilesPerPage = 12;
@@ -50,10 +48,10 @@ const Findprofile = () => {
     const [requestStatus, setRequestStatus] = useState({});
     const [currentPage, setCurrentPage] = useState(0);
 
-
-
-    // Add to wishlist function
-    const handleAddToWishlist = (profile) => {
+    const handleAddToWishlist = (profile, event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        
         let wishlist = JSON.parse(localStorage.getItem("wishlistProfiles")) || [];
         if (!wishlist.some(p => p.id === profile.id)) {
             wishlist.push(profile);
@@ -64,14 +62,16 @@ const Findprofile = () => {
         }
     };
 
-    const handleToggle = (profileId) => {
+    const handleToggle = (profileId, event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        
         const selectedProfile = originalProfiles.find(p => p.id === profileId);
         if (!selectedProfile) return;
-        //   const requestKey = `${selectedProfile.name}_${selectedProfile.age}`;
 
         let requests = JSON.parse(localStorage.getItem("friendRequests")) || {};
 
-        if (requestStatus[profileId]) {
+        if (requests[profileId]) {
             delete requests[profileId];
         } else {
             requests[profileId] = {
@@ -107,9 +107,7 @@ const Findprofile = () => {
                     filters.gender.includes(p.gender.charAt(0).toUpperCase() + p.gender.slice(1))
                 );
             }
-
         }
-
 
         if (filters.ageRange.min) {
             result = result.filter((p) => p.age >= parseInt(filters.ageRange.min));
@@ -118,20 +116,16 @@ const Findprofile = () => {
             result = result.filter((p) => p.age <= parseInt(filters.ageRange.max));
         }
 
-
         if (filters.onlineNow) {
             result = result.filter((p) => p.isOnline);
         }
-
 
         if (filters.verifiedOnly) {
             result = result.filter((p) => p.verified === true);
         }
 
-
         if (filters.interests && filters.interests.length > 0) {
             result = result.filter((p) =>
-                // Check if ALL selected interests are present in any of the profile's tags
                 filters.interests.every((filterInterest) =>
                     p.tags.some((profileTag) =>
                         profileTag.toLowerCase().includes(filterInterest.toLowerCase())
@@ -176,29 +170,28 @@ const Findprofile = () => {
         const statuses = {};
 
         currentProfiles.forEach((profile) => {
-            if (requests[profile.id])
-                statuses[profile.id] = true;
+            statuses[profile.id] = !!requests[profile.id];
         });
 
         setRequestStatus(statuses);
     }, [currentPage, filteredProfiles]);
+
     return (
         <section className='find-profile-section'>
             <div className="container-fluid">
                 <Filterations onFilterChange={applyFilters} />
                 <hr />
                 <div className="row">
-                    {currentProfiles.map((item, index) => (
-                        <div key={index} className="col-md-3 col-6">
+                    {currentProfiles.map((item) => (
+                        <div key={item.id} className="col-md-3 col-6">
                             <div className='profile-match-card position-relative'>
-                                {/* ⋮ Dropdown menu */}
                                 <div className="dropdown-menu-wrapper">
                                     <button
                                         className="dots-button"
                                         onClick={(e) => {
                                             e.preventDefault();
                                             e.stopPropagation();
-                                            const menu = document.getElementById(`menu-${index}`);
+                                            const menu = document.getElementById(`menu-${item.id}`);
                                             document.querySelectorAll('.dropdown-menu-content').forEach(m => {
                                                 if (m !== menu) m.classList.remove('show');
                                             });
@@ -207,28 +200,24 @@ const Findprofile = () => {
                                     >
                                         <i className="bi bi-shield-exclamation action-button"></i>
                                     </button>
-                                    <div id={`menu-${index}`} className="dropdown-menu-content">
+                                    <div id={`menu-${item.id}`} className="dropdown-menu-content">
                                         <button className="dropdown-item text-danger"><i className="bi bi-ban"></i> Block</button>
                                         <button className="dropdown-item text-warning"><i className="bi bi-flag"></i> Report</button>
                                     </div>
                                 </div>
 
-                                {/* Profile Link */}
-                                <Link href={'/pages/find-match/id'} className='profile-match-link'>
+                                <Link href={`/pages/find-match/${item.id}`} className='profile-match-link'>
                                     <div className="profile-image-wrapper">
                                         <Image src={item.picture} alt={item.name} className="profile-img" />
                                     </div>
                                     <div className="profile-info">
                                         <div
-                                            onClick={(event) => {
-                                                event.preventDefault();
-                                                event.stopPropagation();
-                                                handleToggle(index);
-                                            }}
-                                            className={`userRequestbtn ${requestStatus[index] ? 'bg-danger text-light' : ' theme-bg text-light'}`}>
-                                            {requestStatus[index]
+                                            onClick={(event) => handleToggle(item.id, event)}
+                                            className={`userRequestbtn ${requestStatus[item.id] ? 'bg-danger text-light' : 'bg-secondary text-light'}`}
+                                        >
+                                            {requestStatus[item.id]
                                                 ? <i className="bi bi-person-check-fill"></i>
-                                                : <i className="bi bi-person-fill-add float-end "></i>}
+                                                : <i className="bi bi-person-fill-add float-end"></i>}
                                         </div>
                                         <h4>{item.name}, <span>{item.age}</span></h4>
                                         <p className="profession"><i className="bi bi-briefcase-fill"></i> {item.profession}</p>
@@ -238,22 +227,14 @@ const Findprofile = () => {
                                             ))}
                                         </div>
                                         <button
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                handleAddToWishlist(item);
-                                            }}
+                                            onClick={(event) => handleAddToWishlist(item, event)}
                                             className="btn btn-wishlist"
                                         >
-                                           < FaHeartCirclePlus className='fs-3' />
+                                            <FaHeartCirclePlus className='fs-3' />
                                         </button>
-
-
-
                                     </div>
                                 </Link>
 
-                                {/* Avatar and Online Dot */}
                                 <div className="bottom-avatar">
                                     <Image src={item.picture} alt="small" className="avatar-img" />
                                 </div>
@@ -261,7 +242,6 @@ const Findprofile = () => {
                             </div>
                         </div>
                     ))}
-
                 </div>
 
                 <div className="pagination-container text-center mt-4">

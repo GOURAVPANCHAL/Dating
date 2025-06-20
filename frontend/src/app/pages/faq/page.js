@@ -46,12 +46,12 @@ const Page = () => {
                         <div className="col-12">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb justify-content-center m-0 gap-2">
-                                    <li className="breadcrumb-item"><Link href="/">Home</Link></li>
+                                    <li className="breadcrumb-item "><Link href="/"className="text-light" >Home</Link></li>
                                     {/* <i className="bi bi-heart"></i> */}
                                     <li className="breadcrumb-item active text-light" aria-current="page"></li>FAQ
                                 </ol>
                             </nav>
-                            <h1 className='text-center'>FAQ Page</h1>
+                            {/* <h1 className='text-center'>FAQ Page</h1> */}
                             {/* <p className='text-center'>Choose the plan that suits you best</p> */}
                         </div>
                     </div>
