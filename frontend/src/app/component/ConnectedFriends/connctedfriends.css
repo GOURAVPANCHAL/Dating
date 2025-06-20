@@ -16,22 +16,8 @@
 }
 
 
-.premium-ribbon {
-  position: absolute;
-  top: 17px;
-  right: -10px;
-  width: 95px;
-  text-align: center;
-  background: linear-gradient(to right, #e91e63, #ff4081);
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  transform: rotate(45deg);   
-  z-index: 10;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  padding: 4px 0;
-  pointer-events: none;
-}
+
+
 .BookingMainSec{
   border:solid 5px var(--bg);
   border-radius: 40px;
@@ -204,6 +190,27 @@
   text-align: center;
 }
 
+.feedback-ribbon {
+  cursor: pointer;
+  border-radius: 0 18px 0px 0px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 95px;
+  text-align: center;
+  background: linear-gradient(to right, #e91e63, #ff4081);
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  transform: rotate(0deg);
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 4px 0;
+  pointer-events: none;
+}
+
+
+
 .ConnectedFriends-info {
   padding: 0.5rem 0;
 }
@@ -213,6 +220,64 @@
   font-weight: 600;
   color: #333;
 }
+
+.feedback-points-popup {
+  margin-top: 1rem;
+}
+
+.feedback-points-popup h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.checkbox-item {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+.checkbox-item input[type="checkbox"] {
+  accent-color: #e91e63;
+  cursor: pointer;
+}
+
+.feedback-points-popup {
+  max-width: 100%;
+}
+
+.compact-checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox-item {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 6px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin: 0;
+  accent-color: #e91e63;
+  cursor: pointer;
+}
+
+.checkbox-item label {
+  margin: 0;
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+}
+
+
+
 
 .price-tag {
   font-size: 0.9rem;
@@ -239,6 +304,87 @@
   color: #888;
   font-weight: 500;
 }
+
+.popup-overlay {
+ 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-box {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  max-width: 440px;
+  width: 90%;
+  animation: scaleIn 0.3s ease-in-out;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+
+.feedback-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 14px;
+  resize: none;
+  transition: border-color 0.3s;
+}
+
+.feedback-textarea:focus {
+  border-color: #e91e63;
+  outline: none;
+}
+
+.submit-feedback-btn {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-feedback-btn:hover {
+  background: #c2185b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
 
 
 
@@ -360,6 +506,8 @@
 .star-rating i:hover {
   color: #f39c12;
 }
+
+
 
 
 /* Responsive styles */

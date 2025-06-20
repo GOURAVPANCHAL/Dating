@@ -1,5 +1,8 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from 'next/navigation'; // Note the different import path
+
+// Then use router.push('/pages/profile?tab=message')
 import React, { useState, useEffect, useRef } from "react";
 import SuggestedProfiles from "../FindMatch/suggestedProfiles";
 import "../../component/FindMatch/FindDetails.css";
@@ -19,8 +22,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const FindDetails = () => {
+
   const [activeBtn, setActiveBtn] = useState(null);
   const [friend, setFriend] = useState(false);
   const [zoomedImage, setZoomedImage] = useState(null);
@@ -37,6 +42,7 @@ const FindDetails = () => {
   const suggestedRef = useRef(null);
 
   const handleCancelDate = () => {
+
     // Reset everything
     setDate("");
     setTime("");
@@ -87,16 +93,18 @@ const FindDetails = () => {
     setCurrentStep(1); // Reset step
   };
 
+  const generateMeetingCode = () => {
+    return Math.floor(100000 + Math.random() * 900000).toString();
+  };
+
   const handleSubmit = () => {
-    // Validate final step fields if needed
     if (!surprise || !note) {
       alert("Please fill all fields before submitting.");
       return;
     }
-    setThankYou(true);  // Mark booking as done
-    setShowBooking(false); // Close popup
+    setThankYou(true);
+    setShowBooking(false);
   };
-
 
   const profileDetail = [
     {
@@ -229,7 +237,7 @@ const FindDetails = () => {
                 <div className="FindDetailsBtnSec">
                   <button
                     onClick={handleToggle}
-                    className={`MakeFriendbtn ${friend ? "MakeFriendbtn" : "theme-bg"
+                    className={`MakeFriendbtn ${friend ? "theme-bg" : "MakeFriendbtn"
                       }`}
                   >
                     {friend ? (
@@ -244,37 +252,33 @@ const FindDetails = () => {
                       </>
                     )}
                   </button>
-                  <button className="messagebtn">
-                    <span
-                      className="justify-content-center text-light pb-3"
-                      style={{ fontSize: "18px" }}
-                    ></span>
-                    <i className="bi bi-chat-left-dots text-light fs-5"></i>
-                  </button>
-
+                  <Link
+                    href="/pages/profile?tab=message"
+                    className="messagebtn" // Add your button styles here
+                  >
+                    <button className="messagebtn">
+                      <span
+                        className="justify-content-center text-light pb-3"
+                        style={{ fontSize: "14px" }}
+                      >
+                        <i className="bi bi-chat-left-dots text-light fs-5"></i>
+                      </span>
+                    </button>
+                  </Link>
                   <div>
                     {!thankYou ? (
-                      <button className="Bookingbtn" onClick={() => {
-                        setShowBooking(true);
-                        setCurrentStep(1);
-                      }}>
+                      <button className="Bookingbtn" onClick={handleBooking}>
                         <span style={{ fontSize: "18px" }}>Let's Date</span>
                       </button>
                     ) : (
                       <button
                         className="Bookingbtn cancel"
                         onClick={() => {
-                          // Your cancel logic here
                           setThankYou(false);
-                          setDate("");
-                          setTime("");
-                          setPlace("");
-                          setVibe("");
-                          setSurprise("");
-                          setNote("");
+                          resetBooking();
                         }}
                       >
-                        <span style={{ fontSize: "18px", color: "white" }}>Cancel Date</span>
+                        <span style={{ fontSize: "18px", color: "white" }}>Date Scheduled</span>
                       </button>
                     )}
                   </div>
@@ -493,14 +497,15 @@ const FindDetails = () => {
           </div>
         </div>
         {thankYou && (
-  <div className="thank-you-popup-overlay" onClick={() => setThankYou(false)}>
-    <div className="thank-you-popup" onClick={(e) => e.stopPropagation()}>
-      <h3>🎉 Thank You!</h3>
-      <p>We hope your date will be amazing. All the best! ❤️</p>
-      <button onClick={() => setThankYou(false)}>Close</button>
-    </div>
-  </div>
-)}
+          <div className="thank-you-popup-overlay" onClick={() => setThankYou(false)}>
+            <div className="thank-you-popup" onClick={(e) => e.stopPropagation()}>
+              <h3>🎉 Thank You!</h3>
+              <b>Meeting Code: <span className="meeting-code bg-warning p-2 mb-3 rounded">{generateMeetingCode()}</span></b>
+              <p className="mt-3">We hope your meeting will be a success ❤️</p>
+              <button onClick={() => setThankYou(false)}>Close</button>
+            </div>
+          </div>
+        )}
 
         <div className="suggested-profiles" ref={suggestedRef}>
           <SuggestedProfiles />
