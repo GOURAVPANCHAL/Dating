@@ -10,6 +10,7 @@ import ChatingPage from '../Chating/ChatingPage';
 import Friendlist from '../Friendlist/Friendlist';
 import ConnectedFriends from '../ConnectedFriends/ConnectedFriends';
 import Wishlist from '../Wishlist/Wishlist';
+import MyPlan from '../MyPlan/Myplan';
 import { FaHeartCirclePlus } from "react-icons/fa6";
 
 const ProfileTabs = () => {
@@ -55,6 +56,14 @@ const ProfileTabs = () => {
             </>
           );
 
+        
+      case 'MyPlan':
+        return(
+          <>
+          <MyPlan/>
+          </>
+        );  
+
       case 'notification':
         return <NotificationsPage />;
       case 'users':
@@ -86,6 +95,7 @@ const ProfileTabs = () => {
                   { key: 'message', label: 'Message', icon: 'bi-chat-left-text' },
                   { key: 'Wishlist', label: 'Wishlist', icon: 'bi bi-heart-fill' },
                   { key: 'notification', label: 'Notification', icon: 'bi-bell-fill' },
+                  { key: 'MyPlan', label: 'MyPlan', icon: 'bi-bell-fill' },
                   { key: 'users', label: 'Users', icon: 'bi-person-lines-fill' },
                   { key: 'setting', label: 'Setting', icon: 'bi-gear-fill' },
                 ].map((tab) => (

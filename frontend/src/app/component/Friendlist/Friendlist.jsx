@@ -2,10 +2,24 @@
 import React, { useEffect, useState } from 'react';
 import './FriendsPage.css';
 import { FaEnvelope, FaUser } from 'react-icons/fa';
+import { IoPersonRemove } from "react-icons/io5";
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 const FriendsPage = () => {
   const [friends, setFriends] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [unfriend, setUnfriend] = useState(true);
+  const searchParams = useSearchParams();
+  const tab = searchParams.get("tab"); // get tab from URL
+  const [activeTab, setActiveTab] = useState("overview");
+
+  useEffect(() => {
+    if (tab) setActiveTab(tab); // update when URL query changes
+  }, [tab]);
+
+
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -59,13 +73,24 @@ const FriendsPage = () => {
                   <p className="friendsPage-email">{friend.email}</p>
                 </div>
               </div>
+
               <div className="friendsPage-card-footer">
-                <button className="friendsPage-btn">
-                  <FaEnvelope size={14} />
-                </button>
-                <button className="friendsPage-btn">
-                  <FaUser size={14} />
-                </button>
+                {/* Fixed Link + Button for message redirection */}
+                <Link  href="/pages/profile?tab=message">
+                  <button className="friendsPage-btn">
+                    <FaEnvelope size={14} />
+                  </button>
+                </Link>
+
+                {unfriend ? (
+                  <button className="friendsPage-btn" onClick={() => setUnfriend(false)}>
+                    <IoPersonRemove size={14} className='text-danger' />
+                  </button>
+                ) : (
+                  <button className="friendsPage-btn" onClick={() => setUnfriend(true)}>
+                    <FaUser size={14} />
+                  </button>
+                )}
               </div>
             </div>
           ))}

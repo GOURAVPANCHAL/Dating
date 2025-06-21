@@ -18,8 +18,9 @@ import Step9 from '@/app/component/Steps/Step9';
 import Step10 from '@/app/component/Steps/Step10';
 import Step11 from '@/app/component/Steps/Step11';
 import Step12 from '@/app/component/Steps/Step12';
-import Step15 from '@/app/component/Steps/Step15';
+import Step13 from '@/app/component/Steps/Step13';
 import Step14 from '@/app/component/Steps/Step14';
+import Step15 from '@/app/component/Steps/Step15';
 
 const steps = {
   1: Step1,
@@ -34,6 +35,7 @@ const steps = {
   10: Step10,
   11: Step11,
   12: Step12,
+  13: Step13,
   14: Step14,
   15: Step15,
 };

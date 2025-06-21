@@ -4,6 +4,11 @@
     padding: 2rem 0;
   }
   
+  .wishlistTopSec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .meetings-heading {
     color: #e91e63;
     font-weight: 600;

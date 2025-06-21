@@ -158,3 +158,18 @@
     background: linear-gradient(to right, #b0296d, #d94f87);
   }
   
+
+  @media (max-width: 768px){
+    .earn-title {
+      font-size: 1.8rem;
+      
+    }
+
+    .earn-section {
+      padding: 5px 20px;
+    }
+
+    .earn-subtitle {
+      margin-bottom: 10px;
+    }
+  }    

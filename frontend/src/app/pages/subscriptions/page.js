@@ -6,25 +6,6 @@ import SubscriptionBenifit from '@/app/component/SubscriptionBenifits/page'
 import Image from 'next/image';
 
 const plans = [
-  // {
-  //   title: "Qiupid Standard",
-  //   price: 35,
-  //   color: "#fbbf24",
-  //   features: [
-  //     "View members directory",
-  //     "View members profile",
-  //     "Access to groups",
-  //     "Add media to your profile",
-  //   ],
-  //   disabled: [
-  //     "View site activity",
-  //     "Send private messages",
-  //     "Access group directory",
-  //     "Create group",
-  //     "Forum admin",
-  //     "Special title",
-  //   ],
-  // },
   {
     title: "Qiupid Plus",
     price: 40,

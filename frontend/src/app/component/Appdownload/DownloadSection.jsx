@@ -1,12 +1,12 @@
 import React from 'react'
 import './downloadSection.css'
-import backgroundImage from '../../Images/bg.png'
+import backgroundImage from '../../Images/bg4.png'
 import Image from 'next/image'
 const DownloadSection = () => {
     return (
         <>
             <div className="download-app">
-                <div className="container-fluid">
+                <div className="container">
                 <div className="row align-items-center">
                     <div className="col-md-4 p-0">
                         <div className="download-image">
@@ -17,7 +17,7 @@ const DownloadSection = () => {
                         <div className="download-content">
                             <h2>Download Our App</h2>
                             <h5>
-                                The Ready for <span>App Name</span> App
+                                The Ready for <span>LuvNestor</span> App
                             </h5>
                             <p>All it takes is 30 seconds to Download. Fast, Simples & Delightful. Meet genuine
                                 people near you. Find meaningful connections effortlessly. Your perfect match
