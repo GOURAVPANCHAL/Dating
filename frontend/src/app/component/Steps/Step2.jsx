@@ -16,11 +16,11 @@ export default function Step2({ formData, setFormData }) {
 
       {/* Perfect Weekend */}
       <div className="step2-field">
-        <label className="step2-label">What’s your idea of a perfect weekend?</label>
+        <label className="step2-label">Write a short bio here</label>
         <textarea
           value={formData.weekend || ""}
           onChange={(e) => handleChange("weekend", e.target.value)}
-          placeholder="e.g., Netflix, hiking, beach, gaming..."
+          placeholder="like: “Tell us about yourself in 150 characters” "
           className="step2-textarea"
           rows={3}
         />
@@ -44,18 +44,16 @@ export default function Step2({ formData, setFormData }) {
 
       {/* Love Language */}
       <div className="step2-field">
-        <label className="step2-label">What’s your love language?</label>
+        <label className="step2-label">What’s your Diet?</label>
         <select
-          value={formData.loveLanguage || ""}
-          onChange={(e) => handleChange("loveLanguage", e.target.value)}
+          value={formData.diet || ""}
+          onChange={(e) => handleChange("diet", e.target.value)}
           className="step2-select"
         >
           <option value="">Choose one</option>
-          <option value="words">Words of Affirmation</option>
-          <option value="time">Quality Time</option>
-          <option value="gifts">Receiving Gifts</option>
-          <option value="acts">Acts of Service</option>
-          <option value="touch">Physical Touch</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Non-Veg">Non-Veg</option>
+          <option value="Vegan">Vegan</option>
         </select>
       </div>
 

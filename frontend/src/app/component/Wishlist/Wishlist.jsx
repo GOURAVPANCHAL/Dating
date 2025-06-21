@@ -4,6 +4,7 @@ import './wishlist.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaTrashAlt } from "react-icons/fa";
+import pic1 from '@/app/Images/wishlist.png'
 
 const Wishlist = () => {
   const [wishlistProfiles, setWishlistProfiles] = useState([]);
@@ -21,15 +22,18 @@ const Wishlist = () => {
 
   return (
     <section className="meetings-section container">
-      <h2 className="meetings-heading mt-3">💗 My Wishlist</h2>
+      <div className=' wishlistTopSec'>
+      <Image src={pic1}  alt="heartimg" width={60} height={60} />
+      <h2 className="meetings-heading mt-3"> My Wishlist</h2>
+      </div>
       <div className="row">
         {wishlistProfiles.length > 0 ? (
           wishlistProfiles.map((item, index) => (
             <div key={index} className="col-md-3 col-6 mb-4">
               <div className="wishlist-match-card position-relative">
-                <div className="premium-ribbon">Wishlisted</div>
+                <div className="premium-ribbon">Wishlisted 💗</div>
 
-                <Link href={`/pages/find-match/${item.id}`} className="wishlist-match-link">
+                <Link href={`/pages/find-match/${item.id}`} className="wishlist-match-link"> 
                   <div className="wishlist-image-wrapper">
                     <Image src={item.picture} alt={item.name} className="wishlist-img" width={300} height={300} />
                   </div>

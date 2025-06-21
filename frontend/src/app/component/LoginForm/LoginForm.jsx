@@ -1,7 +1,7 @@
 'use client';
 import './login-form.css';
 import Image from 'next/image';
-import pic1 from '@/app/Images/img1.jpg';
+import pic1 from '@/app/Images/banner7.png';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 

@@ -1,0 +1,121 @@
+.subscription-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #e91e63;
+    margin-bottom: 30px;
+  }
+  
+  .current-plan-card {
+    background: #fff0f6;
+    border-left: 8px solid #e91e63;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+    position: relative;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .current-plan-card span {
+    font-weight: bold;
+    color: #d81b60;
+  }
+  
+  .current-plan-card .price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  
+  .current-plan-card ul {
+    padding-left: 20px;
+    color: #444;
+  }
+  
+  .active-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #e91e63;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .upgrade-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #000000;
+    font-weight: 600;
+  }
+  
+  .upgrade-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .upgrade-card {
+    width: 280px;
+    background: #f9f9ff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .upgrade-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .upgrade-card h4 {
+    color: #8e24aa;
+    font-size: 1.5rem;
+  }
+  
+  .upgrade-card .price {
+    font-size: 1.2rem;
+    color: #444;
+    margin: 10px 0;
+  }
+  
+  .upgrade-card ul {
+    list-style: none;
+    padding: 0;
+    color: #333;
+    text-align: left;
+  }
+  
+  .upgrade-card li {
+    margin: 8px 0;
+    font-size: 0.95rem;
+  }
+  
+  .btn-upgrade {
+    background: linear-gradient(to right, #8e24aa, #d81b60);
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-upgrade:hover {
+    background: linear-gradient(to right, #7b1fa2, #c2185b);
+  }
+  
