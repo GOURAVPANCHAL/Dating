@@ -3,7 +3,7 @@
     /* background-image: url("/public/Video-Banner.jpg"); */
  /* background: #ED147D; */
  background-image: url("../../Images/Video-Banner.jpg");
-    height:650px;
+    height:497px;
     width:100%;
     background-position: center center;
     background-repeat: no-repeat;
@@ -30,7 +30,7 @@
     height:auto;
     width: 100%;
     background: #F5F5F5;
-    padding: 130px 0px 130px 0px;
+    padding: 0px 0px 130px 0px;
 }
 
 
@@ -48,17 +48,22 @@
     /* color: #A16EFF; */
 }
 .element-container{
+    width: 530px;
+    height: 80px;
     font-weight: 400;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    color: #676770;
+    color: #ffffff;
     display: grid;
-    background-color: #FFFFFF;
+    background-color: #E8385C;
     margin-top:20px;
     margin-left :140px;
     margin-right :140px;
     box-sizing: border-box;
     padding: 15px 15px 15px 15px;
     border-radius: 30px 30px 30px 0px;
+}
+.elements-button-wrapper{
+    font-size: 24px;
 }
 
 .boldSec{
@@ -71,10 +76,10 @@
 
 
 .preferenceSec{
-    margin-top:10px;
+    margin-top: 90px;
 }
 .preferenceElementSec{
-    max-width: 500px;
+    max-width: 95%;
     display: grid;
     margin-left: auto;
     margin-right: auto;
@@ -83,18 +88,36 @@
 .elements-button-wrapper{
     width:100%;
 }
-.elementor-button{
-    background-color: var(--bg);
-    font-size: 16px;
+.elementor-button1{
+    background-color: #FE8E73;
+    font-size: 24px;
     font-weight: 600;
     box-shadow: 0px 8px 11px 0px #F8CFE3;
-    border-radius: 30px 30px 30px 30px;
-    padding: 5px 225px 5px 225px;
+    border-radius: 7px;
+    padding: 0px 225px 0px 225px;
     margin:5px;
     color:#FFFFFF;
     text-decoration: none;
     width:100%
 }
+
+.elementor-button2{
+    background-color: #E7375B;
+    font-size: 24px;
+    font-weight: 600;
+    box-shadow: 0px 8px 11px 0px #F8CFE3;
+    border-radius: 7px;
+    padding: 0px 225px 0px 225px;
+    margin:5px;
+    color:#FFFFFF;
+    text-decoration: none;
+    width:100%
+}
+
+
+
+
+
 @media (max-width: 768px){
     .AdviceRightSec {
        

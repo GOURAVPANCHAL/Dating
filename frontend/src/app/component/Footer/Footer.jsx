@@ -1,3 +1,6 @@
+
+
+
 import React from 'react'
 import './footer.css'
 import image1 from '@/app/Images/user/user1.jpeg'

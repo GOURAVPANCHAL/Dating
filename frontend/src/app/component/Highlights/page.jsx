@@ -71,7 +71,7 @@ const StatsSection = () => {
   return (
     <section className="stats-section" ref={sectionRef}>
       <div className="stats-overlay">
-        <h2 className="section-title">Love By The Numbers</h2>
+        <h2 className="section-title">LOVE BY THE NUMBERS</h2>
         <p className="section-subtitle">Real people. Real connections. Real passion.</p>
         <div className="stats-grid">
           {statsData.map((item, index) => (

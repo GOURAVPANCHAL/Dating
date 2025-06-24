@@ -43,7 +43,9 @@ const page = () => {
       </AnimatedSection>
   
     
-
+      <AnimatedSection>
+          <Highlights/>
+        </AnimatedSection>
 
       
       <AnimatedSection> 
@@ -63,9 +65,7 @@ const page = () => {
        {/* <CubeSection/> */}
    
        
-       <AnimatedSection>
-          <Highlights/>
-        </AnimatedSection>
+       
 
     
        <AnimatedSection>

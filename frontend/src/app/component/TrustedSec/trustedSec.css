@@ -7,20 +7,29 @@
   padding: 40px 0;
 }
 
-.trustedtitleSec h1 {
-  /* font-family: var(--font-family); */
-  /* color: #A16EFF; */
+.trustedtitleSec p {
+  font-size: 48px;
+  font-weight: 700;
   margin-bottom: 30px;
 }
 
+.trustedSec p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
 .trustedSec h3 {
-  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
 }
 
 .trustedSec {
-  background:gray;
+  background: white;
   /* semi-transparent glass layer */
   backdrop-filter: blur(10px);
+  border: 5px solid black;
   /* background blur */
   -webkit-backdrop-filter: blur(10px);
   /* for Safari */
@@ -41,8 +50,8 @@
 
 @media (max-width : 768px) {
   .trusted-sec-main {
-  padding: 20px 0;
-}
+    padding: 20px 0;
+  }
 
   .trustedSec img {
     width: 80px;
