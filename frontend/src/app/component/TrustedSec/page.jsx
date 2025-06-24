@@ -11,15 +11,15 @@ const page = () => {
     <>
       <section className='trusted-sec-main'>
         <div>
-          <div className="container-fluid"> 
+          <div className="container"> 
             <div className='text-center trustedtitleSec'>
-              <h1>The No.1 Trusted Dating</h1>
+              <p className='trustedtitle'>The No.1 Trusted Dating</p>
             </div>
             <div className="row align-items-center">
               <div className="col-md-3 col-6"> 
                 <div className='trustedSec'>
                   <Image src={pic1} alt="svgImage" height={50} width={50} className='svgImg' />
-                  <h3 className=''>Awesome Community</h3>
+                  <h3 className=''> Community</h3>
                   <p className='m-0'>Caramels pie cake pie marshmallow souffle donut biscuit.</p>
                 </div>
               </div>

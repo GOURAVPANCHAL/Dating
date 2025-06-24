@@ -30,13 +30,13 @@ color: black !important;
 text-decoration: none !important;
 }
 
-.all-body {
-  background-image: url('/background-image.jpg');
+.hero-section {
+  background-image: url('/Desktop.png');
   height: 100%;
   width: 100%;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
@@ -47,7 +47,7 @@ text-decoration: none !important;
 .login-btn {
   color: white;
   text-decoration: none;
-  background-color: var(--bg);
+  background-color:#FC0004;
   padding: 10px 15px;
   border-radius: 21px;
   font-weight: 600;

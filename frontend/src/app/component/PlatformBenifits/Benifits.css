@@ -1,73 +1,103 @@
-.BenifitSec {
+.benefits-section {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-sizing: border-box;
     text-align: center;
-}
-
-.BenifitLeftSec h3 {
-    text-align: center;
-    font-weight: 800;
-    margin: 25px 0px;
-
-}
-
-.BenifitSec p {
-    text-align: justify;
-    color: gray;
+  }
+  
+  .benefits-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  .benefits-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .benefit-left,
+  .benefit-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .benefit-image {
+    flex-shrink: 0;
+  }
+  
+  .benefit-box {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+  }
+  
+  .benefit-box h3 {
     font-size: 16px;
-}
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .benefit-box p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .pink {
+    padding: 15px 0 5px 0;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #f84d6c;
+    color: white;
+  }
+  
+  .pink h3 {
+    color: white;
+    text-align: center;
+  }
 
-.BenifitImageSec img {
-    height: 600px;
-    width: 650px;
-    padding: 40px 0;
-}
-
-.BenifitLeftSec .iconimg {
-    width: 70px;
-    height: 70px;
-}
-
-.iconimg {
-    width: 80px;
-    height: 80px;
-}
-
-@media (max-width: 768px) {
-
-    .BenifitImageSec img {
-        display: none;
+  .paragraph {
+    text-align: center;
+    padding: 25px;
+  }
+  
+  .yellow {
+    padding: 15px 0 5px 0;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .orange {
+    text-align: center;
+    padding: 15px 0 5px 0;
+    border-radius: 30px;
+    background-color: #fd8c5d;
+    color: white;
+  }
+  
+  .orange h3,
+  .yellow h3 {
+    color: black;
+  }
+  
+  @media (max-width: 900px) {
+    .benefits-container {
+      flex-direction: column;
     }
-
-    .BenifitLeftSec h3 {
-        background-color: var(--bg);
-        color: white;
-        padding: 7px 20px;
-        max-width: -moz-fit-content;
-        max-width: fit-content;
-        margin: auto auto 1rem;
-        -webkit-clip-path: polygon(100% 0, 95% 50%, 100% 100%, 0% 100%, 5% 51%, 0% 0%);
-        clip-path: polygon(100% 0, 95% 50%, 100% 100%, 0% 100%, 5% 51%, 0% 0%);
-        font-size: 16px;
-        font-weight: 400;
+  
+    .benefit-image {
+      order: -1;
     }
-
-    .BenifitSec p {
-        margin: 0;
-        text-align: center;
-        font-size: 12px;
-        padding: 0;
-    }
-
-    .BenifitHeading {
-        font-size: 13px;
-    }
-
-    .iconimg {
-        width: 60px;
-        height: 60px;
-    }
-
-    .BenifitSec {
-        margin-bottom: 1rem;
-    }
-
-}
+  }
+  

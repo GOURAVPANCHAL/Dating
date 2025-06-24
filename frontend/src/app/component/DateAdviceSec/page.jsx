@@ -33,20 +33,20 @@ const page = () => {
                            <section className='preferenceSec'>
                                 <div className="preferenceElementSec">
                                 
-                                    <Link href="" className='elementor-button'>
+                                    <Link href="" className='elementor-button1'>
                                      <button className='btn text-light elements-button-wrapper'>
                                           Mens
                                      </button>
                                     
                                     </Link>
-                                    <Link href="" className='elementor-button'>
+                                    <Link href="" className='elementor-button2'>
                                      <button className='btn  text-light elements-button-wrapper'>
                                           Wemen
                                      </button>
                                     
                                     </Link>
                                  
-                                    <Link href="" className='elementor-button'>
+                                    <Link href="" className='elementor-button1'>
                                      <button className='btn text-light elements-button-wrapper'>
                                           Others
                                      </button>

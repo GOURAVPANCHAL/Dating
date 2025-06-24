@@ -35,9 +35,16 @@ const Hero = () => {
               </ul>
             </div>
             <div className="hero-text">
-              <h1>Dating for Grown Ups Make a Real Connection</h1>
-              <p>Start meeting singles who are ready to commit today.</p>
-              <Link href="/pages/create-account/step/page" className="login-btn">Create account</Link>
+              <p>DATING FOR GROWN UPS:</p>
+              <h1 className='title'>MAKING REAL</h1>
+              <h1 className='subtitle'> CONNECTIONS.</h1>
+              <div className='title_paragraphSec'>
+              <span className='title_paragraph'>Start meeting singles who are ready to commit today.</span>
+              </div>
+              <div className='create_buttonSec'>
+
+              <Link href="/pages/create-account/step/page" className="create_accountbtn">Create account</Link>
+              </div>
             </div>
           </div>
         </div>

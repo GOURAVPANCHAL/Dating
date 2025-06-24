@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import logo from "../../Images/logo.png"
+import logo from "../../Images/Group 9.png"
 import mermberImage from "../../Images/explore-lmage.png"
 import './header.css'
 
@@ -59,9 +59,6 @@ const Header = () => {
         {
           title: "Our Services",
           links: [
-        // { label: "Profile Verification", href: "/services/profile-verification" },
-        // { label: "Matchmaking", href: "/services/matchmaking" },
-        // { label: "Relationship Coaching", href: "/services/relationship-coaching" },
         { label: "Privacy & Safety", href: "/pages/policies" },
         { label: "VIP Membership", href: "/services/vip-membership" },
         { label: "Dating Events", href: "/services/events" },
@@ -92,13 +89,13 @@ const Header = () => {
               <div className="col-md-2 d-flex align-items-center">
                 <div className="nav-logo">
                   <Link href="/">
-                    <Image src={logo} width={50} className='logoimg' height={"auto"} alt="Logo" />
+                    <Image src={logo} width={200} className='logoimg' height={"auto"} alt="Logo" />
                   </Link>
                 </div>
               </div>
               <div className="col-md-8">
                 <div className="nav-menu-header">
-                  <ul className="nav-menu-ul">
+                  <ul className="nav-menu-ul ">
                     {navItems.map((item, idx) => (
                       <li key={idx} className={item.isDropdown ? "dropdown-parent" : ""}>
                         <Link href={item.href}>

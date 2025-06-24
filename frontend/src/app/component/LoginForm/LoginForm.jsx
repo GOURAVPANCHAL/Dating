@@ -18,9 +18,6 @@ export default function LoginPage() {
 
   return (
     <>
- 
-
-
     <div className="login-container">
     <motion.div
       initial={{ opacity: 0, scale: 0.9, y: 50 }}
