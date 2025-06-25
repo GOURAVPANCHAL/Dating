@@ -7,10 +7,6 @@ import image1 from '@/app/Images/user/user1.jpeg'
 import image2 from '@/app/Images/user/user2.jpeg'
 import image3 from '@/app/Images/user/user3.jpeg'
 
-// import image1 from '../../Images/user/people1.png'
-// import image2 from '../../Images/user/people2.png'
-// import image3 from '../../Images/user/people3.png'
-
 const Footer = () => {
   return (
     <>

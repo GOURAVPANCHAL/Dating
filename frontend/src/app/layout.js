@@ -5,36 +5,36 @@
   import Header from './component/Header/Header';
   import Footer from './component/Footer/Footer';
   import Loader from './component/Loader/Loader';
-  import ProfileNavbar from './component/ProfileHeader/ProfileHeader'; // Import ProfileNavbar
+  // import ProfileNavbar from './component/ProfileHeader/ProfileHeader'; // Import ProfileNavbar
   import 'bootstrap/dist/css/bootstrap.min.css';
   import Script from 'next/script';
 
   export default function RootLayout({ children }) {
     const [loader, setLoader] = useState(true);
     const [isVerified, setIsVerified] = useState(null);
-    const pathname = usePathname();
+    // const pathname = usePathname();
 
-    // useEffect(() => {
-    //   const timer = setTimeout(() => {
-    //     setLoader(false);
-    //   }, 2000);
-    //   return () => clearTimeout(timer);
-    // }, []);
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setLoader(false);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }, []);
 
     const handleVerification = (status) => {
       setIsVerified(status);
     };
 
     // Determine which header to show
-    const renderHeader = () => {
-      return pathname === '/' ? <Header /> : <ProfileNavbar />;
-    };
+    // const renderHeader = () => {
+    //   return pathname === '/' ? <Header /> : <ProfileNavbar />;
+    // };
 
     return (
       <html lang="en">
         <head />
         <body>
-          {/* {loader ? (
+           {loader ? (
             <Loader />
           ) : isVerified === null ? (
             <div className="age-form">
@@ -53,20 +53,21 @@
                 </div>
               </div>
             </div>
-          ) : isVerified === true ? ( */}
+          ) : isVerified === true ? ( 
             <div>
-              {renderHeader()}          
+              {/* {renderHeader()}           */}
+              <Header />
               {children}
               <Footer />
             </div>
-          {/* ) : (
+           ) : (
             <div className="d-flex justify-content-center align-items-center vh-100 bg-dark text-white">
               <div className="text-center">
                 <h2>Access Denied</h2>
                 <p>You must be 18 years or older to access this website.</p>
               </div>
             </div>
-          )}  */}
+          )}  
 
           <Script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"

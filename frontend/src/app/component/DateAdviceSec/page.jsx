@@ -41,7 +41,7 @@ const page = () => {
                                     </Link>
                                     <Link href="" className='elementor-button2'>
                                      <button className='btn  text-light elements-button-wrapper'>
-                                          Wemen
+                                          Women
                                      </button>
                                     
                                     </Link>

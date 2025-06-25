@@ -1,41 +1,79 @@
 footer {
-    /* background-image: url('../../Images/footer-bg.jpg'); */
     width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 2rem 0;
+    background-color: #f8f9fa;
 }
 
 .footer-heading {
     font-weight: 600;
     margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
 .newsletter-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
 .newsletter-form {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     max-width: 100%;
 }
 
 .email-input {
     flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.upgradebtn {
+    padding: 0.5rem 1rem;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.upgradebtn:hover {
+    background-color: #c82333;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .social-icons a {
     color: #333;
     font-size: 1.25rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
     transition: color 0.2s;
 }
 
 .social-icons a:hover {
     color: #dc3545;
+}
+
+.footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-main > div {
+    flex: 1 1 200px;
 }
 
 .footer-main .member {
@@ -49,6 +87,7 @@ footer {
     height: 40px;
     border-radius: 50%;
     margin-right: 0.5rem;
+    object-fit: cover;
 }
 
 .footer-links {
@@ -81,18 +120,43 @@ footer {
     margin-right: 0.5rem;
     border-radius: 4px;
 }
-@media (max-width:768px){
-    .FormSelectSection{
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .newsletter-row {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
-    /* .couple-form-left h1 {
-        font-size: 38px !important;
-        text-align: center !important;
-        line-height: 55px !important;
-        letter-spacing: -1.7px;
-        font-family: var(--font-family);
-        color: var(--bg);
-        text-transform: capitalize;
-        max-width: 100% !important;
-    } */
+
+    .newsletter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .upgradebtn {
+        width: 100%;
+    }
+
+    .footer-main {
+        flex-direction: column;
+        gap:0;
+    }
+ 
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-main > div {
+        text-align: center;
+    }
+
+    .footer-main .member {
+        justify-content: center;
+    }
+
+    .recent-activity {
+        justify-content: center;
+        text-align: left;
+    }
 }

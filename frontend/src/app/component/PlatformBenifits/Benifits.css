@@ -93,11 +93,84 @@
   
   @media (max-width: 900px) {
     .benefits-container {
-      flex-direction: column;
+      /* flex-direction: column; */
+      align-items: center;
     }
   
     .benefit-image {
       order: -1;
+      margin-bottom: 20px;
     }
+  }
+  
+  /* ✅ New Code for Mobile: Show 2 Cards in a Row */
+  @media (max-width: 768px) {
+    .benefit-left,
+    .benefit-right {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr); /* 2 per row */
+      gap: 20px;
+      max-width: 100%;
+    }
+  
+    .benefit-box {
+      text-align: center;
+      padding: 15px;
+      height: 260px;
+    }
+  
+ 
+    .pink {
+      padding: 5px 0 5px 0;
+    }
+
+    .benefitImg {
+      width: 70%;
+      max-width: 300px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .benefits-container {
+      gap: 5px;
+    }
+    
+  
+    .benefits-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  
+    .benefit-box h3 {
+      padding: 6px 3px 2px 4px;
+      font-size: 12px;
+    }
+  
+    .benefit-box p {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+    .benefit-left,
+    .benefit-right {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  
+    .benefit-box {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  }
+  
+  /* ✅ Stack cards vertically on very narrow devices */
+  @media (max-width: 400px) {
+    .benefit-left,
+    .benefit-right {
+      grid-template-columns: 1fr;
+    }
+    
   }
   

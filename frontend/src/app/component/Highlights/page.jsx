@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { FaHeart, FaUsers, FaComments, FaShieldAlt } from 'react-icons/fa';
 import './highlights.css';
@@ -43,7 +43,7 @@ const StatCard = ({ icon, targetNumber, label, inView }) => {
 };
 
 const StatsSection = () => {
-  const sectionRef = useRef();
+  const sectionRef = useRef(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
