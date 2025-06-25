@@ -3,9 +3,7 @@
 }
 
 .couple-fullscreen {
-  /* width: 100vw; */
-  height: 100vh;
-  /* background-color: var(--bg); */
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +17,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding: 0 40px; */
   position: relative;
   z-index: 2;
 }
@@ -48,14 +45,24 @@
 }
 
 .form-box p {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-size: 16px;
   color: #333;
 }
 
+.genderSec{
+  margin-bottom: 20px !important;
+}
+.Age-section{
+  margin-top:23px;
+/* display: grid; */
+}
 .form-group {
   margin-bottom: 5px;
   text-align: left;
+}
+.form-group1{
+  display: flex;
 }
 
 .radio-group {
@@ -85,16 +92,22 @@
 }
 
 .age-range input {
-  width: 100px;
+  width: 55px;
   padding: 6px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 select {
-  width: 100%;
+  width: 70%;
   padding: 10px;
   border-radius: 5px;
+}
+.countrySec{
+  display: grid;
+  padding:20px;
+      margin-top: auto;
+
 }
 
 .find-btn {
@@ -107,4 +120,75 @@ select {
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+}
+
+
+
+
+/* RESPONSIVE STYLES */
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+  
+
+  .couple-fullscreen {
+    height: 75vh;
+  }
+  .mobile-only {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  .mobile-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .couple-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .form-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 50px;
+    
+  }
+
+  .form-box h1 {
+    font-size: 20px;
+  }
+
+  .form-box p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .radio-btn {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+
+  .age-range input {
+    width: 60px;
+  }
+
+  .find-btn {
+    width: 100%;
+    font-size: 14px;
+  }
 }

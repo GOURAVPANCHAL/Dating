@@ -126,6 +126,16 @@
         display: none;
     }
 
+    .hero-wall-content h1 {
+        font-size: 18px;
+    }
+
+    .register-btn {
+        font-size: 12px;
+        padding: 5px 20px;
+    }
+
+
     .hero-content .hero-text {
         margin: 1rem auto 3rem auto;
         width: 100%;
@@ -194,9 +204,20 @@
         padding-top: 0px;
     }
 
-    .hero-content .hero-text h1 {
-        font-size: 24px;
+    .hero-content .title  {
+        line-height: 20px;
+        font-size: 35px;
     }
+
+    
+    .hero-content .subtitle {
+         font-size: 40px;
+    }
+
+
+    /* .hero-content .hero-text h1 {
+        font-size: 35px;
+    } */
 
     .hero-content .hero-text p {
         font-size: 18px;
@@ -224,6 +245,9 @@
     .hero-wall-content {
         width: 100%;
     }
+    .hero-content .hero-text p {
+        font-size: medium;
+   }
 
     .hero-wall-content img {
         width: 60%;
@@ -239,9 +263,55 @@
 }
 
 @media (max-width:768px){
+     */
+
+    .register-btn {
+        font-size: 12px;
+        padding: 5px 20px;
+    }
+
+
+    .title_paragraphSec {
+        margin-top: -3px;
+    
+    }
+
+    .title_paragraph {
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .create_buttonSec {
+        margin-top: 20px;
+    }
+
+
+    .create_accountbtn {
+        font-size: 12px;
+        padding: 9px 20px;
+        border-radius: 15px;
+        font-weight: 600;
+        /* border: none; */
+    }
+    
+    .hero-content .title  {
+        line-height: 23px;
+        font-size: 35px;
+    }
+
+    
+    .hero-content .subtitle {
+         font-size: 40px;
+    }
+
+
     .hero-content {
         text-align: center;
         padding-bottom: 0;
     }
+     .hero-icons ul {
+        padding-top: 0rem;
+    }
+
     
 }

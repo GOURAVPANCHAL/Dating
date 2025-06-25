@@ -65,6 +65,12 @@
     width: 650px;
     z-index: 100;
 }
+.profile-image-nav img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
 
 .dropdown-parent:hover .dropdown {
     color:black;
@@ -172,7 +178,7 @@
         padding: 0;
     }
 
-    .bottom-bar {
+    /* .bottom-bar {
         position: fixed;
         bottom: 10px;
         left: 50%;
@@ -187,7 +193,7 @@
         border-radius: 40px;
         align-items: center;
         width: 60%;
-    }
+    } */
 
 
     .bottom-bar a {

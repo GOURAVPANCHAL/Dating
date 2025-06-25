@@ -4,6 +4,8 @@ import Image from 'next/image';
 import pic1 from '@/app/Images/banner7.png';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { FaFacebook } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -46,7 +48,7 @@ export default function LoginPage() {
             />
 
             <div className="password-field">
-              <input
+              <input     
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Enter Password"
                 value={password}
@@ -71,8 +73,8 @@ export default function LoginPage() {
           <p className="or-divider">Or</p>
 
           <div className="social-icons">
-            <img src="/google-icon.svg" alt="Google" />
-            <img src="/facebook-icon.svg" alt="Facebook" />
+          <FaFacebook  className='fs-3 text-primary'/>
+          < FaGoogle  className='fs-3 text-success'/>
           </div>
         </div>
       </div>

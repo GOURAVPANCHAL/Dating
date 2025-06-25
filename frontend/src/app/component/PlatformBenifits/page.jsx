@@ -2,7 +2,7 @@
 import React from "react";
 import "./Benifits.css";
 import Image from "next/image";
-import coupleImage from "@/app/Images/midImage.png"; // You must place your image in public folder or use `import` properly
+import coupleImage from "@/app/Images/midImage.png";
 
 const BenefitsSection = () => {
   return (
@@ -10,20 +10,20 @@ const BenefitsSection = () => {
       <h2 className="benefits-title">Benefits of Using Our Dating Platform</h2>
       <div className="benefits-container">
         <div className="benefit-left">
-          <div className="benefit-box ">
+          <div className="benefit-box">
             <div className="pink">
-            <h3>Find True Connections:</h3>
+              <h3>Find True Connections:</h3>
             </div>
-            <p className="paragraph">
+            <p>
               Discover authentic relationships and meaningful conversations
               with like-minded individuals who value love and connection as much as you do.
             </p>
           </div>
           <div className="benefit-box">
             <div className="yellow">
-            <h3>Advanced Matching:</h3>
+              <h3>Advanced Matching:</h3>
             </div>
-            <p className="paragraph">
+            <p>
               Our smart matchmaking algorithm connects you with people who share your interests,
               values, and lifestyle, giving you the best chance to find someone special.
             </p>
@@ -31,24 +31,24 @@ const BenefitsSection = () => {
         </div>
 
         <div className="benefit-image">
-          <Image src={coupleImage} alt="Happy Couple" width={588} height={608} />
+          <Image src={coupleImage} className="benefitImg" alt="Happy Couple" width={588} height={608} />
         </div>
 
         <div className="benefit-right">
-          <div className="benefit-box ">
-           <div className="orange">
-           <h3>Safe & Secure:</h3>
-           </div>
-            <p className="paragraph">
+          <div className="benefit-box">
+            <div className="orange">
+              <h3>Safe & Secure:</h3>
+            </div>
+            <p>
               Your privacy and safety are our top priority. We use advanced encryption
               and verification tools to ensure your profile is secure and your interactions are genuine.
             </p>
           </div>
           <div className="benefit-box">
-          <div className="pink">
-          <h3>Seamless User Experience:</h3>
-          </div>
-            <p className="paragraph">
+            <div className="pink">
+              <h3>Seamless User Experience:</h3>
+            </div>
+            <p>
               Enjoy a smooth, user-friendly interface that lets you focus on making connections,
               with intuitive messaging, dynamic profiles.
             </p>
@@ -60,14 +60,6 @@ const BenefitsSection = () => {
 };
 
 export default BenefitsSection;
-
-
-
-
-
-
-
-
 
 
 

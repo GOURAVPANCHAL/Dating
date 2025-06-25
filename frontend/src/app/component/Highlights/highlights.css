@@ -1,39 +1,21 @@
-/* highlights.css - Romantic Stats Section Styling */
-/* .stats-section {
-  background: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
-    url('../../Images/horizontalpic.jpg');
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: overlay;
-  padding: 80px 20px;
-  color: white;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-} */
-
-
 .stats-section {
-  background: 
-  /* linear-gradient(to bottom, rgba(62, 61, 61, 0.556), rgba(0, 0, 0, 0.3)), */
-  url('../../Images/number1.png');
-  background-size:cover;
+  background: url('../../Images/number1.png');
+  background-size: cover;
   background-position: center;
   background-blend-mode: inherit;
   padding: 80px 20px;
   color: #000000;
   text-align: center;
   position: relative;
-  /* overflow: hidden; */
 }
+
 .stats-overlay {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .section-title {
-  line-height: 30px;
+  line-height: 1.2;
   color: #fc0004;
   font-size: 3rem;
   font-weight: 700;
@@ -50,13 +32,13 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
   justify-content: center;
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 30px 20px;
@@ -127,36 +109,66 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2.5rem;
   }
-  
+}
+
+@media (max-width: 768px) {
   .section-title {
     font-size: 2rem;
   }
-  
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  .stats-section {
+    padding:20px;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
   .stat-card {
-    padding: 20px 10px;
+    width:250px;
+    height:150px;
+    padding: 20px 12px;
   }
-  
+  .icon {
+    font-size: 25px;
+    margin-bottom: 0px;
+  }
   .number {
-    font-size: 1.8rem;
+    font-size: 1rem;
+    
   }
-  
+
   .label {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
   }
-  
-  .section-title {
-    font-size: 1.8rem;
+
+  .number {
+    font-size: 1rem;
+  }
+
+  .label {
+    font-size: 0.95rem;
   }
 }

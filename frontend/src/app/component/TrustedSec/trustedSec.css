@@ -50,8 +50,14 @@
 
 @media (max-width : 768px) {
   .trusted-sec-main {
-    padding: 20px 0;
+    padding: 0px 0;
   }
+
+  .trustedtitleSec p {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
 
   .trustedSec img {
     width: 80px;
@@ -76,7 +82,7 @@
 
   .trustedSec p {
     font-size: 10px;
-    color: white;
+    color: rgb(1, 1, 1);
   }
 
   .trustedSec h3 {

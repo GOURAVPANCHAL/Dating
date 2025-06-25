@@ -1,155 +1,183 @@
-.dateAdviceImageSec{
+/* Datesec.css */
+
+.dateAdviceImageSec {
     position: relative;
-    /* background-image: url("/public/Video-Banner.jpg"); */
- /* background: #ED147D; */
- background-image: url("../../Images/Video-Banner.jpg");
-    height:497px;
-    width:100%;
-    background-position: center center;
+    background-image: url("../../Images/Video-Banner.jpg");
+    height: 497px;
+    width: 100%;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-}
-.PlayiconSvg{
-    position:absolute;
-    top:50%;
-     left:50%;
-     
-}
-.SvgPic:hover{
+  }
+  
+  .PlayiconSvg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .SvgPic:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
-    
-}
-
-.dateAdviceimg{
-    object-fit:cover;
-}
-
-.AdviceRightSec {
-    height:auto;
+  }
+  
+  .AdviceRightSec {
     width: 100%;
-    background: #F5F5F5;
-    padding: 0px 0px 130px 0px;
-}
-
-
-.subtitle-section {
-    font-family: "Archivo Narrow", Sans-serif;
+    background: #f5f5f5;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .subtitle-section {
+    font-family: "Archivo Narrow", sans-serif;
     font-size: 22px;
     font-weight: 600;
-    color: #000000;
+    color: #000;
     text-align: center;
-}
-.DataTittle{
+  }
+  
+  .DataTittle {
     font-weight: 600;
     font-size: 45px;
-    /* font-family: var(--font-family); */
-    /* color: #A16EFF; */
-}
-.element-container{
-    width: 530px;
-    height: 80px;
+    text-align: center;
+  }
+  
+  .element-container {
+    max-width: 90%;
     font-weight: 400;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     color: #ffffff;
-    display: grid;
-    background-color: #E8385C;
-    margin-top:20px;
-    margin-left :140px;
-    margin-right :140px;
-    box-sizing: border-box;
-    padding: 15px 15px 15px 15px;
+    background-color: #e8385c;
+    margin: 20px auto;
+    padding: 15px;
     border-radius: 30px 30px 30px 0px;
-}
-.elements-button-wrapper{
-    font-size: 24px;
-}
-
-.boldSec{
-    box-sizing: border-box;
-}
-.DateTextSection .subtitle-section{
-    /* font-family: var(--font-family); */
-    color:var(--bg)
-}
-
-
-.preferenceSec{
-    margin-top: 90px;
-}
-.preferenceElementSec{
-    max-width: 95%;
-    display: grid;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-}
-.elements-button-wrapper{
-    width:100%;
-}
-.elementor-button1{
-    background-color: #FE8E73;
-    font-size: 24px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    font-size: 18px;
+  }
+  
+  .boldSec {
     font-weight: 600;
-    box-shadow: 0px 8px 11px 0px #F8CFE3;
-    border-radius: 7px;
-    padding: 0px 225px 0px 225px;
-    margin:5px;
-    color:#FFFFFF;
-    text-decoration: none;
-    width:100%
-}
-
-.elementor-button2{
-    background-color: #E7375B;
-    font-size: 24px;
+  }
+  
+  .preferenceSec {
+    margin-top: 60px;
+    text-align: center;
+  }
+  
+  .preferenceElementSec {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  
+  .elements-button-wrapper {
+    font-size: 20px;
+    width: 100%;
+  }
+  
+  .elementor-button1,
+  .elementor-button2 {
+    font-size: 20px;
     font-weight: 600;
-    box-shadow: 0px 8px 11px 0px #F8CFE3;
     border-radius: 7px;
-    padding: 0px 225px 0px 225px;
-    margin:5px;
-    color:#FFFFFF;
+    padding: 12px 0;
+    color: #fff;
     text-decoration: none;
-    width:100%
-}
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 8px 11px 0px #f8cfe3;
+  }
+  
+  .elementor-button1 {
+    background-color: #fe8e73;
+  }
+  
+  .elementor-button2 {
+    background-color: #e7375b;
+  }
+  
+  /* Media Queries */
+  
+  @media (max-width: 992px) {
+    .DataTittle {
+      font-size: 36px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .DataTittle {
+      font-size: 28px;
+    }
 
-
-
-
-
-@media (max-width: 768px){
-    .AdviceRightSec {
+    .preferenceElementSec {
+        gap: 5px;
        
-        padding: 20px 0px 30px 0px;
+      }
+  
+    .AdviceRightSec {
+        padding: 20px 20px;
+      }
+    .preferenceSec {
+        margin-top: 5px;
+        text-align: center;
     }
 
-    .element-container{
-        margin: 0;
+    .element-container {
+        border-radius: 20px 20px 20px 0px;
+        font-size: 10px;
+        margin: 10px auto
     }
-    .elementor-button {
-     padding: 0px;
-     box-shadow: none;
+ 
+
+    .subtitle-section {
+      font-size: 17px;
     }
-    
-.preferenceElementSec {
-    max-width: 300px;
-}
-.DataTittle {
-    font-weight: 700;
-    font-size: 28px;
-}
-.subtitle-section {
+  
    
-    font-size: 17px;
-}
-.dateAdviceImageSec {
-    display: none;
-}
-
-.PlayiconSvg {
-    top: 31%;
-    left: 36%;
-}
-
-}
+  
+    .elementor-button1,
+    .elementor-button2 {
+      font-size: 18px;
+      padding:  0px;
+    }
+  
+    .dateAdviceImageSec {
+      margin-top: 10px;
+      height: 300px;
+    }
+  
+    .PlayiconSvg {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .DataTittle {
+      font-size: 24px;
+    }
+  
+    .subtitle-section {
+      font-size: 15px;
+    }
+  
+    .element-container {
+      font-size: 10px;
+      margin: 10px auto
+    }
+  
+    .elementor-button1,
+    .elementor-button2 {
+      font-size: 16px;
+    }
+  
+    .dateAdviceImageSec {
+      height: 250px;
+    }
+  }
+  

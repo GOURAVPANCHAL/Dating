@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import logo from "../../Images/Group 9.png"
 import mermberImage from "../../Images/explore-lmage.png"
+import ProfileImage from "../../Images/people1.png"
+import thundar from "../../Images/thunder.gif"
 import './header.css'
 
 const Header = () => {
@@ -83,8 +85,8 @@ const Header = () => {
   return (
     <>
       <div className="nav-main">
-        <div className="container">
-          <nav className="navbar">
+        <div className="container ">
+          <nav className="navbar ">
             <div className="desktop row align-items-center w-100">
               <div className="col-md-2 d-flex align-items-center">
                 <div className="nav-logo">
@@ -93,7 +95,7 @@ const Header = () => {
                   </Link>
                 </div>
               </div>
-              <div className="col-md-8">
+              <div className="col-md-7">
                 <div className="nav-menu-header">
                   <ul className="nav-menu-ul ">
                     {navItems.map((item, idx) => (
@@ -132,7 +134,23 @@ const Header = () => {
                   </ul>
                 </div>
               </div>
-              <div className="col-md-2 text-end">
+              <div className="col-md-3 text-end d-flex">
+              <div className='profile-image-nav d-flex'>
+                        <div>
+                            <Link href={"/pages/profile"} className='text-decoration-none'>
+                                <Image src={ProfileImage} alt='profile-image' />
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href={"/pages/subscriptions"}>
+                            <Image src={thundar} alt='notification' className='notification-icon' />
+                            </Link>
+                        </div>
+                    </div> 
+        
+
+
+
                 <Link href="/pages/login" className="login-btn">Log In / Register</Link>
               </div>
             </div>
@@ -195,6 +213,7 @@ const Header = () => {
                 <li><Link className='upgradebtn text-white' href="/login" onClick={toggleSidebar}>Log In / Register</Link></li>
               </ul>
             </div>
+          
           </nav>
         </div>
       </div>
@@ -220,6 +239,8 @@ const Header = () => {
             <i className="bi bi-people"></i>
           </Link>
         </div>
+
+      
         {/* <div>
             <Link href={"#"}>
             
