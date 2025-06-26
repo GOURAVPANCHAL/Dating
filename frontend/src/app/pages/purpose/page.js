@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import './Purpose.css';
-import pic1 from '@/app/Images/Banner7.png'
+import pic1 from '@/app/Images/banner7.png'
 import pic2 from '@/app/Images/img.png'
 import pic3 from '@/app/Images/romantic.png'
 import pic4 from '@/app/Images/passion.png'

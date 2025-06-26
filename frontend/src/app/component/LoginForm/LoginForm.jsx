@@ -1,11 +1,13 @@
 'use client';
 import './login-form.css';
 import Image from 'next/image';
-import pic1 from '@/app/Images/banner7.png';
+import pic1 from '../../Images/banner7.png';
+// import pic1 from '@/app/Images/banner7.png';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
+import Link from 'next/link';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -64,7 +66,7 @@ export default function LoginPage() {
             </div>
 
             <div className="forgot-password">
-              <a href="/pages/forgot-password">Forgot Password?</a>
+              <Link href="/pages/forgot-password">Forgot Password?</Link>
             </div>
 
             <button type="submit" className="login-btn">Login</button>

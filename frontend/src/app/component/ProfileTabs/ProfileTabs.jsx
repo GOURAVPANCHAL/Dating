@@ -10,8 +10,7 @@ import ChatingPage from '../Chating/ChatingPage';
 import Friendlist from '../Friendlist/Friendlist';
 import ConnectedFriends from '../ConnectedFriends/ConnectedFriends';
 import Wishlist from '../Wishlist/Wishlist';
-import MyPlan from '../MyPlan/Myplan';
-import { FaHeartCirclePlus } from "react-icons/fa6";
+// import MyPlan from '../MyPlan/MyPlan';
 
 const ProfileTabs = () => {
   const searchParams = useSearchParams();

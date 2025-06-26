@@ -151,7 +151,7 @@ const Header = () => {
 
 
 
-                <Link href="/pages/login" className="login-btn">Log In / Register</Link>
+                <Link href="/pages/login" className="RegisterBtn">Log In / Register</Link>
               </div>
             </div>
             <div className='responsive-sidebar'>

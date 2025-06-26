@@ -133,11 +133,22 @@ select {
   display: none;
 }
 
+@media (max-width: 400px){
+  .mobile-image img {
+    margin-top: 200px;
+  }
+}
+
+
+
+
 @media (max-width: 768px) {
   .desktop-only {
     display: none;
   }
-  
+  .mobile-image img {
+    margin-top: 320px;
+}
 
   .couple-fullscreen {
     height: 75vh;
