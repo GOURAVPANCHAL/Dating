@@ -144,7 +144,7 @@
     .navbar {
         flex-direction: column;
         align-items: flex-start;
-    }
+    }   
 
     .nav-menu-header {
         width: 100%;
@@ -260,6 +260,12 @@
         padding-top: 2rem;
     }
 
+}
+
+@media (max-width: 400px){
+    .hero-section {
+        background-image: none;
+    }
 }
 
 @media (max-width:768px){

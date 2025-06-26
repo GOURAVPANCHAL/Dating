@@ -7,9 +7,13 @@
   }
   
   .benefits-title {
-    font-size: 28px;
+    font-size: 2.8rem;
+    color: #d63384;
+    margin-bottom: 12px;
+    font-weight: 700;
+    /* font-size: 28px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 40px; */
   }
   
   .benefits-container {
@@ -71,7 +75,7 @@
   }
   
   .yellow {
-    padding: 15px 0 5px 0;
+    padding: 9px 0 2px 0;
     text-align: center;
     border-radius: 30px;
     background-color: #ffc107;
@@ -147,6 +151,7 @@
     }
   
     .benefit-box p {
+        line-height: 16px;
       margin-top: 10px;
       font-size: 13px;
     }

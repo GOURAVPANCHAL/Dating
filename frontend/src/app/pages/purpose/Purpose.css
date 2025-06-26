@@ -102,6 +102,7 @@ padding-left: 40px;
 
 /* Hero Section */
 .hero {
+  margin-top: 60px;
   display: flex;
   align-items: center;
   min-height: 70vh;

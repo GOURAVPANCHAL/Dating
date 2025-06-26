@@ -85,6 +85,7 @@
 
 /* find details component css */
 .profile-match-detail-sec {
+  margin-top: 96px;
   background-color: var(--bg2);
   padding: 2rem 0;
 }

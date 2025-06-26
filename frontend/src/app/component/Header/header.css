@@ -11,6 +11,15 @@
     border-radius: 40px;
 }
 
+.RegisterBtn {
+text-decoration: none;
+color: #fdfafa;
+padding: 10px;
+border: 1px solid white;
+background: red;
+border-radius: 22px;
+}
+
 .nav-logo img {
     max-width: 100%;
     justify-content: center;
@@ -71,6 +80,10 @@
     border-radius: 50%;
 }
 
+.profile-image-nav {
+    justify-content: space-between;
+
+}
 
 .dropdown-parent:hover .dropdown {
     color:black;

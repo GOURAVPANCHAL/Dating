@@ -1,8 +1,27 @@
 /* .about-us{
     background-color: var(--bg);
 } */
+
+.About-topSec{
+    width:100vw;
+    position:absolute
+
+}
+.about-us{
+    margin-top: 420px;
+}
+.titleAbout{
+  position:relative;
+  top:40px;
+}
+
+.Aboutbanner1{
+    width: 100%;
+    height:500px;
+}
+
 .AboutCount-Section{
-    padding-left: 130px;
+    padding-left: 0px;
 }
 .about-content-first p{
     font-size: 14px;
@@ -19,15 +38,48 @@
 
 }
 
+
 .rightSideSec{
   text-align: center;
   padding:120px
 }
 
 .About-mainSec{
-    background-color: var(--bg);
+    /* background-color: var(--bg); */
+    
 }
 
+.OverlayMainSec{
+    position:relative;
+}
+
+.OverlayTitle{
+position: absolute;
+top:130px;
+left:170px;
+}
+
+
+.AboutCount-Section img{
+    width: 90%;
+    height:420px;
+}
+.OverlayTitle h2{
+    font-size: 4rem;
+    font-weight: 800;
+    color:white
+}
+.OverlaySubTitle{
+position: absolute;
+top:220px;
+left:170px;
+}
+.OverlaySubTitle p{
+    width: 700px;
+    font-size: 25px;
+        font-weight: 400;
+    line-height: 1.7rem;
+}
 .rightSideSec h2{
     font-family: var(--font-family);
     color: white;
@@ -45,6 +97,28 @@
  left:30px;
  }
 
+
+ .breadcrumb-all{
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    /* background-color: var(--bg); */
+    /* background-color: black; */
+
+    color: rgb(255, 253, 253);
+  }
+  
+  .breadcrumb-item{
+    color: black !important;
+  }
+   
+  .UniqueImg{
+    width:100%;
+  }
+  .breadcrumb-item a{
+  color: black !important;
+  text-decoration: none !important;
+  }
+
  .CloudsvgImg{
     position: absolute;
     top:53px;
@@ -54,4 +128,73 @@
     position: absolute;
     top: 188px;
     right: 53px;
+ }
+
+
+ @media (max-width:768px){
+    .about-us{
+        text-align: justify;
+        padding: 13px;
+    
+    }
+    .titleAbout{
+        font-size: smaller;
+        top:43px;
+    }
+
+    .about-content-first h4 {
+        font-size: 20px;
+        text-align: center;
+      
+    }
+
+    .OverlayTitle {
+        position: absolute;
+        top: 17px;
+        left: 10px;
+    }
+    .AboutCount-Section img{
+        width: 100%;
+        height:300px;
+    }
+    .UniqueImg {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .OverlayTitle h2 {
+        font-size: 1.3rem;
+    }
+
+    .OverlaySubTitle {
+        position: absolute;
+        top: 42px;
+        left: 10px;
+    }
+    .OverlaySubTitle p {
+        width: 58%;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1rem;
+    }
+
+    .AboutCount-Section{
+        padding-left: 0px;
+    }
+    .Aboutbanner1 {
+        width: 100%;
+        height: 200px;
+    }
+    .breadcrumb-all {
+        padding: 0px;
+    }
+    .about-us {
+        margin-top: 130px;
+    }
+
+    .AboutCount-Section img {
+        margin: 0 40px;
+        width: 80%;
+        height: 200px;
+    }
  }
