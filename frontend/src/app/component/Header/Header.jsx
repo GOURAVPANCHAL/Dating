@@ -25,18 +25,21 @@ const Header = () => {
       href: "/pages/find-match",
     },
     {
-      label: "Community",
+      label: "Explore",
       href: "/about",
       isDropdown: true,
       dropdown: [
         {
-          title: "Community",
+          title: "Menu",
           links: [
-            { label: "Community Activity", href: "/pages/create-account/step/page" },
-            { label: "Recent Groups", href: "/pages/payment-section" },
-            { label: "Single Group", href: "/about" },
-            { label: "Members", href: "/pages/purpose" },
             { label: "About Us", href: "/pages/about-us" },
+            { label: "Privacy & Safety", href: "/pages/policies" },
+            { label: "Purpose", href: "/pages/purpose" },
+            { label: "FAQ", href: "/pages/faq" },
+            { label: "", href: "/pages/payment-section" },
+            // { label: "Community Activity", href: "/pages/create-account/step/page" },
+            // { label: "Single Group", href: "/about" },
+          
           ]
         },
         {
@@ -61,11 +64,17 @@ const Header = () => {
         {
           title: "Our Services",
           links: [
-        { label: "Privacy & Safety", href: "/pages/policies" },
         { label: "VIP Membership", href: "/services/vip-membership" },
         { label: "Dating Events", href: "/services/events" },
-        { label: "FAQ", href: "/pages/faq" }
-      ]
+
+      ],
+      
+
+        },
+        {
+          title: "",
+          image: mermberImage,
+          href: "/pages/about-us"
         }
       ]
     },
@@ -147,10 +156,6 @@ const Header = () => {
                             </Link>
                         </div>
                     </div> 
-        
-
-
-
                 <Link href="/pages/login" className="RegisterBtn">Log In / Register</Link>
               </div>
             </div>
@@ -218,34 +223,6 @@ const Header = () => {
         </div>
       </div>
       <div className="bottom-bar">
-
-        <div>
-          <Link href={"/"}>
-            <i className="bi bi-house"></i>
-          </Link>
-        </div>
-        <div>
-          <Link className='main-icon' href={"/pages/find-match"}>
-            <i className="bi bi-search-heart"></i>
-          </Link>
-        </div>
-        <div>
-          <Link href={"/pages/notifications"}>
-            <i className="bi bi-bell-fill"></i>
-          </Link>
-        </div>
-        <div>
-          <Link href={"/pages"}>
-            <i className="bi bi-people"></i>
-          </Link>
-        </div>
-
-      
-        {/* <div>
-            <Link href={"#"}>
-            
-            </Link>
-          </div> */}
       </div>
     </>
 

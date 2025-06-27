@@ -44,7 +44,7 @@ border-radius: 22px;
 .nav-menu-header .nav-menu-ul li a {
     text-decoration: none;
     color: rgb(2, 1, 1);
-    font-weight: 600;
+    font-weight: 370;
     padding: 10px 15px;
     transition: all 0.3s ease;
     border-radius: 5px;
@@ -71,7 +71,7 @@ border-radius: 22px;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    width: 650px;
+    width: 400px;
     z-index: 100;
 }
 .profile-image-nav img {

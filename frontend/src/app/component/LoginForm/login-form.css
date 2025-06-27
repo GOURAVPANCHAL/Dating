@@ -8,10 +8,12 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    align-items: flex-end;
     justify-content: center;
   }
   
   .login-card {
+    margin: 120px 0;
     display: flex; 
     width: 850px;
     background: white;
@@ -112,11 +114,12 @@ body {
   
   .or-divider {
     text-align: center;
-    margin: 20px 0;
+    margin: 5px 0;
     color: #777;
   }
   
-  .social-icons {
+  .social-icons-login {
+    margin-bottom: 15px;
     display: flex;
     justify-content: center;
     gap: 20px;

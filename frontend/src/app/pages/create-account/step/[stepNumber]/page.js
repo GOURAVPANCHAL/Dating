@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import './createAccount.css';
 import Image from 'next/image';
 import logo from '@/app/Images/logo.png'
-
 // Import steps
 import Step1 from '@/app/component/Steps/Step1';
 import Step2 from '@/app/component/Steps/Step2';
@@ -44,7 +43,6 @@ export default function StepPage() {
   const router = useRouter();
   const [stepNumber, setStepNumber] = useState(1);
   const [showConsent, setShowConsent] = useState(true);
-
   // Detect step from URL
   useEffect(() => {
     const match = window?.location?.pathname.match(/step\/(\d+)/);
@@ -132,11 +130,9 @@ export default function StepPage() {
             ) : (
               <button
                 className="btn submit"
-                onClick={() => {
-                  console.log('Final Submit', formData);
-                }}
+                onClick={() => router.push("/pages/login")}
               >
-                ❤️ Submit
+                Let's Get Started! ❤️
               </button>
             )}
           </div>

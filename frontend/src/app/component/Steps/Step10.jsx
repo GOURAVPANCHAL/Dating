@@ -78,7 +78,7 @@ export default function Step10({ formData, handleChange, setFormData }) {
   };
 
   return (
-    <div className="container py-4">
+    <div className="container pt-4">
       <h4 className="mb-4 text-primary">Step 10: Aadhaar, City & Hobbies</h4>
 
       {/* Aadhaar Input */}
@@ -181,7 +181,7 @@ export default function Step10({ formData, handleChange, setFormData }) {
               <button
                 key={hobby}
                 type="button"
-                className={`btn btn-sm ${isSelected ? "btn-primary" : "btn-outline-secondary"}`}
+                className={`hobbybtn ${isSelected ? "btn-primary" : "btn-outline-secondary"}`}
                 onClick={() => toggleHobby(hobby)}
               >
                 {hobby}

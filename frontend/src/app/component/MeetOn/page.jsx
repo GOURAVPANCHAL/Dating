@@ -9,7 +9,7 @@ export default function MeetOn() {
             <section className="MeetOnMainSec">
                 <div className="MeetOnTextSec">
                     <div className="MeetOnTittle">
-                        <h2>They Meet On Qiupid</h2>
+                        <h2>They Meet On LuvNestor</h2>
                     </div>
                     <div className="MeetOnDescription">
                         <p>

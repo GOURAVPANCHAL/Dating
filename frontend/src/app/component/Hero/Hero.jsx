@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <>
     <div>
-        <Whatsapp/>
+        {/* <Whatsapp/> */}
     </div>
     <section className='hero-section2-responsive'>
         <div className="container">
@@ -54,7 +54,7 @@ const Hero = () => {
           </div>
           <div className='hero-wall-content'>
             <h1>Start your love story</h1>
-            <h6>Qiupid: find love with our dating site!</h6>
+            <h6>LuvNestor: find love with our dating site!</h6>
           </div>
           <div className='hero-wall-content'>
             <Link href={"/pages/login"} className='register-btn'>Register Now</Link>

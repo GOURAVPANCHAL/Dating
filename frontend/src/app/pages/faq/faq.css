@@ -1,5 +1,5 @@
 .faqMainSec{
-    margin-top:40px;
+    margin-top:100px;
 }
 .faq-image{
     border-radius: 15px 15px 15px 15px;
@@ -15,7 +15,9 @@
     border-radius: 30px;
 }
 
-
+.faqLeftSec {
+    margin-top: 50px;
+}
 
 .transition-icon {
     transition: transform 0.3s ease;
