@@ -32,6 +32,12 @@ const Religion = [
     description: "Practicing the path to enlightenment through Buddhism.",
     color: "#997C80",
   },
+  {
+    key: "Others",
+    title: "None of these",
+    description: "Religion not mentioned",
+    color: "#944C80",
+  },
 ];
 
 export default function Step9({ formData, setFormData }) {
@@ -43,7 +49,7 @@ export default function Step9({ formData, setFormData }) {
 
   return (
     <div className="step9-container">
-      <h2 className="step9-title">Do You Religion Alcohol</h2>
+      <h2 className="step9-title">What's Your  Religion </h2>
       <p className="step9-subtitle">for making strong Relationship </p>
 
       <div className="step9-list">

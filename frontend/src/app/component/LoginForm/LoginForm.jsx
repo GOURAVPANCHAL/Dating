@@ -8,11 +8,13 @@ import { useState } from 'react';
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import Link from 'next/link';
+import {useRouter} from 'next/navigation';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,14 +72,19 @@ export default function LoginPage() {
             </div>
 
             <button type="submit" className="login-btn">Login</button>
+     
+      
           </form>
 
           <p className="or-divider">Or</p>
 
-          <div className="social-icons">
+          <div className="social-icons-login">
           <FaFacebook  className='fs-3 text-primary'/>
           < FaGoogle  className='fs-3 text-success'/>
           </div>
+
+          <button className='bg-secondary btn ' onClick={()=> router.push("/pages/create-account/step/page") }>I Haven't Account</button>
+
         </div>
       </div>
     </motion.div>

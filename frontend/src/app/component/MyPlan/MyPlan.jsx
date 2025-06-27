@@ -5,7 +5,7 @@ import './myplan.css';
 
 const allPlans = [
   {
-    title: "Qiupid Plus",
+    title: "LuvNestor Plus",
     price: 40,
     features: [
       "View members directory",
@@ -16,7 +16,7 @@ const allPlans = [
     ],
   },
   {
-    title: "Qiupid Extra",
+    title: "LuvNestor Extra",
     price: 45,
     features: [
       "All Plus features",
@@ -25,7 +25,7 @@ const allPlans = [
     ],
   },
   {
-    title: "Qiupid Platinum",
+    title: "LuvNestor Platinum",
     price: 50,
     features: [
       "All Extra features",
@@ -37,7 +37,7 @@ const allPlans = [
 ];
 
 // Simulated current user plan
-const userCurrentPlan = "Qiupid Plus";
+const userCurrentPlan = "LuvNestor Plus";
 
 const MyPlan = () => {
   const currentPlan = allPlans.find(plan => plan.title === userCurrentPlan);

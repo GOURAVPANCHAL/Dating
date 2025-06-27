@@ -13,7 +13,7 @@ const BenefitsSection = () => {
           <div className="benefit-box">
             <div className="pink">
               <h3>Find True Connections:</h3>
-            </div>
+            </div>       
             <p>
               Discover authentic relationships and meaningful conversations
               with like-minded individuals who value love and connection as much as you do.

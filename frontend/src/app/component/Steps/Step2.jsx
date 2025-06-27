@@ -59,7 +59,7 @@ export default function Step2({ formData, setFormData }) {
 
       {/* Dealbreaker */}
       <div className="step2-field">
-        <label className="step2-label">What’s a total dealbreaker for you?</label>
+        <label className="step2-label">What Your Point of View About RelationShip ?</label>
         <textarea
           value={formData.dealbreaker || ""}
           onChange={(e) => handleChange("dealbreaker", e.target.value)}

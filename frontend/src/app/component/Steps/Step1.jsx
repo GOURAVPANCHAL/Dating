@@ -55,13 +55,13 @@ export default function Step1({ formData, handleChange, setFormData }) {
   };
 
   return (
-    <div className="container mt-4">
-      <div className="mb-4 text-center">
+    <div className="container ">
+      <div className=" text-center">
         <h4 className="fw-bold text-primary">Step 1: Basic Info</h4>
         <p className="text-muted">Start by sharing your name, email, and photos.</p>
       </div>
 
-      <div className="mb-3">
+      <div className="NameInputSec">
         <label className="form-label fw-bold text-primary">Name:</label>
         <input
           type="text"

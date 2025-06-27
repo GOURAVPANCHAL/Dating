@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const plans = [
   {
-    title: "Qiupid Plus",
+    title: "LuvNestor Plus",
     price: 40,
     color: "#06b6d4",
     features: [
@@ -26,7 +26,7 @@ const plans = [
     ],
   },
   {
-    title: "Qiupid Extra",
+    title: "LuvNestor Extra",
     price: 45,
     color: "#f472b6",
     features: [
@@ -41,7 +41,7 @@ const plans = [
     disabled: ["Create group", "Forum admin", "Special title"],
   },
   {
-    title: "Qiupid Platinum",
+    title: "LuvNestor Platinum",
     price: 50,
     color: "#a66dd4",
     features: [

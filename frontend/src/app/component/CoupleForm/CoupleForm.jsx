@@ -5,6 +5,7 @@ import countryData from "../../data/countrydata";
 import Image from "next/image";
 import maleImage from "../../Images/couple2.png";
 import femaleImage from "../../Images/couple1.png";
+import Link from "next/link";
 
 const CoupleForm = () => {
   const [formData, setFormData] = useState({
@@ -141,9 +142,11 @@ const CoupleForm = () => {
             </div>
 
             {/* Submit Button */}
+            <Link href="/pages/login">
             <button type="submit" className="find-btn">
-              Find Your Partner
+              Find Your Partner 
             </button>
+            </Link>
           </form>
         </div>
 
